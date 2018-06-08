@@ -1,0 +1,133 @@
+a:any-link {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    text-align: center;
+    margin: auto;
+    width: 7%;
+    padding: 0px;
+}
+
+li {
+    margin: auto;
+    width: 50%;
+    padding: 12px;
+}
+
+.app {
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    align-content: center;
+    cursor: default;
+}
+
+.app-logo-hover {
+    animation: app-logo-spin infinite 3s linear;
+    height: 100px;
+}
+
+@keyframes app-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.app-logo {
+    height: 100px;
+}
+
+.app-header {
+    background-color: #4ECDC4;
+    height: 15%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+
+}
+
+.app-nav-bar-item {
+    height: 50px;
+    width: 115px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.app-nav-bar-item:hover {
+    border-bottom: solid #4ECDC4 0px;
+    animation: navAnimation 3s ease forwards;
+
+}
+.app-nav-bar-item-active{
+    height: 50px;
+    width: 115px;
+    list-style-type: none;
+    text-align: center;
+    border-bottom: solid white 5px;
+}
+.navbar-header {
+    font-size: 30px;
+    font-weight: bold;
+    margin: -12px;
+}
+
+.navbar-nav {
+    font-size: 20px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.example-appear.example-appear-active {
+    opacity: 1;
+    transition: opacity .20s ease-in;
+}
+
+@keyframes navAnimation {
+    from {
+        border-bottom: solid #4ECDC4 5px;
+    }
+    to {
+        border-bottom: solid white 5px;
+    }
+}
+
+.iconimg:any-link {
+    font-size: 7em;
+    color: #4ECDC4;
+    height: 100px;
+    width: 100px;
+    margin: 40px;
+    animation: icons-shrink 1s ease forwards;
+}
+
+.iconimg:hover {
+    animation: icons-grown 1s ease forwards;
+}
+
+@keyframes icons-grown {
+    from {
+        font-size: 7em;
+        color: inherit;
+    }
+    to {
+        font-size: 8em;
+
+    }
+
+}
+
+@keyframes icons-shrink {
+    from {
+        font-size: 8em;
+
+    }
+    to {
+        font-size: 7em;
+        color: inherit;
+    }
+
+}
+
