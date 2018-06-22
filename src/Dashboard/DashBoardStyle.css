@@ -1,45 +1,66 @@
-.btn{
+.btn {
     color: #4ECDC4;
-    background-color:white ;
-    border:2px solid #4ECDC4;
+    background-color: white;
+    border: 2px solid #4ECDC4;
     margin-left: 10px;
     border-radius: 10px;
 
 }
-.btn:hover{
+.btn:hover {
     background-color: #4ECDC4;
     color: white;
     font-weight: bold;
 }
-.btn:focus{
-    outline:0 !important;
+.btn:focus {
+    outline: 0 !important;
     background-color: #4ECDC4;
     color: white;
     font-weight: bold;
 
 }
-.input-style{
+
+.input-style {
     color: #4ECDC4;
-    background-color:white ;
-    border:2px solid #4ECDC4;
+    background-color: white;
+    border: 2px solid #4ECDC4;
     border-radius: 10px;
     margin-left: 10px;
     height: 30px;
 
 }
-.input-style:focus{
-    outline:0 !important;
+.input-style:focus {
+    outline: 0 !important;
 
 }
-.marked{
+
+.task-ul {
+    width: 50%;
+}
+
+.task-li {
+    width: 100%;
+    list-style-type: none;
+    margin-top: 5px;
+}
+.task-li:hover {
     background-color: rgba(78, 205, 196, 0.4);
-    display:inline-block
 }
-ul{
-    width: 100%;
+
+.not-completed-task-li{
+    border: 2px solid #4ECDC4;
 }
-li{
-    width: 100%;
+.task-complete-li {
+    animation: complete-task 1s linear;
 }
-.bla{
+@keyframes complete-task {
+    from {
+        background-color: inherit;
+    }
+    to {
+        background-color:rgba(78, 205, 196, 0.2);
+    }
+}
+.task-completed-li {
+    background-color: rgba(78, 205, 196, 0.2);
+    text-decoration: line-through ;
 }

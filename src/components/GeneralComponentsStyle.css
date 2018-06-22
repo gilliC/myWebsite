@@ -14,6 +14,14 @@ li {
     width: 50%;
     padding: 12px;
 }
+
+.app {
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    align-content: center;
+    cursor: default;
+}
+
 .app-logo-hover {
     animation: app-logo-spin infinite 3s linear;
     height: 100px;
