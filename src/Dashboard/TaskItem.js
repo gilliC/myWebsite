@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import fire from '../fire';
 
 export default class KPI extends Component {
     constructor(props) {
@@ -7,15 +8,30 @@ export default class KPI extends Component {
         this.onClick = this.onClick.bind(this);
         this.onAnimationEnd = this.onAnimationEnd.bind(this);
     }
+    update(id,value) {
+        return fire.database().ref('tasks').child(id).update({isNotCompleted:value}).then(() => {
+            return {};
+        }).catch(error => {
+            console.log(error.message);
+        });
+    }
 
     onClick() {
-        if (this.state.isNotCompleted)
+
+
+        if (this.state.isNotCompleted) {
             this.setState({isClicked: true});
-        else this.setState({isNotCompleted: true})
+        }
+        else {
+            this.update(this.props.task.id,true);
+            this.setState({isNotCompleted: true})
+        }
+
     }
 
     onAnimationEnd() {
         let {isNotCompleted} = this.state;
+        this.update(this.props.task.id,!isNotCompleted);
         this.setState({isClicked: false, isNotCompleted: !isNotCompleted})
     }
 
