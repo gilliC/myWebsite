@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
 
-export default class missionsDoneByTime extends Component {
+export default class TasksTimeLine extends Component {
 
     render() {
         let tasksCompleted = [1, 1, 2, 5, 2, 1, 3];

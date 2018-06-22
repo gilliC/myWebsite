@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import fire from '../fire';
 
-export default class KPI extends Component {
+export default class TaskItem extends Component {
     constructor(props) {
         super(props);
         this.state = {isNotCompleted: this.props.task.isNotCompleted, isClicked: false};
@@ -17,8 +17,6 @@ export default class KPI extends Component {
     }
 
     onClick() {
-
-
         if (this.state.isNotCompleted) {
             this.setState({isClicked: true});
         }

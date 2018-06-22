@@ -1,24 +1,36 @@
 import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 
-export default class KPI extends Component {
+export default class TasksSumPie extends Component {
     constructor(props) {
         super(props);
-        this.state = {kpi: ''};
-        this.onChange = this.onChange.bind(this);
+        this.state = {data:this.props.data};
+    }
+    componentWillReceiveProps({data}) {
+        this.setState({data});
+
     }
 
-    onChange(e) {
-        this.setState({kpi: e.target.value});
+    countInfo() {
+        const {data} = this.state;
+        let count = 0;
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].isNotCompleted)
+                count++;
+
+        }
+        return count;
     }
 
     render() {
-        let data = [12, 19, 3];
+        const {data} = this.props;
+        const leftToDo = this.countInfo();
+        let tasksData = [data.length - leftToDo, leftToDo, 1];
         let chartData = {
             labels: ["Done on time", "Need to be done", "Done after due date"],
             datasets: [{
                 label: 'Task completion tracker',
-                data: data,
+                data: tasksData,
                 backgroundColor: [
                     'rgba(78, 205, 196, 0.6)',
                     'rgba(255, 93, 115, 0.6)',

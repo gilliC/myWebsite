@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import fire from '../fire';
 
-export default class KPI extends Component {
+export default class AddingKPI extends Component {
     constructor(props) {
         super(props);
         this.addTask = this.addTask.bind(this);
