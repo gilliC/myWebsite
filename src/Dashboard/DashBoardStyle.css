@@ -1,0 +1,45 @@
+.btn{
+    color: #4ECDC4;
+    background-color:white ;
+    border:2px solid #4ECDC4;
+    margin-left: 10px;
+    border-radius: 10px;
+
+}
+.btn:hover{
+    background-color: #4ECDC4;
+    color: white;
+    font-weight: bold;
+}
+.btn:focus{
+    outline:0 !important;
+    background-color: #4ECDC4;
+    color: white;
+    font-weight: bold;
+
+}
+.input-style{
+    color: #4ECDC4;
+    background-color:white ;
+    border:2px solid #4ECDC4;
+    border-radius: 10px;
+    margin-left: 10px;
+    height: 30px;
+
+}
+.input-style:focus{
+    outline:0 !important;
+
+}
+.marked{
+    background-color: rgba(78, 205, 196, 0.4);
+    display:inline-block
+}
+ul{
+    width: 100%;
+}
+li{
+    width: 100%;
+}
+.bla{
+}

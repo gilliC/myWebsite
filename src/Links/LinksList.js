@@ -29,7 +29,7 @@ const mapStateToProps = state => {
         list: state.list,
 
     };
-    //return the data in state (reducer). vocabulary as a prop under the key vocabulary
+    //return the chartData in state (reducer). vocabulary as a prop under the key vocabulary
 
 };
 export default connect(mapStateToProps,)(LinksList);

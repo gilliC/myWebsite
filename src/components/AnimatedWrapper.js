@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import * as Animated from "animated/lib/targets/react-dom";
+
+
 const AnimatedWrapper = WrappedComponent => class AnimatedWrapper
     extends Component {
     constructor(props) {

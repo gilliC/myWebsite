@@ -9,5 +9,5 @@ export default combineReducers({
     activeItem:activeItemReducer,
 });
 
-// data : the name of the variable
+// chartData : the name of the variable
 // DataReducer: the value, which the reducer gives.

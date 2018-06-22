@@ -26,7 +26,7 @@ const mapStateToProps = state => {
         activeItem: state.activeItem,
 
     };
-    //return the data in state (reducer). vocabulary as a prop under the key vocabulary
+    //return the chartData in state (reducer). vocabulary as a prop under the key vocabulary
 
 };
 export default connect(mapStateToProps, {changeActiveItem})(LinksItem);

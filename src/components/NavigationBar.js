@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
 import {withRouter, Link} from 'react-router-dom';
+
 import logo from '../drawable/websiteLogo.png';
+import './generalComponentsStyle.css';
+
 
 
 class NavigationBar extends Component {
