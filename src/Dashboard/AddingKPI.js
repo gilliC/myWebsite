@@ -1,25 +1,27 @@
 import React, {Component} from 'react';
+import fire from '../fire';
 
 export default class KPI extends Component {
     constructor(props) {
         super(props);
-        this.state = {kpi: ''};
-        this.onChange = this.onChange.bind(this);
+        this.addTask = this.addTask.bind(this);
     }
-
-    onChange(e) {
-        this.setState({kpi: e.target.value});
+    addTask(e) {
+        e.preventDefault();
+        fire.database().ref('tasks').push({title:this.inputEl.value, isNotCompleted:true});
+        this.inputEl.value = '';
     }
-
     render() {
         return (
-            <div>
-                <h3>Add KPI</h3>
-                <br/>
-                <input type="text" name="kpi" value={this.state.kpi} onChange={this.onChange} className="input-style"/>
-                <input type="submit" value="Add" className="btn"/>
-                <p>{this.state.kpi}</p>
-            </div>
+
+                <form onSubmit={this.addTask}>
+                    <h3>Add KPI</h3>
+                    <br/>
+                    <input type="text"
+                           ref={ el => this.inputEl = el }
+                           className="input-style"/>
+                    <input type="submit" value="Add" className="btn"/>
+                </form>
         );
     }
 }

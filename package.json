@@ -6,6 +6,7 @@
     "animated": "^0.2.2",
     "bootstrap": "^4.1.1",
     "chart.js": "^2.7.2",
+    "firebase": "^5.1.0",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.1",
     "react-chartjs-2": "^2.7.2",
@@ -20,6 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy":"firebase deploy"
   }
 }
