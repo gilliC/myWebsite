@@ -12,7 +12,6 @@ import NavigationBar from './components/NavigationBar';
 import Home from './Home/Home';
 import Links from './Links/Links';
 import Dashboard from './Dashboard/Dashboard';
-import Trying from './trying';
 
 
 
@@ -52,12 +51,6 @@ const App = () => (
                            children={({match, ...rest}) => (
                                <TransitionGroup component={firstChild}>
                                    {match && <Dashboard {...rest} />}
-                               </TransitionGroup>
-                           )}/>
-                    <Route exact path="/projects"
-                           children={({match, ...rest}) => (
-                               <TransitionGroup component={firstChild}>
-                                   {match && <Trying {...rest} />}
                                </TransitionGroup>
                            )}/>
                 </CSSTransitionGroup>

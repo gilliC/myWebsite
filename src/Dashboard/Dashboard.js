@@ -21,7 +21,6 @@ class DashboardComponent extends Component {
         //re-renders each time I get a sanpshot, can it be smarter?
         tasksRef.on('child_added', snapshot => {
             let task = {title: snapshot.val().title, isNotCompleted: snapshot.val().isNotCompleted, id: snapshot.key};
-           console.log(snapshot);
             this.setState({data: [task].concat(this.state.data)});
         });
         tasksRef.on('child_changed', snapshot => {

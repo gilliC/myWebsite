@@ -14,7 +14,7 @@ class LinksItem extends Component {
     }
     render() {
         return (
-            <div className="app link-item" onClick={this.onPress} >
+            <div className="app link-item" onClick={this.onPress} key={ this.props.item.title} >
                 <h3>{ this.props.item.title}</h3>
 
             </div>

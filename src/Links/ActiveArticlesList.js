@@ -19,8 +19,7 @@ class ActiveArticlesList extends Component {
                     <tr>
                         <td>
                             {this.props.activeItem.articles.map(article => {
-                                console.log(article);
-                                return <ArticleLink article={article}/>
+                                return <ArticleLink article={article} key={article.title}/>
                             })}
                         </td>
                     </tr>

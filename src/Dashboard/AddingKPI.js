@@ -8,8 +8,10 @@ export default class AddingKPI extends Component {
     }
     addTask(e) {
         e.preventDefault();
-        fire.database().ref('tasks').push({title:this.inputEl.value, isNotCompleted:true});
-        this.inputEl.value = '';
+        if(this.inputEl.value!=="") {
+            fire.database().ref('tasks').push({title: this.inputEl.value, isNotCompleted: true});
+            this.inputEl.value = '';
+        }
     }
     render() {
         return (

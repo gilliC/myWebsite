@@ -2,6 +2,7 @@ a:any-link {
     color: white;
     text-decoration: none;
 }
+
 ul {
     text-align: center;
     margin: auto;
@@ -9,10 +10,13 @@ ul {
     padding: 0px;
 }
 
-li {
-    margin: auto;
-    width: 50%;
-    padding: 12px;
+.nav-div {
+    float: left;
+}
+
+.logo-div{
+    background-color: inherit;
+    list-style-type: none;
 }
 
 .app {
@@ -39,21 +43,27 @@ li {
 .app-logo {
     height: 100px;
 }
-
 .app-header {
     background-color: #4ECDC4;
     height: 15%;
     padding: 20px;
     color: white;
     text-align: center;
-
 }
-
+.container-fluid{
+    margin-top: 3%;
+}
+.app-brand {
+    font-size: 40px;
+    font-weight: bold;
+    list-style-type: none;
+}
 .app-nav-bar-item {
     height: 50px;
     width: 115px;
     list-style-type: none;
     text-align: center;
+
 }
 
 .app-nav-bar-item:hover {
@@ -61,13 +71,15 @@ li {
     animation: navAnimation 3s ease forwards;
 
 }
-.app-nav-bar-item-active{
+
+.app-nav-bar-item-active {
     height: 50px;
     width: 115px;
     list-style-type: none;
     text-align: center;
     border-bottom: solid white 5px;
 }
+
 .navbar-header {
     font-size: 30px;
     font-weight: bold;
@@ -129,4 +141,3 @@ li {
     }
 
 }
-

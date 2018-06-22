@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
-import {withRouter, Link} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 
 import logo from '../drawable/websiteLogo.png';
 import './GeneralComponentsStyle.css';
-
 
 
 class NavigationBar extends Component {
@@ -13,8 +12,6 @@ class NavigationBar extends Component {
         this.state = {isHovered: false};
         this.onMouseEnter = this.onMouseEnter.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
-        console.log(this.props.location.pathname);
-
     }
 
     onMouseEnter() {
@@ -30,44 +27,43 @@ class NavigationBar extends Component {
         const pathname = this.props.location.pathname;
 
         return (
-
             <div>
-                <Navbar componentClass="app-nav-bar">
-                    <Navbar.Header bsClass="app-nav-bar-item">
-                        <Navbar.Text bsClass="app-nav-bar-item">
-                            <Link to='/'> GC Website</Link>
-                        </Navbar.Text>
-                        <Navbar.Toggle/>
+                <Navbar fluid={true} componentClass="app-nav-bar">
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <Nav bsClass="app-brand" pullLeft>
+                                <NavItem href="/">
+                                    GC Website
+                                </NavItem>
+                            </Nav>
+                        </Navbar.Brand>
                     </Navbar.Header>
-                    <Nav bsClass={pathname === '/projects' ? 'app-nav-bar-item-active' : 'app-nav-bar-item'}>
-                        <NavItem>
-                            <Link to="projects">
-                                Projects
-                            </Link>
+                    <Nav
+                        bsClass={pathname === '/projects' ? 'app-nav-bar-item-active' : 'app-nav-bar-item'}>
+                        <NavItem href="projects">
+                            Projects
                         </NavItem>
                     </Nav>
-                    <Nav bsClass={pathname === '/articles' ? 'app-nav-bar-item-active' : 'app-nav-bar-item'}>
-                        <NavItem>
-                            <Link to="/articles">
-                                Articles
-                            </Link>
+                    <Nav
+                        bsClass={pathname === '/articles' ? 'app-nav-bar-item-active' : 'app-nav-bar-item'}>
+                        <NavItem href="/articles">
+                            Articles
                         </NavItem>
                     </Nav>
-                    <Nav bsClass={pathname === '/dashboard' ? 'app-nav-bar-item-active' : 'app-nav-bar-item'}>
-                        <NavItem>
-                            <Link to="/dashboard">
-                                Dashboard
-                            </Link>
+                    <Nav
+                        bsClass={pathname === '/dashboard' ? 'li-nav app-nav-bar-item-active' : 'li-nav app-nav-bar-item'}>
+                        <NavItem href="/dashboard">
+                            Dashboard
                         </NavItem>
                     </Nav>
-                    <Nav pullRight>
-                        <Link to='/'>
+                    <Nav bsClass="logo-div" pullRight>
+                        <NavItem>
                             <img src={logo}
                                  className={logoClassName}
                                  alt="logo"
                                  onMouseEnter={this.onMouseEnter}
                                  onMouseLeave={this.onMouseLeave}/>
-                        </Link>
+                        </NavItem>
                     </Nav>
                 </Navbar>
             </div>
