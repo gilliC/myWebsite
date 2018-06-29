@@ -2,26 +2,38 @@ import React, {Component} from 'react';
 import {Modal, Button} from 'react-bootstrap';
 import {formatDate} from '../services';
 import DatePickerItem from '../components/DatePickerItem';
+import fire from '../fire';
+
 
 export default class ModalComponent extends Component {
     constructor(props) {
         super(props);
-        this.state = {show: false,date:''};
-        this.onDayChange= this.onDayChange.bind(this);
-        this.completeTask= this.completeTask.bind(this);
+        this.state = {show: false, date: ''};
+        this.onDayChange = this.onDayChange.bind(this);
+        this.completeTask = this.completeTask.bind(this);
+        this.deleteTask = this.deleteTask.bind(this);
+
 
     }
 
     componentWillReceiveProps({show}) {
         this.setState({show});
     }
-    completeTask(){
-        this.props.update(this.props.task.id,false,this.state.date);
+
+    completeTask() {
+        this.props.update(this.props.task.id, false, this.state.date);
     }
 
     onDayChange(date) {
         date = formatDate(date);
         this.setState({date});
+    }
+
+    deleteTask() {
+        fire.database().ref('tasks').child(this.props.task.id).remove().then(() => {
+        }).catch(error => {
+            console.log(error.message);
+        });
     }
 
     render() {
@@ -50,7 +62,9 @@ export default class ModalComponent extends Component {
                     />
                 </Modal.Body>
                 <Button onClick={this.props.handleClose}>Close</Button>
-                <Button onClick={this.completeTask}>Edit</Button>
+                <Button onClick={this.completeTask}>Done</Button>
+                <Button onClick={this.deleteTask}>Delete</Button>
+
             </Modal>
         );
     }

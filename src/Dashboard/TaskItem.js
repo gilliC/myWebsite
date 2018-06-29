@@ -61,8 +61,8 @@ export default class TaskItem extends Component {
                 this.handleEnd();
                 return {};
             }).catch(error => {
-                this.handleClose();
                 console.log(error.message);
+                this.handleClose();
             });
 
         }
@@ -93,15 +93,22 @@ export default class TaskItem extends Component {
             this.setState({isClicked: false, isNotCompleted: !isNotCompleted})
 
     }
-
+    liClasses(){
+        let classOptions = [];
+        classOptions[0] = 'task-li task-complete-li '+this.props.disabled;
+        classOptions[1] = 'task-li not-completed-task-li '+this.props.disabled;
+        classOptions[2] = 'task-li task-completed-li '+this.props.disabled;
+        return classOptions;
+    }
     render() {
         let date = this.props.task.dueDate;
+        let classOptions = this.liClasses();
         let {isNotCompleted, isClicked} = this.state;
         return (
             <li
                 onClick={this.onClick}
                 onAnimationEnd={this.onAnimationEnd}
-                className={isNotCompleted ? isClicked ? 'task-li task-complete-li' : 'task-li not-completed-task-li' : 'task-li task-completed-li'}
+                className={isNotCompleted ? isClicked ? classOptions[0] : classOptions[1] : classOptions[2]}
             >
                 <h4> {this.props.task.title}</h4>
                 {date}

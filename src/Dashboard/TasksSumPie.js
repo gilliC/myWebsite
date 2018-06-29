@@ -14,7 +14,6 @@ export default class TasksSumPie extends Component {
     }
 
     countInfo() {
-        console.log("count info");
         const {data} = this.state;
         let count = [];
         count[0] = 0; // on time
@@ -22,18 +21,13 @@ export default class TasksSumPie extends Component {
         for (let i = 0; i < data.length; i++) {
             if (!data[i].isNotCompleted) {
                 let completionDate = parseToMoment(data[i].completionDate);
-                let dueDate =  parseToMoment(data[i].dueDate);
-                console.log(completionDate);
-                console.log(dueDate);
-                if(completionDate.isBefore(dueDate)) {
-                    console.log("beforeee");
+                let dueDate = parseToMoment(data[i].dueDate);
+                if (completionDate.isBefore(dueDate))
                     count[0]++;
-                }
-                else {
-                    console.log("after");
-                    console.log(data[i]);
+
+                else
                     count[1]++;
-                }
+
             }
         }
         return count;

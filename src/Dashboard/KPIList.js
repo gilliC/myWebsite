@@ -32,7 +32,12 @@ export default class KPI extends Component {
                     <ul className="task-ul">
                         {data.map(task => {
                             return (
-                                <TaskItem edit={this.state.edit} task={task} key={task.id}/>
+                                <TaskItem
+                                    edit={this.state.edit}
+                                    task={task}
+                                    key={task.id}
+                                    disabled={edit?"":"disabled"}
+                                />
                             );
                         })}
                     </ul>

@@ -47,9 +47,10 @@
     margin: 5px;
     padding: 5px;
 }
-.task-li:hover {
+.task-li:hover:not(.disabled) {
     background-color: rgba(78, 205, 196, 0.4);
 }
+
 
 .not-completed-task-li{
     border: 2px solid #4ECDC4;
@@ -73,6 +74,7 @@
     margin-outside: 5px;
     border: solid transparent 1px;
 }
+
 .edit-list-div{
     margin-outside: 5px;
     margin-inside: 10px;

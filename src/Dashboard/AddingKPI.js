@@ -21,7 +21,6 @@ export default class AddingKPI extends Component {
                 dueDate: formatDate(this.state.date),
                 completionDate:""
             };
-            console.log(task);
             fire.database().ref('tasks').push(task);
             this.inputEl.value = '';
         }

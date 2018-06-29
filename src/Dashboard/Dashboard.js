@@ -19,7 +19,7 @@ class DashboardComponent extends Component {
 
     componentDidMount() {
         let tasksRef = fire.database().ref('tasks').orderByKey().limitToLast(100);
-        //re-renders each time I get a sanpshot, can it be smarter?
+        //re-renders each time I get a snapshot, can it be smarter?
         tasksRef.on('child_added', snapshot => {
             let item = snapshot.val();
             let task = {
@@ -30,6 +30,15 @@ class DashboardComponent extends Component {
                 completionDate:item.completionDate
             };
             this.setState({data: [task].concat(this.state.data)});
+        });
+        tasksRef.on('child_removed', snapshot => {
+            console.log("The blog post titled '" + snapshot.key + "' has been deleted");
+            let data = this.state.data;
+            data =data.filter((task)=>{
+               return task.id!== snapshot.key;
+            });
+            this.setState({data});
+
         });
         tasksRef.on('child_changed', snapshot => {
             let item = snapshot.val();
