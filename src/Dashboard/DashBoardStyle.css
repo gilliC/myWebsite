@@ -4,6 +4,7 @@
     border: 2px solid #4ECDC4;
     margin-left: 10px;
     margin-top: 5px;
+    margin-bottom: 10px;
     border-radius: 10px;
 
 }
@@ -27,6 +28,7 @@
     border-radius: 10px;
     margin-left: 10px;
     margin-top: 5px;
+    padding: 15px;
     height: 30px;
 
 }
@@ -36,14 +38,14 @@
 }
 
 .task-ul {
-    width: 50%;
+    width: 75%;
 }
 
 .task-li {
     width: 100%;
     list-style-type: none;
-    margin-top: 5px;
-    padding: 15px;
+    margin: 5px;
+    padding: 5px;
 }
 .task-li:hover {
     background-color: rgba(78, 205, 196, 0.4);
@@ -66,4 +68,20 @@
 .task-completed-li {
     background-color: rgba(78, 205, 196, 0.2);
     text-decoration: line-through ;
+}
+.list-div{
+    margin-outside: 5px;
+    border: solid transparent 1px;
+}
+.edit-list-div{
+    margin-outside: 5px;
+    margin-inside: 10px;
+    border: solid #4ecdc4 1px;
+}
+.edit-true-p{
+    color: #4ECDC4;
+    margin-top: 5px;
+}
+.edit-false-p{
+    margin-top: 5px;
 }

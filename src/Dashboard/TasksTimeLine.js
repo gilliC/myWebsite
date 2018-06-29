@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import Moment from 'moment';
-
 import {Bar} from 'react-chartjs-2';
 
 export default class TasksTimeLine extends Component {
@@ -13,22 +11,19 @@ export default class TasksTimeLine extends Component {
 
     }
     calculateData() {
-        console.log("notice:");
-        console.log(Moment());
         const tasksList = this.state.data;
         let arr = {};
         for (let i = 0; i < tasksList.length; i++) {
-            if (arr[tasksList[i].date] >= 1)
-                arr[tasksList[i].date]++;
+            if (arr[tasksList[i].dueDate] >= 1)
+                arr[tasksList[i].dueDate]++;
             else
-                arr[tasksList[i].date] = 1;
+                arr[tasksList[i].dueDate] = 1;
         }
         return arr;
     }
 
     render() {
         let data = this.calculateData();
-        console.log(data);
         let tasksDates = Object.keys(data);
         let tasksCompleted = Object.values(data);
 

@@ -1,34 +1,49 @@
 import React, {Component} from 'react';
 import fire from '../fire';
 
-import DatePickerItem from './DatePickerItem';
+import {formatDate} from '../services';
+import DatePickerItem from '../components/DatePickerItem';
 
 export default class AddingKPI extends Component {
     constructor(props) {
         super(props);
+        this.state = {date: ""};
         this.addTask = this.addTask.bind(this);
+        this.onDayChange = this.onDayChange.bind(this);
+
     }
 
     addTask(e) {
         e.preventDefault();
         if (this.inputEl.value !== "") {
-            fire.database().ref('tasks').push({title: this.inputEl.value, isNotCompleted: true});
+            let task = {title: this.inputEl.value,
+                isNotCompleted: true,
+                dueDate: formatDate(this.state.date),
+                completionDate:""
+            };
+            console.log(task);
+            fire.database().ref('tasks').push(task);
             this.inputEl.value = '';
         }
+
+    }
+
+    onDayChange(day) {
+        this.setState({date: day});
     }
 
     render() {
         return (
-
             <form onSubmit={this.addTask}>
                 <h3>Add KPI</h3>
-                <br/>
                 <input type="text"
                        placeholder="  Enter task"
                        ref={el => this.inputEl = el}
                        className="input-style"/>
-                <br/>
-                <DatePickerItem/>
+                <DatePickerItem
+                    onDayChange={this.onDayChange}
+                    placeholder='  Enter due date'
+                />
                 <br/>
                 <input type="submit" value="Add" className="btn"/>
             </form>

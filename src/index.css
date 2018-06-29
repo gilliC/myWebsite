@@ -9,3 +9,6 @@ body {
   align-content: center;
   cursor: default;
 }
+.bold{
+  font-weight: bold;
+}

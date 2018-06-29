@@ -1,31 +1,48 @@
 import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
+import {parseToMoment} from '../services';
 
 export default class TasksSumPie extends Component {
     constructor(props) {
         super(props);
-        this.state = {data:this.props.data};
+        this.state = {data: this.props.data};
     }
+
     componentWillReceiveProps({data}) {
         this.setState({data});
 
     }
 
     countInfo() {
+        console.log("count info");
         const {data} = this.state;
-        let count = 0;
+        let count = [];
+        count[0] = 0; // on time
+        count[1] = 0; // after due date
         for (let i = 0; i < data.length; i++) {
-            if (data[i].isNotCompleted)
-                count++;
-
+            if (!data[i].isNotCompleted) {
+                let completionDate = parseToMoment(data[i].completionDate);
+                let dueDate =  parseToMoment(data[i].dueDate);
+                console.log(completionDate);
+                console.log(dueDate);
+                if(completionDate.isBefore(dueDate)) {
+                    console.log("beforeee");
+                    count[0]++;
+                }
+                else {
+                    console.log("after");
+                    console.log(data[i]);
+                    count[1]++;
+                }
+            }
         }
         return count;
     }
 
     render() {
         const {data} = this.props;
-        const leftToDo = this.countInfo();
-        let tasksData = [data.length - leftToDo, leftToDo, 1];
+        const tasksDone = this.countInfo();
+        let tasksData = [tasksDone[0], data.length - tasksDone[0] - tasksDone[1], tasksDone[1]];
         let chartData = {
             labels: ["Done on time", "Need to be done", "Done after due date"],
             datasets: [{

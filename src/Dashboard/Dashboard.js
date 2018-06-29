@@ -22,7 +22,13 @@ class DashboardComponent extends Component {
         //re-renders each time I get a sanpshot, can it be smarter?
         tasksRef.on('child_added', snapshot => {
             let item = snapshot.val();
-            let task = {title: item.title, isNotCompleted: item.isNotCompleted, id: snapshot.key, date:item.date};
+            let task = {
+                title: item.title,
+                isNotCompleted: item.isNotCompleted,
+                id: snapshot.key,
+                dueDate:item.dueDate,
+                completionDate:item.completionDate
+            };
             this.setState({data: [task].concat(this.state.data)});
         });
         tasksRef.on('child_changed', snapshot => {
@@ -39,12 +45,12 @@ class DashboardComponent extends Component {
 
         return (
             <div className="bla">
-                <div className="col-md-4">
+                <div className="col-md-8">
                     <TasksPieChart data={this.state.data}/>
                     <TasksTimeLineChart  data={this.state.data}/>
                 </div>
-                <div className="col-md-8">
-                    <AddingKPI/>
+                <div className="col-md-4">
+                    <AddingKPI edit={false}/>
                     <KPIList data={this.state.data}/>
                 </div>
 
