@@ -24,7 +24,7 @@ export default class KPI extends Component {
                     <h3 className="col-md-8">Your KPIs:</h3>
                     <div onClick={this.onClick}
                          className={edit ? "edit-true-p col-md-4" : "edit-false-p col-md-4"}>
-                        <i className="far fa-edit" size="3px"></i>
+                        <i className="far fa-edit" size="3px"/>
                         <p>Edit</p>
                     </div>
                 </div>
