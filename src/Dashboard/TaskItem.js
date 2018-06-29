@@ -41,7 +41,9 @@ export default class TaskItem extends Component {
                 onAnimationEnd={this.onAnimationEnd}
                 className={isNotCompleted ? isClicked ? 'task-li task-complete-li' : 'task-li not-completed-task-li' : 'task-li task-completed-li'}
             >
-                {this.props.task.title}
+                <h4> {this.props.task.title}</h4>
+                {this.props.task.date}
+
             </li>
         );
     }

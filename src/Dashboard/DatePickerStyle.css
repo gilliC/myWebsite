@@ -1,0 +1,49 @@
+.DayPicker-TodayButton {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    color: #4ecdc4;
+    font-size: 0.875em;
+}
+
+.DayPicker-Day--today {
+    color: #4ECDC4;
+    font-weight: 700;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+    background-color: #4ECDC4;
+}
+
+.DayPicker:not(.DayPicker--interactionDisabled)
+.DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+    background-color: rgba(78, 205, 196, 0.5);
+    color: white;
+}
+
+.DayPickerInput-Overlay {
+    left: 0;
+    z-index: 1;
+    position: absolute;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15)
+}
+
+.DPContainer{
+    box-shadow: 1px 7px 5px 3px #4ECDC4;
+}
+input{
+    color: #4ECDC4;
+    background-color: white;
+    border: 2px solid #4ECDC4!important;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 30px
+}
+input:focus {
+    outline: 0 !important;
+
+}

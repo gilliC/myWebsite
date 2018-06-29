@@ -1,14 +1,42 @@
 import React, {Component} from 'react';
+import Moment from 'moment';
+
 import {Bar} from 'react-chartjs-2';
 
 export default class TasksTimeLine extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {data: this.props.data};
+    }
+    componentWillReceiveProps({data}) {
+        this.setState({data});
+
+    }
+    calculateData() {
+        console.log("notice:");
+        console.log(Moment());
+        const tasksList = this.state.data;
+        let arr = {};
+        for (let i = 0; i < tasksList.length; i++) {
+            if (arr[tasksList[i].date] >= 1)
+                arr[tasksList[i].date]++;
+            else
+                arr[tasksList[i].date] = 1;
+        }
+        return arr;
+    }
 
     render() {
-        let tasksCompleted = [1, 1, 2, 5, 2, 1, 3];
-        let tasksLeftToDo =  [0, 2, 1, 2, 3, 2, 3];
+        let data = this.calculateData();
+        console.log(data);
+        let tasksDates = Object.keys(data);
+        let tasksCompleted = Object.values(data);
+
+       // let tasksCompleted = [1, 1, 2, 5, 2, 1, 3];
+        let tasksLeftToDo = [0, 2, 1, 2, 3, 2, 3];
 
         let chartData = {
-            labels: ["22/06", "23/06", "24/06","25/06","26/06","27/06","28/06"],
+            labels: tasksDates,
             datasets: [{
                 label: 'The amount of tasks completed',
                 data: tasksCompleted,
@@ -20,7 +48,7 @@ export default class TasksTimeLine extends Component {
             },
                 {
                     label: 'The amount of tasks left to do',
-                    data:tasksLeftToDo ,
+                    data: tasksLeftToDo,
                     backgroundColor: 'rgba(255, 93, 115, 0.2)',
                     borderColor: 'rgba(255, 93, 115, 1)',
                     hoverBackgroundColor: 'rgba(255, 93, 115, 0.7)',
@@ -34,7 +62,7 @@ export default class TasksTimeLine extends Component {
         return (
             <div className="col-md-12">
                 <h3>Tasks Tracker:</h3>
-                <div >
+                <div>
                     <Bar
                         data={chartData}
                         options={options}

@@ -7,9 +7,11 @@
     "bootstrap": "^4.1.1",
     "chart.js": "^2.7.2",
     "firebase": "^5.1.0",
+    "moment": "^2.22.2",
     "react": "^16.3.2",
     "react-bootstrap": "^0.32.1",
     "react-chartjs-2": "^2.7.2",
+    "react-day-picker": "^7.1.9",
     "react-dom": "^16.3.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
@@ -22,6 +24,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy":"firebase deploy"
+    "deploy": "firebase deploy"
   }
 }
