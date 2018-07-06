@@ -6,10 +6,12 @@ export default class TasksTimeLine extends Component {
         super(props);
         this.state = {data: this.props.data};
     }
+
     componentWillReceiveProps({data}) {
         this.setState({data});
 
     }
+
     calculateData() {
         const tasksList = this.state.data;
         let arr = {};
@@ -27,7 +29,7 @@ export default class TasksTimeLine extends Component {
         let tasksDates = Object.keys(data);
         let tasksCompleted = Object.values(data);
 
-       // let tasksCompleted = [1, 1, 2, 5, 2, 1, 3];
+        // let tasksCompleted = [1, 1, 2, 5, 2, 1, 3];
         let tasksLeftToDo = [0, 2, 1, 2, 3, 2, 3];
 
         let chartData = {

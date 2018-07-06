@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import * as Animated from "animated/lib/targets/react-dom";
 
 
@@ -10,21 +10,25 @@ const AnimatedWrapper = WrappedComponent => class AnimatedWrapper
             animate: new Animated.Value(0)
         };
     }
+
     componentWillAppear(cb) {
-        Animated.timing(this.state.animate, { toValue: 1 }).start();
+        Animated.timing(this.state.animate, {toValue: 1}).start();
         cb();
     }
+
     componentWillEnter(cb) {
         setTimeout(
-            () => Animated.timing(this.state.animate, { toValue: 1 }).start(),
+            () => Animated.timing(this.state.animate, {toValue: 1}).start(),
             250
         );
         cb();
     }
+
     componentWillLeave(cb) {
-        Animated.timing(this.state.animate, { toValue: 0 }).start();
+        Animated.timing(this.state.animate, {toValue: 0}).start();
         setTimeout(() => cb(), 175);
     }
+
     render() {
         const style = {
             opacity: Animated.template`${this.state.animate}`,

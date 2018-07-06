@@ -14,7 +14,7 @@ ul {
     float: left;
 }
 
-.logo-div{
+.logo-div {
     background-color: inherit;
     list-style-type: none;
 }
@@ -43,6 +43,7 @@ ul {
 .app-logo {
     height: 100px;
 }
+
 .app-header {
     background-color: #4ECDC4;
     height: 15%;
@@ -50,14 +51,17 @@ ul {
     color: white;
     text-align: center;
 }
-.container-fluid{
+
+.container-fluid {
     margin-top: 3%;
 }
+
 .app-brand {
     font-size: 40px;
     font-weight: bold;
     list-style-type: none;
 }
+
 .app-nav-bar-item {
     height: 50px;
     width: 115px;

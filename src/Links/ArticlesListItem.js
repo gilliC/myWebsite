@@ -8,19 +8,22 @@ class LinksItem extends Component {
         super(props);
         this.onPress = this.onPress.bind(this);
     }
-    onPress (event) {
+
+    onPress(event) {
         event.preventDefault();
         this.props.changeActiveItem(this.props.item);
     }
+
     render() {
         return (
-            <div className="app link-item" onClick={this.onPress} key={ this.props.item.title} >
-                <h3>{ this.props.item.title}</h3>
+            <div className="app link-item" onClick={this.onPress} key={this.props.item.title}>
+                <h3>{this.props.item.title}</h3>
 
             </div>
         );
     }
 }
+
 const mapStateToProps = state => {
     return {
         activeItem: state.activeItem,
@@ -29,4 +32,4 @@ const mapStateToProps = state => {
     //return the chartData in state (reducer). vocabulary as a prop under the key vocabulary
 
 };
-export default connect(mapStateToProps,{changeActiveItem})(LinksItem);
+export default connect(mapStateToProps, {changeActiveItem})(LinksItem);

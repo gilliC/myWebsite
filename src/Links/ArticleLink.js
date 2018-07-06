@@ -9,9 +9,9 @@ class LinksItem extends Component {
             <div className="article-item">
                 <a className="article-title" href={this.props.article.link} target="_blank">
                     <p className="article-title">
-                        {" " +this.props.article.title}
+                        {" " + this.props.article.title}
                         <span className="article-writer">
-                    {" / " +this.props.article.writer}
+                    {" / " + this.props.article.writer}
                    </span>
                     </p>
                 </a>

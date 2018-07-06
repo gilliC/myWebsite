@@ -67,7 +67,6 @@ class DashboardComponent extends Component {
                     <AddingKPI edit={false}/>
                     <KPIList data={this.state.data}/>
                 </div>
-
             </div>
         );
     }

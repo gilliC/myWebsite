@@ -12,19 +12,15 @@ class ActiveArticlesList extends Component {
 
     render() {
         return (
-            <div>
-                <h1>{this.props.activeItem.title}</h1>
-                <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                            {this.props.activeItem.articles.map(article => {
-                                return <ArticleLink article={article} key={article.title}/>
-                            })}
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+            <div className="list-container">
+                <div className="col-md-12">
+                    <h1>{this.props.activeItem.title}</h1>
+                </div>
+                <div className="col-md-12">
+                    {this.props.activeItem.articles.map(article => {
+                        return <ArticleLink article={article} key={article.title}/>
+                    })}
+                </div>
             </div>
         );
     }

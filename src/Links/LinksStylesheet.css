@@ -1,4 +1,4 @@
-.link-list{
+.link-list {
     margin-left: 20px;
     border-radius: 10px;
     width: 300px;
@@ -6,39 +6,45 @@
 
 }
 
-.link-item{
-     border-bottom: solid #4ECDC4 2px;
-    padding:10px;
-
- }
-.link-item:hover{
-    animation: linkItenAnimation 1s ease forwards;
-    cursor: pointer;
-    color:#4ECDC4;
+.link-item {
+    border-bottom: solid #4ECDC4 2px;
+    padding: 10px;
 
 }
 
+.link-item:hover {
+    animation: linkItenAnimation 1s ease forwards;
+    cursor: pointer;
+    color: #4ECDC4;
 
-@keyframes linkItenAnimation {
+}
+
+@keyframes linkItemAnimation {
     from {
         box-shadow: 1px 7px 5px 3px transparent;
     }
-    to{
+    to {
         box-shadow: 1px 7px 5px 3px #4ECDC4;
     }
 }
 
-.article-item{
+.article-item {
     display: flex;
 
 }
-.article-title:any-link{
+
+.article-title:any-link {
     color: black;
 }
-.article-title:hover{
+
+.article-title:hover {
     color: #4ECDC4;
 }
-.article-writer{
+
+.article-writer {
     color: darkgrey;
 }
 
+.list-container {
+    align-content: center;
+}

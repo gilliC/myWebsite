@@ -36,7 +36,7 @@ export default class KPI extends Component {
                                     edit={this.state.edit}
                                     task={task}
                                     key={task.id}
-                                    disabled={edit?"":"disabled"}
+                                    disabled={edit ? "" : "disabled"}
                                 />
                             );
                         })}

@@ -14,7 +14,6 @@ import Links from './Links/Links';
 import Dashboard from './Dashboard/Dashboard';
 
 
-
 const store = createStore(reducers);
 
 const firstChild = props => {

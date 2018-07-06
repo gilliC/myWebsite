@@ -10,11 +10,12 @@ class LinksList extends Component {
         fetchList();
 
     }
+
     render() {
         return (
             <div className="app">
                 {
-                    this.props.list.map(link=>{
+                    this.props.list.map(link => {
                         return <ArticleItem item={link} key={link.title}/>
                     })
                 }

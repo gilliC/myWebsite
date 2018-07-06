@@ -2,19 +2,22 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display:         flex;
+    display: flex;
     flex-wrap: wrap;
 }
+
 .carousel-row > [class*='col-'] {
     display: flex;
     flex-direction: column;
 }
-.icon-style{
+
+.icon-style {
     font-size: 4em;
     color: #4ecdc4;
     align-self: center;
 }
-.container{
+
+.container {
     margin-top: 100px;
     align-items: center;
 }

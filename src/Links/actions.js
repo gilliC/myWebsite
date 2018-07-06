@@ -8,11 +8,11 @@ export const changeActiveItem = (activeItem) => ({
     payload: activeItem
 });
 
-export const fetchList = () =>({
+export const fetchList = () => ({
     type: FETCH_LIST
 });
 
-export const fetchActiveItem = () =>({
+export const fetchActiveItem = () => ({
     type: FETCH_ACTIVE_ITEM
 });
 

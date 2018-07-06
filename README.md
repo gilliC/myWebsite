@@ -1,6 +1,8 @@
 Just a simple website which with it I'm trying to learn React and its friends.
 In this website I'm using:
 
+•	Redux
+
 •	React-bootstrap
 
 •	Font awesome

@@ -20,6 +20,7 @@ export default class TaskItem extends Component {
         this.update = this.update.bind(this);
 
     }
+
     componentWillReceiveProps({edit}) {
         this.setState({edit})
     }
@@ -27,13 +28,15 @@ export default class TaskItem extends Component {
     handleClose() {
         this.setState({show: false});
     }
+
     handleShow() {
         if (!this.state.show) {
             this.setState({show: true});
         }
     }
-    handleEnd(){
-        this.setState({show:false,isClicked:true});
+
+    handleEnd() {
+        this.setState({show: false, isClicked: true});
     }
 
     update(id, value, date = undefined) {
@@ -87,19 +90,21 @@ export default class TaskItem extends Component {
 
     onAnimationEnd() {
         let {isNotCompleted} = this.state;
-        if(isNotCompleted) {
+        if (isNotCompleted) {
             this.update(this.props.task.id, !isNotCompleted);
         }
-            this.setState({isClicked: false, isNotCompleted: !isNotCompleted})
+        this.setState({isClicked: false, isNotCompleted: !isNotCompleted})
 
     }
-    liClasses(){
+
+    liClasses() {
         let classOptions = [];
-        classOptions[0] = 'task-li task-complete-li '+this.props.disabled;
-        classOptions[1] = 'task-li not-completed-task-li '+this.props.disabled;
-        classOptions[2] = 'task-li task-completed-li '+this.props.disabled;
+        classOptions[0] = 'task-li task-complete-li ' + this.props.disabled;
+        classOptions[1] = 'task-li not-completed-task-li ' + this.props.disabled;
+        classOptions[2] = 'task-li task-completed-li ' + this.props.disabled;
         return classOptions;
     }
+
     render() {
         let date = this.props.task.dueDate;
         let classOptions = this.liClasses();
