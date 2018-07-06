@@ -9,6 +9,8 @@ import TasksTimeLineChart from './TasksTimeLine';
 import AddingKPI from './AddingKPI';
 import KPIList from './KPIList';
 
+import Carousel from '../components/Carousel/Carousel';
+
 import './DashBoardStyle.css';
 
 class DashboardComponent extends Component {
@@ -26,16 +28,16 @@ class DashboardComponent extends Component {
                 title: item.title,
                 isNotCompleted: item.isNotCompleted,
                 id: snapshot.key,
-                dueDate:item.dueDate,
-                completionDate:item.completionDate
+                dueDate: item.dueDate,
+                completionDate: item.completionDate
             };
             this.setState({data: [task].concat(this.state.data)});
         });
         tasksRef.on('child_removed', snapshot => {
             console.log("The blog post titled '" + snapshot.key + "' has been deleted");
             let data = this.state.data;
-            data =data.filter((task)=>{
-               return task.id!== snapshot.key;
+            data = data.filter((task) => {
+                return task.id !== snapshot.key;
             });
             this.setState({data});
 
@@ -50,13 +52,16 @@ class DashboardComponent extends Component {
             this.setState({data});
         });
     }
+
     render() {
 
         return (
             <div className="bla">
                 <div className="col-md-8">
-                    <TasksPieChart data={this.state.data}/>
-                    <TasksTimeLineChart  data={this.state.data}/>
+                    <Carousel>
+                        <TasksPieChart data={this.state.data}/>
+                        <TasksTimeLineChart data={this.state.data}/>
+                    </Carousel>
                 </div>
                 <div className="col-md-4">
                     <AddingKPI edit={false}/>

@@ -74,7 +74,6 @@ export default class TasksSumPie extends Component {
                         data={chartData}
                         options={options}
                         height={250}
-
                     />
                 </div>
             </div>

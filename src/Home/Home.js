@@ -14,5 +14,6 @@ class HomeComponent extends Component {
         );
     }
 }
+
 const Home = AnimatedWrapper(HomeComponent);
 export default Home;
