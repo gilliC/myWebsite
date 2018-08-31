@@ -7,12 +7,19 @@ import reducers from './reducers';
 
 import './App.css';
 
+<<<<<<< HEAD
 import NavigationBar from './components/NavigationBar/NavigationBar';
+=======
+import NavigationBar from './components/NavigationBar';
+>>>>>>> origin/master
 
 import Home from './Home/Home';
 import Links from './Links/Links';
 import Dashboard from './Dashboard/Dashboard';
+<<<<<<< HEAD
 import EcologicalTips from "./EcologicalTips/EcologicalTips";
+=======
+>>>>>>> origin/master
 
 
 const store = createStore(reducers);
@@ -53,12 +60,15 @@ const App = () => (
                                    {match && <Dashboard {...rest} />}
                                </TransitionGroup>
                            )}/>
+<<<<<<< HEAD
                     <Route exact path="/ecologicalTips"
                            children={({match, ...rest}) => (
                                <TransitionGroup component={firstChild}>
                                    {match && <EcologicalTips {...rest} />}
                                </TransitionGroup>
                            )}/>
+=======
+>>>>>>> origin/master
                 </CSSTransitionGroup>
             </div>
         </Router>
