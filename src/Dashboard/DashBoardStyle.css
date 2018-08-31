@@ -1,0 +1,98 @@
+.btn {
+    color: #4ECDC4;
+    background-color: white;
+    border: 2px solid #4ECDC4;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+
+.btn:hover {
+    background-color: #4ECDC4;
+    color: white;
+    font-weight: bold;
+}
+
+.btn:focus {
+    outline: 0 !important;
+    background-color: #4ECDC4;
+    color: white;
+    font-weight: bold;
+
+}
+
+.input-style {
+    color: #4ECDC4;
+    background-color: white;
+    border: 2px solid #4ECDC4;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 15px;
+    height: 30px;
+
+}
+
+.input-style:focus {
+    outline: 0 !important;
+
+}
+
+.task-ul {
+    width: 75%;
+}
+
+.task-li {
+    width: 100%;
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+}
+
+.task-li:hover:not(.disabled) {
+    background-color: rgba(78, 205, 196, 0.4);
+}
+
+.not-completed-task-li {
+    border: 2px solid #4ECDC4;
+}
+
+.task-complete-li {
+    animation: complete-task 1s linear;
+}
+
+@keyframes complete-task {
+    from {
+        background-color: inherit;
+    }
+    to {
+        background-color: rgba(78, 205, 196, 0.2);
+    }
+}
+
+.task-completed-li {
+    background-color: rgba(78, 205, 196, 0.2);
+    text-decoration: line-through;
+}
+
+.list-div {
+    margin-outside: 5px;
+    border: solid transparent 1px;
+}
+
+.edit-list-div {
+    margin-outside: 5px;
+    margin-inside: 10px;
+    border: solid #4ecdc4 1px;
+}
+
+.edit-true-p {
+    color: #4ECDC4;
+    margin-top: 5px;
+}
+
+.edit-false-p {
+    margin-top: 5px;
+}
