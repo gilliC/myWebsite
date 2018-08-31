@@ -16,6 +16,7 @@ export default class NavigationNav extends Component {
   render() { const pathname = this.props.localPath;
 
     return ( <Nav bsClass={ pathname === this.props.page.path ?
-	    'app-nav-bar-item-active' : 'app-nav-bar-item' }> {' '}
-		  <NavItem href={this.props.page.path}>
-		  {this.props.page.title} </NavItem> </Nav>); } }
+		    'app-nav-bar-item-active' : 'app-nav-bar-item'
+    }> {' '} <NavItem href={this.props.page.path}>
+	    {this.props.page.title} </NavItem> </Nav>); } }
+
