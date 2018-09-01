@@ -1,4 +1,80 @@
-.ecoItem {
-	background:url('../drawable/recycleBins.jpg'),
+$default-tip-height: 150px;
+$hover-tip-height: 250px;
+$default-tip-width: 750px;
+$border-radius: 25px;
+$margin: 10px;
 
+.ecologicalTipsBody {
+  margin-top: 20px;
+}
+.ecoItem {
+  content: '';
+  width: $default-tip-width;
+  height: $default-tip-height;
+  display: inline-block;
+  position: relative;
+  &:after {
+    content: '';
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    border-radius: $border-radius;
+  }
+  &:hover:after {
+    opacity: 0.4;
+    z-index: 5;
+    height: $hover-tip-height;
+    position: absolute;
+    transition: opacity 0.35s ease-in-out;
+    -moz-transition: opacity 0.35s ease-in-out;
+    -webkit-transition: opacity 0.35s ease-in-out;
+  }
+  &:hover {
+    h2 {
+      display: block;
+      color: #ffffff;
+      font-family: 'Kite One';
+    }
+    .layer {
+      height: $hover-tip-height;
+      position: absolute;
+      z-index: 5;
+    }
+  }
+  h2 {
+    color: transparent;
+    display: none;
+  }
+  a {
+    z-index: 99;
+  }
+}
+.layer {
+  background-color: #000000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  border-radius: $border-radius;
+}
+.recycle {
+  &:after {
+    background-image: url('../drawable/recycle2.jpg');
+  }
+}
+.water {
+  &:after {
+    background-image: url('../drawable/water.jpg');
+    background-position: center;
+  }
+}
+.publictransport {
+  &:after {
+    background-image: url('../drawable/publictransport.jpg');
+    background-position: center;
+  }
 }

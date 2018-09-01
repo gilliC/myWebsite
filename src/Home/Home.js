@@ -6,13 +6,13 @@ import HomePageBody from './HomePageBody';
 import './HomeStyle.css';
 
 class HomeComponent extends Component {
-    render() {
-        return (
-            <div>
-                <HomePageBody/>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <HomePageBody />{' '}
+      </div>
+    );
+  }
 }
 
 const Home = AnimatedWrapper(HomeComponent);
