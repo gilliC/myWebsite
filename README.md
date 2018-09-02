@@ -1,24 +1,24 @@
 Just a simple website which with it I'm trying to learn React and its friends.
 In this website I'm using:
 
-•	Redux
+• Redux
 
-•	React-bootstrap
+• React-bootstrap
 
-•	Font awesome
+• Font awesome
 
-•	react-transition-group
+• react-transition-group
 
-•	react-router-dom
+• react-router-dom
 
-•	animated
+• animated
 
-•	chart.JS
+• chart.JS
 
-•   Firebase
+• Firebase
 
-•	react-day-picker
+• react-day-picker
 
-•   moment.js
+• moment.js
 
-
+• SASS

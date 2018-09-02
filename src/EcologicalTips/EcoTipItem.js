@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 
 import './EcologicalTips.scss';
 export default class EcoTipItem extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let classname = 'ecoItem ' + this.props.item.img.toLowerCase();
     return (

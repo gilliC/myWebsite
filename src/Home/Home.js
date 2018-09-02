@@ -9,7 +9,7 @@ class HomeComponent extends Component {
   render() {
     return (
       <div>
-        <HomePageBody />{' '}
+        <HomePageBody />
       </div>
     );
   }

@@ -12,12 +12,13 @@ class Carousel extends Component {
 
   showChild(id) {
     if (this.props.children !== undefined) {
-      return;
-      <ComponentItem
-        component={this.state.components[id]}
-        index={id}
-        key={id}
-      />;
+      return (
+        <ComponentItem
+          component={this.state.components[id]}
+          index={id}
+          key={id}
+        />
+      );
     }
   }
 
@@ -48,26 +49,17 @@ class Carousel extends Component {
   render() {
     return (
       <div className="container">
-        {' '}
         <div className="carousel-row">
-          {' '}
           <div className="col-md-1" onClick={this.onClick} data-name="left">
-            {' '}
-            <i
-              className="fas
-    fa-chevron-left icon-style"
-              size="7px"
-            />{' '}
-          </div>{' '}
+            <i className="fas fa-chevron-left icon-style" size="7px" />
+          </div>
           <div className="col-md-10">
-            {' '}
             {this.showChild(this.state.componentIndex)}
-          </div>{' '}
+          </div>
           <div className="col-md-1" onClick={this.onClick} data-name="right">
-            {' '}
-            <i className="fas fa-chevron-right icon-style" />{' '}
-          </div>{' '}
-        </div>{' '}
+            <i className="fas fa-chevron-right icon-style" />
+          </div>
+        </div>
       </div>
     );
   }

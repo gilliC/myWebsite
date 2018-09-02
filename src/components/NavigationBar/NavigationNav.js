@@ -29,11 +29,7 @@ export default class NavigationNav extends Component {
             ? 'app-nav-bar-item-active'
             : 'app-nav-bar-item'
         }>
-        {' '}
-        <NavItem href={this.props.page.path}>
-          {' '}
-          {this.props.page.title}{' '}
-        </NavItem>{' '}
+        <NavItem href={this.props.page.path}>{this.props.page.title}</NavItem>
       </Nav>
     );
   }

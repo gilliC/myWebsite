@@ -46,37 +46,31 @@ class NavigationBar extends Component {
 
     return (
       <div>
-        {' '}
         <Navbar fluid={true} componentClass="app-nav-bar">
           <Navbar.Header>
-            {' '}
             <Navbar.Brand>
-              {' '}
               <Nav bsClass="app-brand" pullLeft>
-                {' '}
-                <NavItem href="/">GC Website</NavItem>{' '}
-              </Nav>{' '}
-            </Navbar.Brand>{' '}
-          </Navbar.Header>{' '}
+                <NavItem href="/">GC Website</NavItem>
+              </Nav>
+            </Navbar.Brand>
+          </Navbar.Header>
           {this.props.pages.map(page => {
             return (
               <NavigationNav page={page} key={page.path} localPath={pathname} />
             );
-          })}{' '}
+          })}
           <Nav bsClass="logo-div" pullRight>
-            {' '}
             <NavItem>
-              {' '}
               <img
                 src={logo}
                 className={logoClassName}
                 alt="logo"
                 onMouseEnter={this.onMouseEnter}
                 onMouseLeave={this.onMouseLeave}
-              />{' '}
-            </NavItem>{' '}
-          </Nav>{' '}
-        </Navbar>{' '}
+              />
+            </NavItem>
+          </Nav>
+        </Navbar>
       </div>
     );
   }

@@ -43,8 +43,7 @@ const AnimatedWrapper = WrappedComponent =>
       };
       return (
         <Animated.div style={style}>
-          {' '}
-          <WrappedComponent {...this.props} />{' '}
+          <WrappedComponent {...this.props} />
         </Animated.div>
       );
     }

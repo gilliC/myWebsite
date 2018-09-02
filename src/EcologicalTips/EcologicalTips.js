@@ -2,10 +2,6 @@ import React, {Component} from 'react';
 import EcoTipItem from './EcoTipItem';
 
 export default class EcologicalTips extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let items = [
       {
