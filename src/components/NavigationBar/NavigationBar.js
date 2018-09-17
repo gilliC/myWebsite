@@ -50,7 +50,9 @@ class NavigationBar extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <Nav bsClass="app-brand" pullLeft>
-                <NavItem href="/">GC Website</NavItem>
+                <NavItem href="/">
+                  GC <br /> Website
+                </NavItem>
               </Nav>
             </Navbar.Brand>
           </Navbar.Header>

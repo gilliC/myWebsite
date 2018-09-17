@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {NavItem, Nav} from 'react-bootstrap';
 
-import '../GeneralComponentsStyle.css';
-
 export default class NavigationNav extends Component {
   constructor(props) {
     super(props);
@@ -21,15 +19,16 @@ export default class NavigationNav extends Component {
 
   render() {
     const pathname = this.props.localPath;
+    const classname =
+      pathname === this.props.page.path
+        ? 'app-nav-bar-item-active'
+        : 'app-nav-bar-item';
 
     return (
-      <Nav
-        bsClass={
-          pathname === this.props.page.path
-            ? 'app-nav-bar-item-active'
-            : 'app-nav-bar-item'
-        }>
-        <NavItem href={this.props.page.path}>{this.props.page.title}</NavItem>
+      <Nav bsClass={classname}>
+        <div>
+          <a href={this.props.page.path}>{this.props.page.title}</a>
+        </div>
       </Nav>
     );
   }

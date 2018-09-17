@@ -1,0 +1,52 @@
+@import '../App.scss';
+
+.link-list {
+  margin-left: 20px;
+  border-radius: 10px;
+  width: 300px;
+  padding: 20px;
+}
+
+.link-item {
+  border-bottom: solid $main-color 2px;
+  padding: 10px;
+}
+
+.link-item-active {
+  color: $main-color;
+}
+
+.link-item:hover {
+  animation: itemHover 1s ease forwards;
+  cursor: pointer;
+  color: $main-color;
+}
+
+@keyframes itemHover {
+  from {
+    box-shadow: 1px 7px 5px 3px transparent;
+  }
+  to {
+    box-shadow: 1px 7px 5px 3px $main-color;
+  }
+}
+
+.article-item {
+  display: flex;
+}
+
+.article-title:any-link {
+  color: black;
+}
+
+.article-title:hover {
+  color: $main-color;
+}
+
+.article-writer {
+  color: darkgrey;
+}
+
+.list-container {
+  align-content: center;
+}

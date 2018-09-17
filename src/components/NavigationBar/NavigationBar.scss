@@ -1,0 +1,93 @@
+@import '../../App.scss';
+
+$right-distance: 40px;
+
+a:any-link {
+  color: $second-color;
+  text-decoration: none;
+}
+ul {
+  text-align: center;
+  margin: auto;
+  padding: 0px;
+}
+
+.nav-div {
+  float: left;
+}
+
+.app-brand {
+  font-size: 40px;
+  font-weight: bold;
+  list-style-type: none;
+  padding-right: $right-distance;
+}
+
+.app-brand:hover {
+  animation: appBrandHover 2s ease forwards;
+}
+@keyframes appBrandHover {
+  0% {
+    font-size: 20px;
+  }
+  50% {
+    font-size: 30px;
+  }
+  100% {
+    font-size: 20px;
+  }
+}
+
+.app-nav-bar-item {
+  height: 50px;
+  padding-right: $right-distance;
+  list-style-type: none;
+  text-align: center;
+}
+
+.app-nav-bar-item:hover {
+  border-bottom: solid $main-color 0px;
+  animation: navAnimation 1s ease forwards;
+}
+
+.navbar-header {
+  font-size: 30px;
+  font-weight: bold;
+  margin: -12px;
+}
+
+.navbar-nav {
+  font-size: 20px;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+
+@keyframes navAnimation {
+  from {
+    border-bottom: solid $main-color 5px;
+  }
+  to {
+    border-bottom: solid $second-color 5px;
+  }
+}
+
+.app-logo {
+  height: 100px;
+}
+.logo-div {
+  background-color: inherit;
+  list-style-type: none;
+}
+
+.app-logo-hover {
+  animation: app-logo-spin infinite 3s linear;
+  height: 100px;
+}
+
+@keyframes app-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
