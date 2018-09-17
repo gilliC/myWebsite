@@ -25,14 +25,34 @@ export default class EcologicalTips extends Component {
         src:
           'https://www.freepik.com/free-vector/urban-bus-and-bus-stop-with-flat-design_2383281.htm',
       },
+      {
+        id: 4,
+        title: 'RECYCLE!',
+        img: 'recycle',
+        src:
+          'https://www.freepik.com/free-photo/crop-hands-throwing-rubbish-in-bins_2254651.htm',
+      },
+      {
+        id: 5,
+        title: 'Save Water',
+        img: 'water',
+        src:
+          'https://www.freepik.com/free-photo/water-background-with-splashes_1101025.htm',
+      },
+      {
+        id: 6,
+        title: 'Use public transport',
+        img: 'publictransport',
+        src:
+          'https://www.freepik.com/free-vector/urban-bus-and-bus-stop-with-flat-design_2383281.htm',
+      },
     ];
 
     return (
       <div className="ecologicalTipsBody">
-        {' '}
         {items.map(item => {
           return <EcoTipItem item={item} />;
-        })}{' '}
+        })}
       </div>
     );
   }

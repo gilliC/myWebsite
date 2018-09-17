@@ -4,15 +4,19 @@ $default-tip-width: 750px;
 $border-radius: 25px;
 $margin: 10px;
 
+$num-of-eco-items: 6;
+
 .ecologicalTipsBody {
   margin-top: 20px;
 }
+
 .ecoItem {
   content: '';
   width: $default-tip-width;
   height: $default-tip-height;
   display: inline-block;
   position: relative;
+
   &:after {
     content: '';
     opacity: 1;
@@ -25,7 +29,7 @@ $margin: 10px;
     border-radius: $border-radius;
   }
   &:hover:after {
-    opacity: 0.4;
+    opacity: 0.85;
     z-index: 5;
     height: $hover-tip-height;
     position: absolute;
@@ -43,16 +47,21 @@ $margin: 10px;
       height: $hover-tip-height;
       position: absolute;
       z-index: 5;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
   }
   h2 {
     color: transparent;
     display: none;
   }
-  a {
-    z-index: 99;
+}
+@for $i from 1 to $num-of-eco-items {
+  .ecoItem:nth-of-type(#{$i}):hover ~ div:nth-of-type(#{$i + 1}) {
+    margin-top: $hover-tip-height -$default-tip-height;
   }
 }
+
 .layer {
   background-color: #000000;
   position: absolute;
