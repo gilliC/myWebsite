@@ -57,7 +57,7 @@ class DashboardComponent extends Component {
   }
   render() {
     return (
-      <div className="bla">
+      <div>
         <div className="col-md-8">
           <Carousel>
             <TasksPieChart data={this.state.data} />
