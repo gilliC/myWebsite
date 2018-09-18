@@ -10,10 +10,6 @@ class NavigationBar extends Component {
   static defaultProps = {
     pages: [
       {
-        path: 'projects',
-        title: 'Projects',
-      },
-      {
         path: 'articles',
         title: 'Articles',
       },

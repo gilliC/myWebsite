@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {NavItem, Nav} from 'react-bootstrap';
+import {Nav} from 'react-bootstrap';
 
 export default class NavigationNav extends Component {
   constructor(props) {
