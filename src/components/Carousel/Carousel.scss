@@ -1,3 +1,4 @@
+@import '../../App.scss';
 .carousel-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -13,7 +14,7 @@
 
 .icon-style {
   font-size: 4em;
-  color: #4ecdc4;
+  color: $primary-color;
   align-self: center;
 }
 

@@ -1,26 +1,57 @@
-$main-color: #4ecdc4;
-$second-color: white;
+$primary-color: #5e82bc;
+$secondary-color: white;
+$tertiary-color: #9e788f;
+$app-header-height: 20%;
 
-.example-appear.example-appear-active {
+body,
+html {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+}
+.transition-group {
+  height: 100%;
+}
+.fade-appear.fade-appear-active {
+  height: 80%;
   opacity: 1;
   transition: opacity 0.2s ease-in;
 }
-
 .app {
   text-align: center;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
   align-content: center;
   cursor: default;
+  height: 100%;
 }
 
 .app-header {
-  background-color: $main-color;
-  height: 15%;
+  background-color: $primary-color;
+  height: 20%;
   padding: 20px;
-  color: $second-color;
+  color: $secondary-color;
   text-align: center;
 }
 
 .container-fluid {
   margin-top: 3%;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
 }

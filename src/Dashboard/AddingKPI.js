@@ -35,13 +35,12 @@ export default class AddingKPI extends Component {
 
   render() {
     return (
-      <form onSubmit={this.addTask}>
+      <form className="addkpi-form" onSubmit={this.addTask}>
         <h3>Add KPI</h3>
         <input
           type="text"
           placeholder="  Enter task"
           ref={el => (this.inputEl = el)}
-          className="input-style"
         />
         <DatePickerItem
           onDayChange={this.onDayChange}

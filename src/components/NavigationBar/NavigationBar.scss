@@ -3,17 +3,13 @@
 $right-distance: 40px;
 
 a:any-link {
-  color: $second-color;
+  color: $secondary-color;
   text-decoration: none;
 }
 ul {
   text-align: center;
   margin: auto;
   padding: 0px;
-}
-
-.nav-div {
-  float: left;
 }
 
 .app-brand {
@@ -46,7 +42,7 @@ ul {
 }
 
 .app-nav-bar-item:hover {
-  border-bottom: solid $main-color 0px;
+  border-bottom: solid $primary-color 0px;
   animation: navAnimation 1s ease forwards;
 }
 
@@ -63,10 +59,10 @@ ul {
 
 @keyframes navAnimation {
   from {
-    border-bottom: solid $main-color 5px;
+    border-bottom: solid $primary-color 5px;
   }
   to {
-    border-bottom: solid $second-color 5px;
+    border-bottom: solid $secondary-color 5px;
   }
 }
 

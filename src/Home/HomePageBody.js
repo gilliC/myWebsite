@@ -9,21 +9,20 @@ export default () => {
         className="iconimg"
         target="_blank"
         rel="noreferrer noopener">
-        <i className="fab fa-github" size="7px" />
+        <i className="fab fa-github" />
       </a>
       <a
         href="https://www.instagram.com/gilli_carmon/"
         className="iconimg"
         target="_blank"
         rel="noreferrer noopener">
-        <i className="fab fa-instagram" size="7px" />
+        <i className="fab fa-instagram" />
       </a>
       <a
-        href="https://github.com/gilliC"
+        href="mailto:gillicarmon@gmail.com"
         className="iconimg"
-        target="_blank"
         rel="noreferrer noopener">
-        <i className="fas fa-envelope" size="7px" />
+        <i className="fas fa-envelope" />
       </a>
       <a
         href="https://sourcerer.io/gillic"

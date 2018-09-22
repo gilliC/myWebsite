@@ -8,18 +8,17 @@
 }
 
 .link-item {
-  border-bottom: solid $main-color 2px;
+  border-bottom: solid $primary-color 2px;
   padding: 10px;
+  &:hover {
+    animation: itemHover 1s ease forwards;
+    cursor: pointer;
+    color: $primary-color;
+  }
 }
 
 .link-item-active {
-  color: $main-color;
-}
-
-.link-item:hover {
-  animation: itemHover 1s ease forwards;
-  cursor: pointer;
-  color: $main-color;
+  color: $primary-color;
 }
 
 @keyframes itemHover {
@@ -27,7 +26,7 @@
     box-shadow: 1px 7px 5px 3px transparent;
   }
   to {
-    box-shadow: 1px 7px 5px 3px $main-color;
+    box-shadow: 1px 7px 5px 3px $primary-color;
   }
 }
 
@@ -40,7 +39,7 @@
 }
 
 .article-title:hover {
-  color: $main-color;
+  color: $primary-color;
 }
 
 .article-writer {

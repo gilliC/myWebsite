@@ -11,6 +11,7 @@ export default class EcoTipItem extends Component {
             <h2 className="ecoItem-text">
               {this.props.item.id}.{this.props.item.title}
             </h2>
+            <p>{this.props.item.info}</p>
             Designed by Freepik
           </div>
         </a>

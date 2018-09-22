@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 
 import 'react-day-picker/lib/style.css';
-import './DatePickerStyle.css';
+import './Datepicker.scss';
 import {formatDate, parseDate} from '../../services';
 import 'moment/locale/it';
 

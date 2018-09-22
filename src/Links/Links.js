@@ -5,7 +5,7 @@ import AnimatedWrapper from '../components/AnimatedWrapper';
 
 import './Links.scss';
 
-class LinksComponent extends Component {
+class Links extends Component {
   render() {
     return (
       <div className="container">
@@ -22,5 +22,4 @@ class LinksComponent extends Component {
   }
 }
 
-const Links = AnimatedWrapper(LinksComponent);
 export default Links;

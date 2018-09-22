@@ -1,5 +1,5 @@
 $default-tip-height: 150px;
-$hover-tip-height: 250px;
+$hover-tip-height: 350px;
 $default-tip-width: 750px;
 $border-radius: 25px;
 $margin: 10px;
@@ -33,7 +33,7 @@ $num-of-eco-items: 6;
     z-index: 5;
     height: $hover-tip-height;
     position: absolute;
-    transition: opacity 0.35s ease-in-out;
+    transition: height 0.35s ease-in-out;
     -moz-transition: opacity 0.35s ease-in-out;
     -webkit-transition: opacity 0.35s ease-in-out;
   }
@@ -72,7 +72,7 @@ $num-of-eco-items: 6;
 }
 .recycle {
   &:after {
-    background-image: url('../drawable/recycle2.jpg');
+    background-image: url('../drawable/recycle.jpg');
   }
 }
 .water {
@@ -84,6 +84,26 @@ $num-of-eco-items: 6;
 .publictransport {
   &:after {
     background-image: url('../drawable/publictransport.jpg');
+    background-position: center;
+  }
+}
+.plasticbags {
+  &:after {
+    background-image: url('../drawable/plasticbags.jpg');
+    background-position: center;
+  }
+}
+
+.smartshopping {
+  &:after {
+    background-image: url('../drawable/smartshopping.jpg');
+    background-position: center;
+  }
+}
+
+.educateothers {
+  &:after {
+    background-image: url('../drawable/educateothers.jpg');
     background-position: center;
   }
 }

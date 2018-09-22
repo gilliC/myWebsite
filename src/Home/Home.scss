@@ -1,6 +1,10 @@
+@import '../App.scss';
+
+$home-body-height: 100% - $app-header-height;
+
 .iconimg:any-link {
   font-size: 7em;
-  color: #4ecdc4;
+  color: $primary-color;
   height: 100px;
   width: 100px;
   margin: 40px;
@@ -29,4 +33,8 @@
     font-size: 7em;
     color: inherit;
   }
+}
+.outline {
+  border: solid $primary-color 20px;
+  height: $home-body-height;
 }

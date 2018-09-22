@@ -3,17 +3,16 @@ import React, {Component} from 'react';
 import AnimatedWrapper from '../components/AnimatedWrapper';
 import HomePageBody from './HomePageBody';
 
-import './HomeStyle.css';
+import './Home.scss';
 
 class HomeComponent extends Component {
   render() {
     return (
-      <div>
+      <div className="outline">
         <HomePageBody />
       </div>
     );
   }
 }
 
-const Home = AnimatedWrapper(HomeComponent);
-export default Home;
+export default HomeComponent;

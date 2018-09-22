@@ -9,11 +9,12 @@ import './NavigationBar.scss';
 class NavigationBar extends Component {
   static defaultProps = {
     pages: [
+      {path: 'dashboard', title: 'Dashboard'},
       {
         path: 'articles',
         title: 'Articles',
       },
-      {path: 'dashboard', title: 'Dashboard'},
+
       {
         path: 'ecologicaltips',
         title: 'EcologicalTips',
@@ -44,13 +45,11 @@ class NavigationBar extends Component {
       <div>
         <Navbar fluid={true} componentClass="app-nav-bar">
           <Navbar.Header>
-            <Navbar.Brand>
-              <Nav bsClass="app-brand" pullLeft>
-                <NavItem href="/">
-                  GC <br /> Website
-                </NavItem>
-              </Nav>
-            </Navbar.Brand>
+            <Nav bsClass="app-brand" pullLeft>
+              <NavItem href="/">
+                GC <br /> Website
+              </NavItem>
+            </Nav>
           </Navbar.Header>
           {this.props.pages.map(page => {
             return (

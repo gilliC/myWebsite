@@ -10,9 +10,9 @@ import KPIList from './KPIList';
 
 import Carousel from '../components/Carousel/Carousel';
 
-import './DashBoardStyle.css';
+import './Dashboard.scss';
 
-class DashboardComponent extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {data: []};
@@ -73,5 +73,4 @@ class DashboardComponent extends Component {
   }
 }
 
-const Dashboard = AnimatedWrapper(DashboardComponent);
 export default Dashboard;

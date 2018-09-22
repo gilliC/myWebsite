@@ -1,0 +1,100 @@
+@import '../App.scss';
+.addkpi-form {
+  input {
+    color: $primary-color;
+    background-color: $secondary-color;
+    border: 2px solid $primary-color !important;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 15px;
+    height: 30px;
+    &:focus {
+      outline: 0 !important;
+    }
+  }
+  h3 {
+    color: $primary-color;
+  }
+  .btn {
+    padding: 6px 30px;
+  }
+}
+.btn {
+  color: $primary-color;
+  background-color: $secondary-color;
+  border: solid $primary-color 2px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 6px 24px;
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-weight: bold;
+    border-color: $primary-color;
+  }
+  &:focus {
+    outline: 0 !important;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-weight: bold;
+  }
+}
+
+.list-div {
+  margin-outside: 5px;
+  border: solid transparent 1px;
+}
+
+.list-div-edit {
+  margin-outside: 5px;
+  margin-inside: 10px;
+  border: solid $primary-color 1px;
+}
+
+.edit-text {
+  margin-top: 5px;
+}
+
+.edit-true {
+  color: $primary-color;
+}
+
+.task {
+  ul {
+    width: 75%;
+  }
+  li {
+    width: 100%;
+    list-style-type: none;
+    margin: 5px;
+    padding: 5px;
+    &:hover:not(.disabled) {
+      background-color: rgba($primary-color, 0.4);
+    }
+  }
+}
+
+.not-completed-task-li {
+  border: 2px solid $primary-color;
+}
+
+.task-complete-li {
+  animation: complete-task 1s linear;
+}
+
+@keyframes complete-task {
+  from {
+    background-color: inherit;
+  }
+  to {
+    background-color: rgba($primary-color, 0.2);
+  }
+}
+
+.task-completed-li {
+  background-color: rgba($primary-color, 0.2);
+  text-decoration: line-through;
+}

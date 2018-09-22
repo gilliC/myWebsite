@@ -19,17 +19,19 @@ export default class KPI extends Component {
   render() {
     const {data, edit} = this.state;
     return (
-      <div className={edit ? 'edit-list-div col-md-12' : 'list-div col-md-12'}>
+      <div className={edit ? 'list-div-edit col-md-12' : 'list-div col-md-12'}>
         <div className="col-md-12">
           <h3 className="col-md-8">Your KPIs:</h3>
           <div
             onClick={this.onClick}
-            className={edit ? 'edit-true-p col-md-4' : 'edit-false-p col-md-4'}>
-            <i className="far fa-edit" size="3px" />
+            className={
+              edit ? 'edit-text edit-true col-md-4' : 'edit-text col-md-4'
+            }>
+            <i className="far fa-edit" />
             <p>Edit</p>
           </div>
         </div>
-        <div className="col-md-12">
+        <div className="task col-md-12">
           <ul className="task-ul">
             {data.map(task => {
               return (
