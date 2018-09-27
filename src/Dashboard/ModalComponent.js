@@ -42,17 +42,18 @@ export default class ModalComponent extends Component {
     return (
       <Modal show={this.state.show} onHide={this.props.handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Edit Task</Modal.Title>
+          <Modal.Title className="special-title">Edit Task</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>
-            <span className="bold"> Task: </span> {' ' + this.props.task.title}
+          <h4 className="kpi-title">
+            <span className="special-title bold"> Task: </span>{' '}
+            {' ' + this.props.task.title}
           </h4>
-          <h5>
-            <span className="bold"> Due Date: </span>
+          <h5 className="kpi-title">
+            <span className="special-title bold"> Due Date: </span>
             {' ' + this.props.task.dueDate}
           </h5>
-          <h5 className="bold">completion date:</h5>
+          <h5 className="bold normal-txt">completion date:</h5>
           <DatePickerItem
             onDayChange={this.onDayChange}
             placeholder="Enter completion day"

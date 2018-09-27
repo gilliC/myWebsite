@@ -5,6 +5,8 @@ $right-distance: 40px;
 a:any-link {
   color: $secondary-color;
   text-decoration: none;
+  font-family: 'Abel';
+  font-size: 25px;
 }
 ul {
   text-align: center;
@@ -13,37 +15,46 @@ ul {
 }
 
 .app-brand {
-  font-size: 40px;
-  font-weight: bold;
-  list-style-type: none;
   padding-right: $right-distance;
+  &:hover {
+    .app-brand-text {
+      animation: appBrandHover 2s ease forwards;
+    }
+  }
 }
-
-.app-brand:hover {
-  animation: appBrandHover 2s ease forwards;
+.app-brand-text {
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 30px !important;
 }
 @keyframes appBrandHover {
   0% {
-    font-size: 20px;
-  }
-  50% {
     font-size: 30px;
   }
+  50% {
+    font-size: 40px;
+  }
   100% {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
 .app-nav-bar-item {
   height: 50px;
-  padding-right: $right-distance;
+  margin-right: $right-distance;
   list-style-type: none;
   text-align: center;
+  &:hover {
+    border-bottom: solid $primary-color 5px;
+    animation: navAnimation 1s ease forwards;
+  }
 }
-
-.app-nav-bar-item:hover {
-  border-bottom: solid $primary-color 0px;
-  animation: navAnimation 1s ease forwards;
+.item-active {
+  height: 50px;
+  margin-right: $right-distance;
+  list-style-type: none;
+  text-align: center;
+  border-bottom: solid $secondary-color 5px;
 }
 
 .navbar-header {
@@ -86,4 +97,7 @@ ul {
   to {
     transform: rotate(360deg);
   }
+}
+.selected {
+  background-color: red;
 }

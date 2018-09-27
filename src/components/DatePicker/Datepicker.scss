@@ -27,6 +27,9 @@
   background-color: rgba($primary-color, 0.5);
   color: $secondary-color;
 }
+.DayPickerInput {
+  width: 100%;
+}
 
 .DayPickerInput-Overlay {
   left: 0;
@@ -57,6 +60,7 @@ input {
   margin-left: 10px;
   margin-top: 5px;
   height: 30px;
+  width: 75%;
 }
 
 input:focus {

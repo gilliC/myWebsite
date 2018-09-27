@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Navbar, NavItem, Nav} from 'react-bootstrap';
-import {withRouter} from 'react-router-dom';
+import {withRouter, NavLink} from 'react-router-dom';
 
 import logo from '../../drawable/websiteLogo.png';
 import NavigationNav from './NavigationNav';
@@ -17,7 +17,7 @@ class NavigationBar extends Component {
 
       {
         path: 'ecologicaltips',
-        title: 'EcologicalTips',
+        title: 'Ecological Tips',
       },
     ],
   };
@@ -46,9 +46,9 @@ class NavigationBar extends Component {
         <Navbar fluid={true} componentClass="app-nav-bar">
           <Navbar.Header>
             <Nav bsClass="app-brand" pullLeft>
-              <NavItem href="/">
+              <NavLink className="app-brand-text" exact to="/">
                 GC <br /> Website
-              </NavItem>
+              </NavLink>
             </Nav>
           </Navbar.Header>
           {this.props.pages.map(page => {

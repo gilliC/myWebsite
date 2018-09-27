@@ -16,11 +16,7 @@ html {
 .transition-group {
   height: 100%;
 }
-.fade-appear.fade-appear-active {
-  height: 80%;
-  opacity: 1;
-  transition: opacity 0.2s ease-in;
-}
+
 .app {
   text-align: center;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
@@ -53,5 +49,22 @@ html {
 }
 .fade-exit-active {
   opacity: 0.01;
-  transition: opacity 500ms ease-in;
+  animation: app-header 5s ease-in;
+}
+.fade-appear.fade-appear-active {
+  height: 80%;
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+@keyframes appTransition {
+  0% {
+    opacity: 0.01;
+  }
+  50% {
+    opacity: 0.01;
+    background-color: white;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
 import {Nav} from 'react-bootstrap';
 
+import './NavigationBar.scss';
 export default class NavigationNav extends Component {
   constructor(props) {
     super(props);
@@ -20,15 +22,14 @@ export default class NavigationNav extends Component {
   render() {
     const pathname = this.props.localPath;
     const classname =
-      pathname === this.props.page.path
-        ? 'app-nav-bar-item-active'
+      pathname === '/' + this.props.page.path
+        ? 'app-nav-bar-item item-active'
         : 'app-nav-bar-item';
-
     return (
       <Nav bsClass={classname}>
-        <div>
-          <a href={this.props.page.path}>{this.props.page.title}</a>
-        </div>
+        <NavLink exact to={this.props.page.path}>
+          {this.props.page.title}
+        </NavLink>
       </Nav>
     );
   }

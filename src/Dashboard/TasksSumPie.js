@@ -65,7 +65,7 @@ export default class TasksSumPie extends Component {
     let options = {cutoutPercentage: 0, maintainAspectRatio: false};
     return (
       <div className="col-md-12">
-        <h3>Task Completion Tracker:</h3>
+        <h3 className="kpi-title">Task Completion Tracker:</h3>
         <div>
           <Doughnut data={chartData} options={options} height={250} />
         </div>

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import AnimatedWrapper from '../components/AnimatedWrapper';
 import fire from '../fire';
 
 import TasksPieChart from './TasksSumPie';

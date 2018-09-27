@@ -10,15 +10,12 @@
 .carousel-row > [class*='col-'] {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
+  align-items: center;
 }
 
 .icon-style {
   font-size: 4em;
   color: $primary-color;
   align-self: center;
-}
-
-.container {
-  margin-top: 100px;
-  align-items: center;
 }

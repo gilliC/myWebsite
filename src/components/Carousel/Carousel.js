@@ -48,7 +48,7 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <div className="carousel-row">
           <div className="col-md-1" onClick={this.onClick} data-name="left">
             <i className="fas fa-chevron-left icon-style" size="7px" />

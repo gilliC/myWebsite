@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import LinksList from './LinksList';
 import ActiveList from './ActiveArticlesList';
-import AnimatedWrapper from '../components/AnimatedWrapper';
 
 import './Links.scss';
 

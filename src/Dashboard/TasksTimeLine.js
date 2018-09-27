@@ -54,7 +54,7 @@ export default class TasksTimeLine extends Component {
     return (
       <div className="col-md-12">
         {' '}
-        <h3>Tasks Tracker:</h3>{' '}
+        <h3 className="kpi-title">Tasks Tracker:</h3>{' '}
         <div>
           {' '}
           <Bar data={chartData} options={options} height={250} />{' '}

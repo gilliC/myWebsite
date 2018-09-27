@@ -16,6 +16,7 @@ $num-of-eco-items: 6;
   height: $default-tip-height;
   display: inline-block;
   position: relative;
+  margin-bottom: 5px;
 
   &:after {
     content: '';
@@ -29,7 +30,7 @@ $num-of-eco-items: 6;
     border-radius: $border-radius;
   }
   &:hover:after {
-    opacity: 0.85;
+    opacity: 0.45;
     z-index: 5;
     height: $hover-tip-height;
     position: absolute;
@@ -41,7 +42,7 @@ $num-of-eco-items: 6;
     h2 {
       display: block;
       color: #ffffff;
-      font-family: 'Kite One';
+      font-family: 'Abel';
     }
     .layer {
       height: $hover-tip-height;
@@ -55,10 +56,13 @@ $num-of-eco-items: 6;
     color: transparent;
     display: none;
   }
+  p {
+    font-family: 'Abel';
+  }
 }
 @for $i from 1 to $num-of-eco-items {
   .ecoItem:nth-of-type(#{$i}):hover ~ div:nth-of-type(#{$i + 1}) {
-    margin-top: $hover-tip-height -$default-tip-height;
+    margin-top: $hover-tip-height -$default-tip-height + 10px;
   }
 }
 

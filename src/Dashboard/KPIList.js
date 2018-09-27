@@ -21,7 +21,7 @@ export default class KPI extends Component {
     return (
       <div className={edit ? 'list-div-edit col-md-12' : 'list-div col-md-12'}>
         <div className="col-md-12">
-          <h3 className="col-md-8">Your KPIs:</h3>
+          <h3 className="col-md-8 kpi-title">Your KPIs:</h3>
           <div
             onClick={this.onClick}
             className={

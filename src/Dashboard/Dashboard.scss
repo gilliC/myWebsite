@@ -1,33 +1,41 @@
 @import '../App.scss';
 .addkpi-form {
+  padding-right: 15px;
+  padding-left: 15px;
+  border: solid transparent 1px;
   input {
     color: $primary-color;
     background-color: $secondary-color;
+    border-radius: 0px;
     border: 2px solid $primary-color !important;
-    border-radius: 10px;
     margin-left: 10px;
     margin-top: 5px;
     padding: 15px;
     height: 30px;
+    width: 75%;
     &:focus {
       outline: 0 !important;
     }
   }
   h3 {
     color: $primary-color;
+    font-family: 'Amatic SC';
+    font-size: 35px;
   }
   .btn {
-    padding: 6px 30px;
+    padding: 0px 30px;
+    font-size: 23px;
   }
 }
 .btn {
+  font-family: 'Abel';
+  font-size: 15px;
   color: $primary-color;
   background-color: $secondary-color;
   border: solid $primary-color 2px;
   margin-left: 10px;
   margin-top: 5px;
   margin-bottom: 10px;
-  border-radius: 10px;
   padding: 6px 24px;
   &:hover {
     background-color: $primary-color;
@@ -44,6 +52,7 @@
 }
 
 .list-div {
+  width: 100%;
   margin-outside: 5px;
   border: solid transparent 1px;
 }
@@ -55,7 +64,8 @@
 }
 
 .edit-text {
-  margin-top: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .edit-true {
@@ -64,7 +74,7 @@
 
 .task {
   ul {
-    width: 75%;
+    width: 80%;
   }
   li {
     width: 100%;
@@ -73,6 +83,9 @@
     padding: 5px;
     &:hover:not(.disabled) {
       background-color: rgba($primary-color, 0.4);
+    }
+    h4 {
+      font-family: 'Abel';
     }
   }
 }
@@ -97,4 +110,19 @@
 .task-completed-li {
   background-color: rgba($primary-color, 0.2);
   text-decoration: line-through;
+}
+
+.kpi-title {
+  font-family: 'Amatic SC';
+  font-size: 35px;
+  right: 10%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.normal-txt {
+  font-family: 'Abel';
+}
+.special-title {
+  font-family: 'Abril Fatface';
+  font-size: 30px;
 }

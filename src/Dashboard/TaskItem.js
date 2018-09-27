@@ -100,9 +100,9 @@ export default class TaskItem extends Component {
 
   liClasses() {
     let classOptions = [];
-    classOptions[0] = 'task-li task-complete-li ' + this.props.disabled;
-    classOptions[1] = 'task-li not-completed-task-li ' + this.props.disabled;
-    classOptions[2] = 'task-li task-completed-li ' + this.props.disabled;
+    classOptions[0] = 'task task-complete-li ' + this.props.disabled;
+    classOptions[1] = 'task not-completed-task-li ' + this.props.disabled;
+    classOptions[2] = 'task task-completed-li ' + this.props.disabled;
     return classOptions;
   }
 
