@@ -28,20 +28,22 @@
   }
 }
 .btn {
+  width: 45%;
   font-family: 'Abel';
   font-size: 15px;
-  color: $primary-color;
   background-color: $secondary-color;
+  color: $primary-color;
   border: solid $primary-color 2px;
-  margin-left: 10px;
+  margin-left: 15px;
   margin-top: 5px;
   margin-bottom: 10px;
   padding: 6px 24px;
   &:hover {
     background-color: $primary-color;
-    color: $secondary-color;
-    font-weight: bold;
     border-color: $primary-color;
+    font-weight: bold;
+    color: $secondary-color;
+    transition: all 1s ease-out;
   }
   &:focus {
     outline: 0 !important;
@@ -52,12 +54,15 @@
 }
 
 .list-div {
+  margin-top: 10px;
   width: 100%;
-  margin-outside: 5px;
   border: solid transparent 1px;
+  .title {
+    text-align: left;
+  }
 }
 
-.list-div-edit {
+.list-edit {
   margin-outside: 5px;
   margin-inside: 10px;
   border: solid $primary-color 1px;
@@ -66,6 +71,7 @@
 .edit-text {
   margin-top: 20px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .edit-true {
@@ -74,7 +80,7 @@
 
 .task {
   ul {
-    width: 80%;
+    margin: 0px;
   }
   li {
     width: 100%;
@@ -83,6 +89,7 @@
     padding: 5px;
     &:hover:not(.disabled) {
       background-color: rgba($primary-color, 0.4);
+      cursor: pointer;
     }
     h4 {
       font-family: 'Abel';
@@ -112,17 +119,35 @@
   text-decoration: line-through;
 }
 
-.kpi-title {
-  font-family: 'Amatic SC';
-  font-size: 35px;
-  right: 10%;
-  padding-right: 20px;
-  padding-left: 20px;
-}
 .normal-txt {
   font-family: 'Abel';
 }
 .special-title {
   font-family: 'Abril Fatface';
   font-size: 30px;
+}
+.modal-body {
+  input {
+    width: 100%;
+    margin-left: 0px;
+    border-radius: 4px;
+  }
+}
+.modal {
+  .btn {
+    width: 47%;
+  }
+  .btn-add {
+    margin-left: 5px;
+  }
+}
+.title {
+  font-family: 'Amatic SC';
+  font-size: 35px;
+  right: 10%;
+  padding-right: 20px;
+  padding-left: 30px;
+}
+.threebtn {
+  width: 30% !important;
 }

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope');
 @import url('https://fonts.googleapis.com/css?family=Kite+One');
-@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Amatic+SC');
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Amatic+SC|Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab|Poiret+One');
 
 body {
   margin: 0;
@@ -17,4 +18,7 @@ body {
 
 .bold {
   font-weight: bold;
+}
+.small-txt {
+  font-size: 15px;
 }

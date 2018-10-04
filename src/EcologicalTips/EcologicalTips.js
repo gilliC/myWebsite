@@ -7,7 +7,7 @@ export default class EcologicalTips extends Component {
     return (
       <div className="ecologicalTipsBody">
         {ecologicalTips.map(item => {
-          return <EcoTipItem item={item} />;
+          return <EcoTipItem item={item} key={item.id} />;
         })}
       </div>
     );

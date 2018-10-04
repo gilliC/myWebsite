@@ -41,7 +41,7 @@ export default class TasksTimeLine extends Component {
           borderWidth: 1,
         },
         {
-          label: 'The amount of tasks left to do',
+          label: 'The amount of tasks left to do to this date',
           data: tasksLeftToDo,
           backgroundColor: 'rgba(193,110,175, 0.2)',
           borderColor: 'rgba(193,110,175, 1)',
@@ -54,7 +54,7 @@ export default class TasksTimeLine extends Component {
     return (
       <div className="col-md-12">
         {' '}
-        <h3 className="kpi-title">Tasks Tracker:</h3>{' '}
+        <h3 className="title">Tasks Tracker:</h3>{' '}
         <div>
           {' '}
           <Bar data={chartData} options={options} height={250} />{' '}

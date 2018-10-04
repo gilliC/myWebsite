@@ -4,7 +4,6 @@ import fire from '../fire';
 
 import TasksPieChart from './TasksSumPie';
 import TasksTimeLineChart from './TasksTimeLine';
-import AddingKPI from './AddingKPI';
 import KPIList from './KPIList';
 
 import Carousel from '../components/Carousel/Carousel';
@@ -59,12 +58,11 @@ class Dashboard extends Component {
       <div>
         <div className="col-md-8">
           <Carousel>
-            <TasksPieChart data={this.state.data} />
-            <TasksTimeLineChart data={this.state.data} />
+            <TasksPieChart className="fullsize" data={this.state.data} />
+            <TasksTimeLineChart className="fullsize" data={this.state.data} />
           </Carousel>
         </div>
         <div className="col-md-4">
-          <AddingKPI edit={false} />
           <KPIList data={this.state.data} />
         </div>
       </div>

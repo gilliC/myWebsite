@@ -5,6 +5,9 @@
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
+  div:not([class]) {
+    width: 100%;
+  }
 }
 
 .carousel-row > [class*='col-'] {

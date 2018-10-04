@@ -17,7 +17,7 @@ class NavigationBar extends Component {
 
       {
         path: 'ecologicaltips',
-        title: 'Ecological Tips',
+        title: 'Eco Tips',
       },
     ],
   };

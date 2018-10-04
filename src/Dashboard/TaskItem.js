@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import fire from '../fire';
 
-import ModalComponent from './ModalComponent';
+import ModalComponent from './ModalEditTask';
 
 export default class TaskItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
       edit: this.props.edit,
-      show: false,
+      showEdit: false,
       isNotCompleted: this.props.task.isNotCompleted,
       isClicked: false,
     };
@@ -25,17 +25,17 @@ export default class TaskItem extends Component {
   }
 
   handleClose() {
-    this.setState({show: false});
+    this.setState({showEdit: false});
   }
 
   handleShow() {
-    if (!this.state.show) {
-      this.setState({show: true});
+    if (!this.state.showEdit) {
+      this.setState({showEdit: true});
     }
   }
 
   handleEnd() {
-    this.setState({show: false, isClicked: true});
+    this.setState({showEdit: false, isClicked: true});
   }
 
   update(id, value, date = undefined) {
@@ -48,12 +48,12 @@ export default class TaskItem extends Component {
           isNotCompleted: value,
         })
         .then(() => {
-          if (this.state.show) this.handleClose();
+          if (this.state.showEdit) this.handleClose();
           return {};
         })
         .catch(error => {
           console.log(error.message);
-          if (this.state.show) this.handleClose();
+          if (this.state.showEdit) this.handleClose();
         });
     } else {
       return fire
@@ -123,7 +123,7 @@ export default class TaskItem extends Component {
         }>
         <h4>{this.props.task.title}</h4> {date}
         <ModalComponent
-          show={this.state.show}
+          show={this.state.showEdit}
           handleClose={this.handleClose}
           task={this.props.task}
           update={this.update}

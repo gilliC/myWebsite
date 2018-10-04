@@ -59,9 +59,15 @@ export default class ModalComponent extends Component {
             placeholder="Enter completion day"
           />
         </Modal.Body>
-        <Button onClick={this.props.handleClose}>Close</Button>
-        <Button onClick={this.completeTask}>Done</Button>
-        <Button onClick={this.deleteTask}>Delete</Button>
+        <Button className="threebtn" onClick={this.props.handleClose}>
+          Close
+        </Button>
+        <Button className="threebtn" onClick={this.completeTask}>
+          Done
+        </Button>
+        <Button className="threebtn" onClick={this.deleteTask}>
+          Delete
+        </Button>
       </Modal>
     );
   }
