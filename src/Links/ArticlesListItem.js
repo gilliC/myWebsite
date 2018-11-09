@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import {changeActiveItem} from './actions';
+import {changeActiveItem, fetchActiveItem} from './actions';
 
 class LinksItem extends Component {
   constructor(props) {
     super(props);
+    this.props.fetchActiveItem();
     this.onPress = this.onPress.bind(this);
   }
 
@@ -15,9 +16,11 @@ class LinksItem extends Component {
   }
 
   render() {
+    let isActive = this.props.activeItem.item.title === this.props.item.title;
+    let classname = isActive ? 'app link-item-active' : 'app link-item';
     return (
       <div
-        className="app link-item"
+        className={classname}
         onClick={this.onPress}
         key={this.props.item.title}>
         <h3>{this.props.item.title}</h3>
@@ -34,5 +37,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  {changeActiveItem},
+  {changeActiveItem, fetchActiveItem},
 )(LinksItem);

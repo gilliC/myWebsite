@@ -13,10 +13,16 @@
   h3 {
     font-family: 'Abel';
   }
-  &:hover {
-    animation: linkItemHover 1s ease forwards;
-    cursor: pointer;
-    color: $primary-color;
+}
+.link-item:hover,
+.link-item-active {
+  animation: linkItemHover 1s ease forwards;
+  cursor: pointer;
+  color: $primary-color;
+  border-bottom: solid $primary-color 2px;
+  padding: 10px;
+  h3 {
+    font-family: 'Abel';
   }
 }
 

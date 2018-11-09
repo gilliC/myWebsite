@@ -1,36 +1,42 @@
 import React from 'react';
+import {Link} from '../components/general_components';
+
+const linksList = [
+  {
+    href: 'https://github.com/gilliC',
+    className: 'fab fa-github',
+    key: 'github',
+  },
+  {
+    href: 'https://www.instagram.com/gilli_carmon/',
+    className: 'fab fa-instagram',
+    key: 'instagram',
+  },
+  {
+    href: 'mailto:gillicarmon@gmail.com',
+    className: 'fas fa-envelope',
+    key: 'mail',
+  },
+  {
+    href: 'https://sourcerer.io/gillic',
+    className: 'fab fa-stripe-s',
+    key: 'sourcerer',
+  },
+  {
+    href: 'https://twitter.com/GilliCarmon',
+    className: 'fab fa-twitter',
+    key: 'twitter',
+  },
+];
 
 export default () => {
+  let linksElements = linksList.map(props => {
+    return <Link {...props} animation="Grow" />;
+  });
   return (
     <div>
       <h1>Contact:</h1>
-      <a
-        href="https://github.com/gilliC"
-        className="iconimg"
-        target="_blank"
-        rel="noreferrer noopener">
-        <i className="fab fa-github" />
-      </a>
-      <a
-        href="https://www.instagram.com/gilli_carmon/"
-        className="iconimg"
-        target="_blank"
-        rel="noreferrer noopener">
-        <i className="fab fa-instagram" />
-      </a>
-      <a
-        href="mailto:gillicarmon@gmail.com"
-        className="iconimg"
-        rel="noreferrer noopener">
-        <i className="fas fa-envelope" />
-      </a>
-      <a
-        href="https://sourcerer.io/gillic"
-        className="iconimg"
-        target="_blank"
-        rel="noreferrer noopener">
-        <i className="fab fa-stripe-s" />
-      </a>
+      {linksElements}
     </div>
   );
 };

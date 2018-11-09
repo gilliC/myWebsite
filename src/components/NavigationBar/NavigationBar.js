@@ -9,10 +9,17 @@ import './NavigationBar.scss';
 class NavigationBar extends Component {
   static defaultProps = {
     pages: [
-      {path: 'dashboard', title: 'Dashboard'},
+      {
+        path: 'projects',
+        title: 'Projects',
+      },
       {
         path: 'articles',
         title: 'Articles',
+      },
+      {
+        path: 'dashboard',
+        title: 'Dashboard',
       },
 
       {
@@ -42,33 +49,31 @@ class NavigationBar extends Component {
     const pathname = this.props.location.pathname;
 
     return (
-      <div>
-        <Navbar fluid={true} componentClass="app-nav-bar">
-          <Navbar.Header>
-            <Nav bsClass="app-brand" pullLeft>
-              <NavLink className="app-brand-text" exact to="/">
-                GC <br /> Website
-              </NavLink>
-            </Nav>
-          </Navbar.Header>
-          {this.props.pages.map(page => {
-            return (
-              <NavigationNav page={page} key={page.path} localPath={pathname} />
-            );
-          })}
-          <Nav bsClass="logo-div" pullRight>
-            <NavItem>
-              <img
-                src={logo}
-                className={logoClassName}
-                alt="logo"
-                onMouseEnter={this.onMouseEnter}
-                onMouseLeave={this.onMouseLeave}
-              />
-            </NavItem>
+      <Navbar fluid={true} fixedTop={true} componentClass="app-nav-bar">
+        <Navbar.Header>
+          <Nav bsClass="app-brand" pullLeft>
+            <NavLink className="app-brand-text" exact to="/">
+              GC <br /> Website
+            </NavLink>
           </Nav>
-        </Navbar>
-      </div>
+        </Navbar.Header>
+        {this.props.pages.map(page => {
+          return (
+            <NavigationNav page={page} key={page.path} localPath={pathname} />
+          );
+        })}
+        <Nav bsClass="logo-div" pullRight>
+          <NavItem>
+            <img
+              src={logo}
+              className={logoClassName}
+              alt="logo"
+              onMouseEnter={this.onMouseEnter}
+              onMouseLeave={this.onMouseLeave}
+            />
+          </NavItem>
+        </Nav>
+      </Navbar>
     );
   }
 }

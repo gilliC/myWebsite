@@ -12,13 +12,11 @@ class Carousel extends Component {
 
   showChild(id) {
     if (this.props.children !== undefined) {
-      return (
-        <ComponentItem
-          component={this.state.components[id]}
-          index={id}
-          key={id}
-        />
-      );
+      let component;
+      if (Array.isArray(this.state.components))
+        component = this.state.components[id];
+      else component = this.state.components;
+      return <ComponentItem component={component} index={id} key={id} />;
     }
   }
 
@@ -26,7 +24,6 @@ class Carousel extends Component {
     const control = e.currentTarget.dataset.name;
     const i = this.state.componentIndex;
     const compCount = this.state.components.length;
-    console.log(control);
     if (control === 'right') {
       if (i + 1 < compCount)
         this.setState({
@@ -48,7 +45,7 @@ class Carousel extends Component {
 
   render() {
     return (
-      <div>
+      <div className="todeletelater">
         <div className="carousel-row">
           <div className="col-md-1" onClick={this.onClick} data-name="left">
             <i className="fas fa-chevron-left icon-style" size="7px" />

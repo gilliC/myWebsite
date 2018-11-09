@@ -2,38 +2,6 @@
 
 $home-body-height: 100% - $app-header-height;
 
-.iconimg:any-link {
-  font-size: 7em;
-  color: $primary-color;
-  height: 100px;
-  width: 100px;
-  margin: 40px;
-  animation: icons-shrink 1s ease forwards;
-}
-
-.iconimg:hover {
-  animation: icons-grown 1s ease forwards;
-}
-
-@keyframes icons-grown {
-  from {
-    font-size: 7em;
-    color: inherit;
-  }
-  to {
-    font-size: 8em;
-  }
-}
-
-@keyframes icons-shrink {
-  from {
-    font-size: 8em;
-  }
-  to {
-    font-size: 7em;
-    color: inherit;
-  }
-}
 .outline {
   border: solid $primary-color 20px;
   height: $home-body-height;

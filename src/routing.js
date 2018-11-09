@@ -6,6 +6,7 @@ import Home from './Home/Home';
 import Links from './Links/Links';
 import Dashboard from './Dashboard/Dashboard';
 import EcologicalTips from './EcologicalTips/EcologicalTips';
+import Projects from './Projects/Projects';
 import NoMatch from './components/defaultPage';
 
 import './App.scss';
@@ -39,6 +40,11 @@ class Routing extends Component {
               exact
               path="/ecologicalTips"
               children={({match, ...rest}) => <EcologicalTips {...rest} />}
+            />
+            <Route
+              exact
+              path="/projects"
+              children={({match, ...rest}) => <Projects {...rest} />}
             />
             <Route
               exact

@@ -31,6 +31,9 @@ html {
   padding: 20px;
   color: $secondary-color;
   text-align: center;
+  position: sticky;
+  top: 0px;
+  z-index: 99;
 }
 
 .container-fluid {

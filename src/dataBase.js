@@ -38,6 +38,12 @@ export const linksList = [
           'https://blog.bitsrc.io/11-react-native-component-libraries-you-should-know-in-2018-71d2a8e33312',
       },
       {
+        title: 'React Native Setup on macOS',
+        writer: 'Luke Scott',
+        link:
+          'https://blog.cloudboost.io/react-native-setup-on-macos-aedb1a44f527',
+      },
+      {
         title: 'Scaling React Native apps for Tablets ',
         writer: 'Akshay Kadam ',
         link:
@@ -113,6 +119,11 @@ export const linksList = [
         link:
           'https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95',
       },
+      {
+        title: 'JavaScript Pro Tips - Code This, NOT That',
+        writer: 'Angular Firebase',
+        link: 'https://www.youtube.com/watch?v=Mus_vwhTCq0&feature=youtu.be',
+      },
     ],
   },
   {
@@ -152,6 +163,12 @@ export const linksList = [
         writer: 'Sara Vieira',
         link:
           'http://www.developerdrive.com/2015/01/8-simple-css-hover-effects/ ',
+      },
+      {
+        title: 'Become A Command-Line Power User With Oh My ZSH And Z',
+        write: 'Wes Bos ',
+        link:
+          'https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/',
       },
     ],
   },
