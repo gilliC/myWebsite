@@ -5,6 +5,7 @@ import {createStore} from 'redux';
 import reducers from './reducers';
 
 import './App.scss';
+import {AppContainer, HeaderContainer} from './app_components';
 
 import NavigationBar from './components/NavigationBar/NavigationBar';
 
@@ -14,12 +15,12 @@ const store = createStore(reducers);
 const App = () => (
   <Provider store={store}>
     <Router>
-      <div className="app">
-        <header className="app-header">
+      <AppContainer>
+        <HeaderContainer>
           <NavigationBar />
-        </header>
+        </HeaderContainer>
         <Routing />
-      </div>
+      </AppContainer>
     </Router>
   </Provider>
 );

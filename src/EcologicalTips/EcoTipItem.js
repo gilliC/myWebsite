@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-import './EcologicalTips.scss';
+import {Layer, EcoItemText, EcoItem, EcoItemTitle} from './ecotips_components';
+import {ColinRow, Bold, SmallText} from '../components/general_components';
+
 export default class EcoTipItem extends Component {
   constructor(props) {
     super(props);
@@ -12,39 +15,53 @@ export default class EcoTipItem extends Component {
     this.setState({clicked: !this.state.clicked});
   }
   render() {
-    let classname = this.state.clicked ? 'ecoItem-clicked ' : 'ecoItem ';
-    classname += this.props.item.img.toLowerCase();
-    const clicked = this.state.clicked;
-    let info = '';
-    if (this.props.item.info !== undefined) {
-      info = this.props.item.info.split('\n').map(function(item, key) {
-        let bold = '';
-        if (item.split('\b').length > 1) bold = 'bold';
-        return (
-          <span className={bold} key={key}>
-            {item}
-            <br />
-          </span>
-        );
+    const {img, info, src, title} = this.props.item;
+    const {clicked} = this.state;
+    let description = '';
+
+    if (info !== undefined) {
+      description = info.split('\n').map(function(item, key) {
+        if (item.split('\b').length > 1)
+          return (
+            <Bold key={key}>
+              {item}
+              <br />
+            </Bold>
+          );
+        else return <EcoItemText key={key}>{item}</EcoItemText>;
       });
     }
+
     let content = (
-      <p>
+      <EcoItemText>
         Click for more information <br />
-        <span className="small-txt">The photo was designed by Freepik</span>
-      </p>
+        <SmallText>The photo was designed by Freepik</SmallText>
+      </EcoItemText>
     );
-    if (clicked) content = <p>{info}</p>;
-    //let classname = 'ecoItem ' + this.props.item.img.toLowerCase();
+
+    if (clicked) content = <EcoItemText>{description}</EcoItemText>;
+
     return (
-      <div className={classname} onClick={this.onClick}>
-        <a href={this.props.item.src}>
-          <div className="layer">
-            <h2 className="ecoItem-text">{this.props.item.title}</h2>
-            {content}
-          </div>
-        </a>
-      </div>
+      <ColinRow>
+        <EcoItem img={img} onClick={this.onClick} clicked={clicked}>
+          <a href={src}>
+            <Layer>
+              <EcoItemTitle clicked={clicked}>{title}</EcoItemTitle>
+              {content}
+            </Layer>
+          </a>
+        </EcoItem>
+      </ColinRow>
     );
   }
 }
+
+EcoTipItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    info: PropTypes.string,
+    src: PropTypes.string,
+    title: PropTypes.string,
+  }),
+};

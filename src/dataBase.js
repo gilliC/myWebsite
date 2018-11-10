@@ -1,3 +1,10 @@
+import water from './drawable/water.jpg';
+import educateothers from './drawable/educateothers.jpg';
+import plasticbags from './drawable/plasticbags.jpg';
+import publictransport from './drawable/publictransport.jpg';
+import recycle from './drawable/recycle.jpg';
+import smartshopping from './drawable/smartshopping.jpg';
+
 export const linksList = [
   {
     title: 'React',
@@ -178,7 +185,7 @@ export const ecologicalTips = [
   {
     id: 1,
     title: 'Recycle',
-    img: 'recycle',
+    img: recycle,
     src:
       'https://www.freepik.com/free-photo/crop-hands-throwing-rubbish-in-bins_2254651.htm',
     info:
@@ -188,7 +195,7 @@ export const ecologicalTips = [
   {
     id: 2,
     title: 'Use public transport',
-    img: 'publictransport',
+    img: publictransport,
     src:
       'https://www.freepik.com/free-vector/urban-bus-and-bus-stop-with-flat-design_2383281.htm',
     info:
@@ -198,7 +205,7 @@ export const ecologicalTips = [
   {
     id: 3,
     title: 'Smart shopping',
-    img: 'smartshopping',
+    img: smartshopping,
     src:
       'https://www.freepik.com/free-vector/food-store-background-design_1059377.htm',
     info:
@@ -207,7 +214,7 @@ export const ecologicalTips = [
   {
     id: 4,
     title: 'Educate others',
-    img: 'educateothers',
+    img: educateothers,
     src:
       'https://www.freepik.com/free-vector/lovely-hand-drawn-education-concept_2826345.htm',
     info:
@@ -216,7 +223,7 @@ export const ecologicalTips = [
   {
     id: 5,
     title: 'Avoid using plastic bags',
-    img: 'plasticbags',
+    img: plasticbags,
     src:
       'https://www.freepik.com/free-photo/crop-hands-throwing-rubbish-in-bins_2254651.htm',
     info:
@@ -225,7 +232,7 @@ export const ecologicalTips = [
   {
     id: 6,
     title: 'Save Water',
-    img: 'water',
+    img: water,
     src:
       'https://www.freepik.com/free-photo/water-background-with-splashes_1101025.htm',
     info:

@@ -22,7 +22,10 @@ export const ContainerRow = styled.div`
   -webkit-align-items: center;
   flex-direction: row;
 `;
-
+export const ColinRow = styled.div`
+  width: ${props => (props.size ? 100 / props.size + '%' : '100%')};
+  float: ${props => (props.float: 'none')};
+`;
 /////////////// Texts /////////////
 export const Title = styled.h1`
   font-size: ${props => props.fontSize || '5em'};
@@ -35,6 +38,13 @@ export const Text = styled.p`
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
+`;
+
+export const Bold = styled.span`
+  font-weight: bold;
+`;
+export const SmallText = styled.span`
+  font-size: 15px;
 `;
 
 /////////////// LINKS /////////////
@@ -57,7 +67,7 @@ const icons_shrink = keyframes`
     color: inherit;
   }`;
 
-const Link_Grows = styled.a`
+const LinkGrows = styled.a`
   :any-link {
     color: ${primaryColor};
     animation: ${icons_shrink} 1s ease forwards;
@@ -71,7 +81,7 @@ const Link_Grows = styled.a`
   }
 `;
 
-const Link_ChangeBackground = styled.a`
+const LinkChangeBackground = styled.a`
   :any-link {
     color: inherit;
     font-size: 7em;
@@ -90,26 +100,26 @@ export const Link = props => {
   switch (props.animation) {
     case 'ColorBackground': {
       return (
-        <Link_ChangeBackground
+        <LinkChangeBackground
           {...props}
           className=""
           target="_blank"
           rel="noreferrer noopener">
           <i className={props.className} />
-        </Link_ChangeBackground>
+        </LinkChangeBackground>
       );
     }
 
     case 'Grow':
     default: {
       return (
-        <Link_Grows
+        <LinkGrows
           {...props}
           className=""
           target="_blank"
           rel="noreferrer noopener">
           <i className={props.className} />
-        </Link_Grows>
+        </LinkGrows>
       );
     }
   }

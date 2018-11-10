@@ -13,29 +13,6 @@ html {
 #root {
   height: 100%;
 }
-.transition-group {
-  height: 100%;
-}
-
-.app {
-  text-align: center;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
-  align-content: center;
-  cursor: default;
-  height: 100%;
-}
-
-.app-header {
-  background-color: $primary-color;
-  height: 20%;
-  padding: 20px;
-  color: $secondary-color;
-  text-align: center;
-  position: sticky;
-  top: 0px;
-  z-index: 99;
-}
-
 .container-fluid {
   margin-top: 3%;
 }

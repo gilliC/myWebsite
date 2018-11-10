@@ -1,24 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
 import LinksList from './LinksList';
 import ActiveList from './ActiveArticlesList';
 
+import {LinksContainer, LinksListContainer} from './links_components';
+import {ColinRow} from '../components/general_components';
+
 import './Links.scss';
 
-class Links extends Component {
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 link-list">
-            <LinksList />
-          </div>
-          <div className="col-md-6 active-list">
-            <ActiveList link={{title: 'React'}} />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Links;
+export default props => {
+  return (
+    <LinksContainer>
+      <LinksListContainer>
+        <LinksList />
+      </LinksListContainer>
+      <ColinRow float="left" size={2}>
+        <ActiveList link={{title: 'React'}} />
+      </ColinRow>
+    </LinksContainer>
+  );
+};
