@@ -15,7 +15,7 @@ class Links extends Component {
         <LinksListContainer>
           <LinksList activeList={activeList.title} />
         </LinksListContainer>
-        <ColinRow float="left" size={2}>
+        <ColinRow float="left" size={6}>
           <ActiveList activeList={activeList} />
         </ColinRow>
       </LinksContainer>

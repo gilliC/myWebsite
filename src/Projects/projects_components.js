@@ -11,6 +11,7 @@ export const CardContainer = styled.div`
   box-shadow: 5px 10px ${primaryColor};
   align-self: center;
   margin-top:20px;
+  margin-bottom:20px;
   min-height: 470px;
 `;
 
