@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from '../components/general_components';
+import {Link} from '../components/common_components';
 
 const linksList = [
   {

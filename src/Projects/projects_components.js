@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import {primaryColor} from '../components/general_components';
+import {primaryColor} from '../app_components';
 
 ////////////// CONTAINERS /////////////
 export const CardContainer = styled.div`
   border-style: solid;
   border-width: 5px;
   border-color: ${primaryColor};
-  width: 50%
+  min-width:800px;
+  width: 60%
   box-shadow: 5px 10px ${primaryColor};
   align-self: center;
   margin-top:20px;

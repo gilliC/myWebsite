@@ -4,7 +4,6 @@ import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from './reducers';
 
-import './App.scss';
 import {AppContainer, HeaderContainer} from './app_components';
 
 import NavigationBar from './components/NavigationBar/NavigationBar';

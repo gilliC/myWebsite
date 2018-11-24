@@ -1,9 +1,7 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-
-export const primaryColor = '#5e82bc';
-export const secondaryColor = 'white';
-export const tertiaryColor = '#9e788f';
+import transition from 'styled-transition-group';
+import {primaryColor, secondaryColor} from '../app_components';
 
 /////////////// DIVS /////////////
 export const Container = styled.div`
@@ -15,17 +13,40 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 export const ContainerRow = styled.div`
-  align-items: center;
+  align-items: ${props => props.align || 'center'};
   display: flex;
   justify-content: center;
   display: -webkit-flex;
-  -webkit-align-items: center;
+  -webkit-align-items: ${props => props.align || 'center'};
   flex-direction: row;
 `;
 export const ColinRow = styled.div`
-  width: ${props => (props.size ? 100 / props.size + '%' : '100%')};
+  width: ${props => (props.size ? (100 / 12) * props.size + '%' : '100%')};
   float: ${props => (props.float: 'none')};
+  display: ${props => props.display || 'initial'};
 `;
+
+export const FadeInContainer = transition.div`
+  &:enter {
+    opacity: 0.01;
+    transform: ${props => props.transformInitial || 'translateX(0)'}
+  }
+  &:enter-active {
+    opacity: 1;
+     transform: translateX(0);
+    transition: all 1000ms ease-in;
+    transition-duration: ${props => props.timeout + 'ms' || '1000ms'}
+    transform: ${props => props.transformFinal || 'translateX(0)'}
+  }
+  &:exit {
+    opacity: 1;
+  }
+  &:exit-active {
+    opacity: 0.01;
+    transition: opacity 800ms ease-in;
+  }
+`;
+
 /////////////// Texts /////////////
 export const Title = styled.h1`
   font-size: ${props => props.fontSize || '5em'};
@@ -34,6 +55,12 @@ export const Title = styled.h1`
   color: ${props => props.color || 'black'};
 `;
 export const Text = styled.p`
+  font-size: ${props => props.fontSize || '1em'};
+  text-align: ${props => props.textAlign || 'center'};
+  font-family: ${props => props.fontFamily || 'Amatic SC'};
+  color: ${props => props.color || 'black'};
+`;
+export const TextSpan = styled.span`
   font-size: ${props => props.fontSize || '1em'};
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
@@ -69,11 +96,11 @@ const icons_shrink = keyframes`
 
 const LinkGrows = styled.a`
   :any-link {
+    width: ${props => props.width || '100%'};
     color: ${primaryColor};
     animation: ${icons_shrink} 1s ease forwards;
     font-size: 7em;
     height: 100px;
-    width: 100px;
     margin: 40px;
   }
   :hover {
@@ -83,10 +110,11 @@ const LinkGrows = styled.a`
 
 const LinkChangeBackground = styled.a`
   :any-link {
+    width: ${props => props.width || '100%'};
     color: inherit;
     font-size: 7em;
     height: 100px;
-    width: 100px;
+
     margin: 40px;
     padding-left: 10px;
     padding-right: 10px;
@@ -124,3 +152,50 @@ export const Link = props => {
     }
   }
 };
+
+/////////////// INPUTS /////////////
+
+export const MainInput = styled.input`
+  color: ${primaryColor};
+  padding: 15px;
+  background-color: ${secondaryColor};
+  border: 2px solid ${primaryColor} !important;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  height: 30px;
+  width: 75%;
+  :focus {
+    outline: 0 !important;
+  }
+`;
+
+/////////////// CAROUSEL /////////////
+export const ComponentItem = ({component}) => {
+  return <div>{component} </div>;
+};
+
+export const CarouselRow = styled.div`
+  min-width: 400px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  :not([class]) {
+    width: 100%;
+  }
+
+  & > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const Arrow = styled.i`
+  font-size: 4em;
+  color: ${primaryColor};
+  align-self: center;
+`;

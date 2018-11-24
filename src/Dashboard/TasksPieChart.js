@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import {parseToMoment} from '../services';
 
+import {getWithOpacity} from '../app_components';
+import {DashboardContainer} from './dashboard_components';
 export default class TasksSumPie extends Component {
   constructor(props) {
     super(props);
@@ -27,8 +29,18 @@ export default class TasksSumPie extends Component {
     }
     return count;
   }
+  colorsWithOpacity(opacity) {
+    let array = [];
+    array[0] = getWithOpacity('primaryColor', opacity);
+    array[1] = getWithOpacity('tertiaryColor', opacity);
+    array[2] = getWithOpacity('(67,124,144)', opacity);
+    return array;
+  }
 
   render() {
+    let backgroundColors = this.colorsWithOpacity(0.6);
+    let borderColors = this.colorsWithOpacity(1);
+    let hoverBackgroundColors = this.colorsWithOpacity(0.9);
     const {data} = this.props;
     const tasksDone = this.countInfo();
     let tasksData = [
@@ -42,21 +54,9 @@ export default class TasksSumPie extends Component {
         {
           label: 'Task completion tracker',
           data: tasksData,
-          backgroundColor: [
-            'rgba(94,130,188,0.6)',
-            'rgba(193,110,175, 0.6)',
-            'rgba(67,124,144, 0.6)',
-          ],
-          borderColor: [
-            'rgba(94,130,188, 1)',
-            'rgba(193,110,175, 1)',
-            'rgba(67,124,144, 1)',
-          ],
-          hoverBackgroundColor: [
-            'rgba(94,130,188, 0.9)',
-            'rgba(193,110,175, 0.9)',
-            'rgba(67,124,144, 0.9)',
-          ],
+          backgroundColor: backgroundColors,
+          borderColor: borderColors,
+          hoverBackgroundColor: hoverBackgroundColors,
           borderWidth: 3,
         },
       ],
@@ -64,12 +64,12 @@ export default class TasksSumPie extends Component {
 
     let options = {cutoutPercentage: 0, maintainAspectRatio: false};
     return (
-      <div className="col-md-12">
-        <h3 className="title">Task Completion Tracker:</h3>
+      <DashboardContainer fontSize={5}>
+        <h1>Task Completion Tracker:</h1>
         <div>
           <Doughnut data={chartData} options={options} height={250} />
         </div>
-      </div>
+      </DashboardContainer>
     );
   }
 }

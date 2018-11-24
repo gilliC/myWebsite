@@ -3,7 +3,8 @@ import {Modal, Button} from 'react-bootstrap';
 import fire from '../fire';
 
 import {formatDate} from '../services';
-import DatePickerItem from '../components/DatePicker/DatePickerItem';
+import DatePickerItem from '../components/DatePickerItem';
+import {MainInput} from '../components/common_components';
 
 export default class ModalComponent extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export default class ModalComponent extends Component {
           <Modal.Title className="special-title">Add Task</Modal.Title>
         </Modal.Header>
         <Modal.Body className="modal-body">
-          <input
+          <MainInput
             type="text"
             placeholder="  Enter task"
             ref={el => (this.inputEl = el)}

@@ -142,6 +142,11 @@ export const linksList = [
         link: ' https://womenalsoknowstuff.com/',
       },
       {
+        title: 'Transitions in CSS',
+        writer: '',
+        link: 'https://www.tutorialspoint.com/css/css_animation.htm',
+      },
+      {
         title: 'MobX vs Redux with React: A noob’s comparison and questions',
         writer: 'Sooraj Chandran',
         link:
@@ -173,7 +178,7 @@ export const linksList = [
       },
       {
         title: 'Become A Command-Line Power User With Oh My ZSH And Z',
-        write: 'Wes Bos ',
+        writer: 'Wes Bos ',
         link:
           'https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/',
       },

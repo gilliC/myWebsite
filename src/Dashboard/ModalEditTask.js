@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Modal, Button} from 'react-bootstrap';
 import {formatDate} from '../services';
-import DatePickerItem from '../components/DatePicker/DatePickerItem';
+import DatePickerItem from '../components/DatePickerItem';
 import fire from '../fire';
 
 export default class ModalComponent extends Component {

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import {primaryColor} from '../app_components';
 
 //////////// CONSTS /////////////
@@ -26,7 +25,7 @@ export const EcoItem = styled.div`
 
   :after {
     content: '';
-    opacity: ${props => (props.clicked ? 0.25 : 1)};
+    opacity: ${props => (props.clicked ? 0.75 : 1)};
     top: 0;
     left: 0;
     bottom: 0;

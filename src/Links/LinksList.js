@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
 import ArticleItem from './ArticlesListItem';
-import {fetchList, fetchActiveItem} from './actions';
+import {fetchList} from './actions';
 
 class LinksList extends Component {
   constructor(props) {
@@ -11,10 +12,13 @@ class LinksList extends Component {
   }
 
   render() {
+    const {list, activeList} = this.props;
     return (
       <div>
-        {this.props.list.map(link => {
-          return <ArticleItem item={link} key={link.title} />;
+        {list.map(link => {
+          return (
+            <ArticleItem activeList={activeList} item={link} key={link.title} />
+          );
         })}
       </div>
     );
@@ -26,7 +30,14 @@ const mapStateToProps = state => {
     list: state.list,
   };
 };
+
 export default connect(
   mapStateToProps,
-  {fetchList, fetchActiveItem},
+  {fetchList},
 )(LinksList);
+
+LinksList.propTypes = {
+  list: PropTypes.array,
+  fetchList: PropTypes.func,
+  activeList: PropTypes.string,
+};

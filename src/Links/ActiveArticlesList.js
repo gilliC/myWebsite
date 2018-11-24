@@ -1,37 +1,49 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React from 'react';
 
-import {fetchActiveItem} from './actions';
 import ArticleLink from './ArticleLink';
+import {
+  Container,
+  ColinRow,
+  FadeInContainer,
+} from '../components/common_components';
+import {ListActiveTitle} from './links_components';
 
-class ActiveArticlesList extends Component {
+export default class ActiveArticleList extends React.Component {
   constructor(props) {
     super(props);
-    this.props.fetchActiveItem();
+    this.state = {
+      show: false,
+    };
+    this.changeState = () => this.setState({show: !this.state.show});
   }
-
+  componentDidMount() {
+    this.changeState();
+  }
+  componentDidUpdate(props, prevstate) {
+    if (props.activeList.title !== this.props.activeList.title) {
+      this.changeState();
+    }
+  }
   render() {
+    let links = this.props.activeList.articles.map(article => {
+      return <ArticleLink article={article} key={article.title} />;
+    });
+    const {show} = this.state;
     return (
-      <div className="list-container">
-        <div className="col-md-12">
-          <h1>{this.props.activeItem.title}</h1>
-        </div>
-        <div className="col-md-12">
-          {this.props.activeItem.articles.map(article => {
-            return <ArticleLink article={article} key={article.title} />;
-          })}
-        </div>
-      </div>
+      <FadeInContainer
+        in={show}
+        timeout={500}
+        transformInitial="translateX(300px)"
+        onExit={this.changeState}>
+        <Container>
+          <ColinRow>
+            <ListActiveTitle fontFamily="Abril Fatface">
+              {this.props.activeList.title}
+            </ListActiveTitle>
+            {links}
+          </ColinRow>
+        </Container>
+      </FadeInContainer>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {
-    activeItem: state.activeItem.item,
-  };
-};
-export default connect(
-  mapStateToProps,
-  {fetchActiveItem},
-)(ActiveArticlesList);

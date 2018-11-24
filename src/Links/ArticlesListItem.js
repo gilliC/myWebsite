@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-import {changeActiveItem, fetchActiveItem} from './actions';
+import {changeActiveItem} from './actions';
+import {ArticleItemContainer} from './links_components';
+import {Title} from '../components/common_components';
 
 class LinksItem extends Component {
   constructor(props) {
     super(props);
-    this.props.fetchActiveItem();
     this.onPress = this.onPress.bind(this);
   }
 
@@ -16,26 +18,31 @@ class LinksItem extends Component {
   }
 
   render() {
-    let isActive = this.props.activeItem.item.title === this.props.item.title;
-    let classname = isActive ? 'app link-item-active' : 'app link-item';
+    const {title} = this.props.item;
+    let isActive = this.props.activeList === title;
     return (
-      <div
-        className={classname}
+      <ArticleItemContainer
+        active={isActive}
         onClick={this.onPress}
-        key={this.props.item.title}>
-        <h3>{this.props.item.title}</h3>
-      </div>
+        key={title}>
+        <Title fontFamily="Abel" fontSize="2em">
+          {title}
+        </Title>
+      </ArticleItemContainer>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    activeItem: state.activeItem,
-  };
-  //return the chartData in state (reducer). vocabulary as a prop under the key vocabulary
-};
 export default connect(
-  mapStateToProps,
-  {changeActiveItem, fetchActiveItem},
+  null,
+  {changeActiveItem},
 )(LinksItem);
+
+LinksItem.propTypes = {
+  changeActiveItem: PropTypes.func,
+  activeList: PropTypes.string,
+  item: PropTypes.shape({
+    title: PropTypes.string,
+    articles: PropTypes.array,
+  }),
+};

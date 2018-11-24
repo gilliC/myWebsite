@@ -1,21 +1,44 @@
-import React from 'react';
-import LinksList from './LinksList';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+
 import ActiveList from './ActiveArticlesList';
-
+import LinksList from './LinksList';
 import {LinksContainer, LinksListContainer} from './links_components';
-import {ColinRow} from '../components/general_components';
+import {ColinRow} from '../components/common_components';
 
-import './Links.scss';
+class Links extends Component {
+  render() {
+    const {activeList} = this.props;
+    return (
+      <LinksContainer>
+        <LinksListContainer>
+          <LinksList activeList={activeList.title} />
+        </LinksListContainer>
+        <ColinRow float="left" size={2}>
+          <ActiveList activeList={activeList} />
+        </ColinRow>
+      </LinksContainer>
+    );
+  }
+}
 
-export default props => {
-  return (
-    <LinksContainer>
-      <LinksListContainer>
-        <LinksList />
-      </LinksListContainer>
-      <ColinRow float="left" size={2}>
-        <ActiveList link={{title: 'React'}} />
-      </ColinRow>
-    </LinksContainer>
-  );
+const mapStateToProps = state => {
+  return {
+    activeList: state.activeList.item,
+  };
+};
+export default connect(
+  mapStateToProps,
+  {},
+)(Links);
+
+Links.propTypes = {
+  changeActiveItem: PropTypes.func,
+  activeItem: PropTypes.shape({
+    item: PropTypes.shape({
+      title: PropTypes.string,
+      articles: PropTypes.array,
+    }),
+  }),
 };

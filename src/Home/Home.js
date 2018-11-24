@@ -1,8 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import {primaryColor} from '../components/general_components';
-
 import HomePageBody from './HomePageBody';
 
 export default props => {
@@ -14,7 +11,6 @@ export default props => {
 };
 
 const HomeContainer = styled.div`
-  border: solid ${primaryColor} 20px;
   height: 100%;
   h1 {
     font-family: 'Amatic SC';

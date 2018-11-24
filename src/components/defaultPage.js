@@ -5,7 +5,7 @@ export default class underConstruction extends Component {
     return (
       <div>
         <h3>Sorry, We couldn't find this page</h3>
-        <h1> :( </h1>{' '}
+        <h1> :( </h1>
       </div>
     );
   }
