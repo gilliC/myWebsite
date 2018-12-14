@@ -16,11 +16,6 @@ const pages = [
     title: 'Articles',
   },
   {
-    path: 'dashboard',
-    title: 'Dashboard',
-  },
-
-  {
     path: 'ecologicaltips',
     title: 'Eco Tips',
   },

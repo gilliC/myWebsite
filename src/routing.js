@@ -5,7 +5,6 @@ import {AppBody} from './app_components';
 
 import Home from './Home/Home';
 import Links from './Links/Links';
-import Dashboard from './Dashboard/Dashboard';
 import EcologicalTips from './EcologicalTips/EcologicalTips';
 import Projects from './Projects/Projects';
 import NoMatch from './components/defaultPage';
@@ -30,11 +29,6 @@ const routing = props => {
           exact
           path="/articles"
           children={({match, ...rest}) => <Links {...rest} />}
-        />
-        <Route
-          exact
-          path="/dashboard"
-          children={({match, ...rest}) => <Dashboard {...rest} />}
         />
         <Route
           exact
