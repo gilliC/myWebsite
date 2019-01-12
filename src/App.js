@@ -1,27 +1,81 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from './reducers';
 
 import {AppContainer, HeaderContainer} from './app_components';
-
-import NavigationBar from './components/NavigationBar/NavigationBar';
+import {ContainerRow} from './components/common_components';
+import {AppSideContainr, SidebarPush} from './app_components';
+import NavigationBar from './TopNavigationBar/TopNavigationBar';
+import Sidebar from './Sidebar/Sidebar';
 
 import Routing from './routing';
 const store = createStore(reducers);
+class App extends Component {
+  constructor(props) {
+    super(props);
+    const pages = [
+      {
+        path: 'projects',
+        title: 'Projects',
+      },
+      {
+        path: 'articles',
+        title: 'Articles',
+      },
+      {
+        path: 'ecologicaltips',
+        title: 'Eco Tips',
+      },
+    ];
+    this.state = {width: 0, height: 0, pages: pages};
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
 
-const App = () => (
-  <Provider store={store}>
-    <Router>
-      <AppContainer>
-        <HeaderContainer>
-          <NavigationBar />
-        </HeaderContainer>
-        <Routing />
-      </AppContainer>
-    </Router>
-  </Provider>
-);
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({width: window.innerWidth, height: window.innerHeight});
+  }
+  render() {
+    const {pages} = this.state;
+    if (this.state.width > 770) {
+      return (
+        <Provider store={store}>
+          <Router>
+            <AppContainer>
+              <HeaderContainer>
+                <NavigationBar />
+              </HeaderContainer>
+              <Routing />
+            </AppContainer>
+          </Router>
+        </Provider>
+      );
+    } else
+      return (
+        <Provider store={store}>
+          <Router>
+            <ContainerRow align="initial">
+              <SidebarPush left size={2}>
+                <Sidebar pages={pages} />
+              </SidebarPush>
+              <AppSideContainr right size={9}>
+                <Routing />
+              </AppSideContainr>
+            </ContainerRow>
+          </Router>
+        </Provider>
+      );
+  }
+}
 
 export default App;

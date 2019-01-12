@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {withRouter} from 'react-router-dom';
 
-import logo from '../../drawable/websiteLogo.png';
+import logo from '../drawable/websiteLogo.png';
 import NavigationNav from './NavigationNav';
-import {NavTabBrand, LogoTab} from './navigationBar_components';
+import {NavTabBrand, LogoTabTop} from './topNavigationbar_components';
 
 const pages = [
   {
@@ -24,14 +24,14 @@ class NavigationBar extends Component {
   render() {
     const pathname = this.props.location.pathname;
     return (
-      <Navbar fluid fixedTop componentClass="app-nav-bar">
+      <Navbar componentClass="app-nav-bar">
         <NavTabBrand />
         {pages.map(page => {
           return (
             <NavigationNav page={page} key={page.path} localPath={pathname} />
           );
         })}
-        <LogoTab src={logo} />
+        <LogoTabTop src={logo} />
       </Navbar>
     );
   }

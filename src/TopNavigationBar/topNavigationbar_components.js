@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {primaryColor, secondaryColor} from '../../app_components';
+import {smartPhoneSize} from '../app_components';
 import Nav from 'react-bootstrap/lib/Nav';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {NavLink} from 'react-router-dom';
@@ -27,15 +27,6 @@ const logoSpin = keyframes`
   }
   to {
     transform: rotate(360deg);
-  }
-`;
-
-const navHover = keyframes`
- from {
-    border-bottom: solid ${primaryColor} 5px;
-  }
-  to {
-    border-bottom: solid ${secondaryColor} 5px;
   }
 `;
 
@@ -79,14 +70,21 @@ const LogoNav = styled(Nav)`
   margin: ${marginFromBottom};
   float: right !important;
 `;
-const LogoImg = styled.img`
+export const LogoImg = styled.img`
   height: 100px;
+  align-self: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   :hover {
     animation: ${logoSpin} infinite 3s linear;
   }
+  @media (max-width: ${smartPhoneSize}) {
+    height: 50px;
+  }
 `;
 
-export const LogoTab = props => {
+export const LogoTabTop = props => {
   return (
     <LogoNavBar>
       <LogoNav>
@@ -98,13 +96,44 @@ export const LogoTab = props => {
 /////////////// NAVIGATION TAB ITEM/////////////
 export const NavTabItem = styled(Nav)`
   height: 50px;
+    align-items: center;
+  -webkit-align-items: center;
+  list-style-type: none;
+  display:flex;
+  justify-content:center;
   margin-right: ${rightDistance};
   list-style-type: none;
   text-align: center;
-  border-bottom: ${props =>
-    props.isactivepage ? `solid ${secondaryColor} 5px` : ''};
-  :hover {
-    border-bottom: solid ${primaryColor} 5px;
-    animation: ${navHover} 1s ease forwards;
+  line{
+  transform: ${props =>
+    props.isactivepage ? 'translateX(70px)' : 'translateX(-70px)'};
+    }
+:hover {
+      line {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dashNav .25s linear forwards;
+      }
+    }
+    @keyframes dashNav {
+      from {
+        stroke-dashoffset: 1000;
+        transform: translateX(0px);
+      }
+      to {
+        stroke-dashoffset: 0;
+        transform: translateX(70px);
+      }
+    }
+  }
+  a {
+    text-decoration: none;
+    width: 100%; 
+    padding:0;
+  }
+    }
+  svg{
+  margin-top:30px;
+  position:absolute;
   }
 `;
