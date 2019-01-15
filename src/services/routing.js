@@ -1,15 +1,15 @@
 import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
 
-import {AppBody} from './app_components';
+import {AppBody} from '../app_components';
 
-import Home from './Home/Home';
-import Links from './Links/Links';
-import EcologicalTips from './EcologicalTips/EcologicalTips';
-import Projects from './Projects/Projects';
-import NoMatch from './components/defaultPage';
+import Home from '../Home/Home';
+import Links from '../Links/Links';
+import EcologicalTips from '../EcologicalTips/EcologicalTips';
+import Projects from '../Projects/Projects';
+import NoMatch from '../components/defaultPage';
 
-import './App.scss';
+//import './App.scss';
 const routing = props => {
   let {location} = props.history;
   return (

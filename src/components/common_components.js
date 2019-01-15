@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import transition from 'styled-transition-group';
-import {primaryColor, secondaryColor} from '../app_components';
+import {primaryColor, secondaryColor, mobileSize} from '../app_components';
 
 /////////////// DIVS /////////////
 export const Container = styled.div`
@@ -53,6 +53,9 @@ export const Title = styled.h1`
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 1em;
+  }
 `;
 export const Text = styled.p`
   font-size: ${props => props.fontSize || '1em'};

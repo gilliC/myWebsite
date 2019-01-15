@@ -1,9 +1,9 @@
-import water from './drawable/water.jpg';
-import educateothers from './drawable/educateothers.jpg';
-import plasticbags from './drawable/plasticbags.jpg';
-import publictransport from './drawable/publictransport.jpg';
-import recycle from './drawable/recycle.jpg';
-import smartshopping from './drawable/smartshopping.jpg';
+import water from '../drawable/water.jpg';
+import educateothers from '../drawable/educateothers.jpg';
+import plasticbags from '../drawable/plasticbags.jpg';
+import publictransport from '../drawable/publictransport.jpg';
+import recycle from '../drawable/recycle.jpg';
+import smartshopping from '../drawable/smartshopping.jpg';
 
 export const linksList = [
   {

@@ -1,5 +1,5 @@
 import {CHANGE_ACTIVE_ITEM} from '../actions';
-import {linksList} from '../../dataBase';
+import {linksList} from '../../services/dataBase';
 
 export default function(state = {item: linksList[0]}, action) {
   switch (action.type) {

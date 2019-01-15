@@ -9,10 +9,10 @@ const appColors = {
   tertiaryColor: '#9e788f',
 };
 const screenSizes = {
-  smartPhoneSize: '768px',
+  mobileSize: '768px',
 };
 export const {primaryColor, secondaryColor, tertiaryColor} = appColors;
-export const {smartPhoneSize} = screenSizes;
+export const {mobileSize} = screenSizes;
 
 export function getWithOpacity(color, opacity) {
   if (typeof opacity !== 'number') return null;
@@ -45,18 +45,22 @@ export const AppContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  background-color: ${primaryColor};
   height: 20%;
-  padding: 20px;
-  color: ${secondaryColor};
-  text-align: center;
+  display: grid;
   position: sticky;
   top: 0px;
   z-index: 99;
+  align-items: center;
+  text-align: center;
+  background-color: ${primaryColor};
+  color: ${secondaryColor};
 `;
 
 const AppBodyTGroup = styled(TransitionGroup)`
   height: 80%;
+  @media screen and (max-width: ${mobileSize}) {
+    height: 100%;
+  }
 `;
 
 const AppCSST = transition.div`
@@ -108,7 +112,7 @@ export const AppSideContainr = styled(AppContainer)`
 export const SidebarPush = styled.div`
   height: 100%;
   width: ${props => (props.size ? (100 / 12) * props.size + '%' : '100%')};
-  min-width: 20px;
+  min-width: 100px;
   position: fixed;
   z-index: 1;
   top: 0;

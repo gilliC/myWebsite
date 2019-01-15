@@ -10,7 +10,7 @@ import {AppSideContainr, SidebarPush} from './app_components';
 import NavigationBar from './TopNavigationBar/TopNavigationBar';
 import Sidebar from './Sidebar/Sidebar';
 
-import Routing from './routing';
+import Routing from './services/routing';
 const store = createStore(reducers);
 class App extends Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class App extends Component {
           <Router>
             <AppContainer>
               <HeaderContainer>
-                <NavigationBar />
+                <NavigationBar pages={pages} />
               </HeaderContainer>
               <Routing />
             </AppContainer>

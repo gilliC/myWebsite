@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {smartPhoneSize} from '../app_components';
+import {mobileSize} from '../app_components';
 import Nav from 'react-bootstrap/lib/Nav';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {NavLink} from 'react-router-dom';
@@ -79,7 +79,7 @@ export const LogoImg = styled.img`
   :hover {
     animation: ${logoSpin} infinite 3s linear;
   }
-  @media (max-width: ${smartPhoneSize}) {
+  @media (max-width: ${mobileSize}) {
     height: 50px;
   }
 `;

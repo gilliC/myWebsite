@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {primaryColor, smartPhoneSize} from '../app_components';
+import {primaryColor, mobileSize} from '../app_components';
 
 /////////////// DIVS /////////////
 export const SideBarContainer = styled.div`
@@ -44,7 +44,7 @@ export const LinkTitle = styled.h3`
   padding-bottom: 10px;
   margin: 0;
   padding: 0;
-  @media (max-width: ${smartPhoneSize}) {
+  @media (max-width: ${mobileSize}) {
     font-size: 15px;
   }
 `;

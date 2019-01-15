@@ -25,7 +25,7 @@ class LinksItem extends Component {
         active={isActive}
         onClick={this.onPress}
         key={title}>
-        <Title fontFamily="Abel" fontSize="2em">
+        <Title fontFamily="Abel" fontSize="1em">
           {title}
         </Title>
       </ArticleItemContainer>

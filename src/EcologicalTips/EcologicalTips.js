@@ -1,6 +1,6 @@
 import React from 'react';
 import EcoTipItem from './EcoTipItem';
-import {ecologicalTips} from '../dataBase';
+import {ecologicalTips} from '../services/dataBase';
 
 import {EcoTipsContainer} from './ecotips_components';
 

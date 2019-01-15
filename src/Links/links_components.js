@@ -1,6 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 
-import {primaryColor} from '../app_components';
+import {primaryColor, mobileSize} from '../app_components';
 import {Title} from '../components/common_components';
 
 ///////////// ANIMATIONS /////////
@@ -28,6 +28,9 @@ export const LinksListContainer = styled.div`
   width: 300px;
   padding: 20px;
   float: left;
+  @media screen and (max-width: ${mobileSize}) {
+    width: 150px;
+  }
 `;
 
 export const ArticleItemContainer = styled.div`
@@ -47,6 +50,8 @@ export const ArticleItemContainer = styled.div`
     padding: 10px;
     animation: ${linkItem_hovering} 1s ease forwards;
   }
+  @media screen and (max-width: ${mobileSize}) {
+  }
 `;
 
 ///////////// TEXT /////////
@@ -56,6 +61,9 @@ export const LinkText = styled.p`
   color: black;
   :hover {
     color: ${primaryColor};
+  }
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 0.5em !important;
   }
 `;
 
