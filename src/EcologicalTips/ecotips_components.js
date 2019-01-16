@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import {primaryColor} from '../app_components';
+import {primaryColor, mobileSize} from '../app_components';
 
 //////////// CONSTS /////////////
 
 const defaultTipHeight = '160px';
 const hoverTipHeight = '350px';
-const defaultTipWidth = '750px';
+const defaultTipWidthDesktop = '750px';
+const defaultTipWidthMobile = '100%';
 const borderRadius = '25px';
 
 //////////// CONTAINERS ////////////
@@ -16,7 +17,7 @@ export const EcoTipsContainer = styled.div`
 
 export const EcoItem = styled.div`
   content: '';
-  width: ${defaultTipWidth};
+  width: ${defaultTipWidthDesktop};
   height: ${props => (props.clicked ? hoverTipHeight : defaultTipHeight)};
   display: inline-block;
   position: relative;
@@ -45,6 +46,19 @@ export const EcoItem = styled.div`
     -moz-transition: opacity 0.35s ease-in-out;
     -webkit-transition: opacity 0.35s ease-in-out;
   }
+
+  @media screen and (max-width: ${mobileSize}) {
+    width: ${defaultTipWidthMobile};
+    opacity: 1;
+    :after {
+      opacity: ${props => (props.clicked ? 0.15 : 0.45)};
+      z-index: 5;
+      position: absolute;
+      transition: height 0.35s ease-in-out;
+      -moz-transition: opacity 0.35s ease-in-out;
+      -webkit-transition: opacity 0.35s ease-in-out;
+    }
+  }
 `;
 
 export const Layer = styled.div`
@@ -57,12 +71,17 @@ export const Layer = styled.div`
   transition: background-color 500ms ease;
 
   ${EcoItem}:hover {
-  { background-color: black;
-      position: absolute;
-      z-index: 5;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+    background-color: black;
+    position: absolute;
+    z-index: 5;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  @media screen and (max-width: ${mobileSize}) {
+    width: ${defaultTipWidthMobile};
+    position: absolute;
+    z-index: 3;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 `;
 
 ///////////// TEXTS /////////////
@@ -77,6 +96,9 @@ export const EcoItemTitle = styled.h2`
     display: ${props => (props.clicked ? 'none' : 'block')};
     color: #ffffff;
   }
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 1em;
+  }
 `;
 export const EcoItemText = styled.p`
   font-family: ${props => (props.clicked ? 'Poiret One' : '')};
@@ -84,5 +106,9 @@ export const EcoItemText = styled.p`
   text-align: center;
   margin: 5px;
   margin-top: 20px;
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 0.95em;
+    line-height: 0.9;
+  }
 `;
 ///////////// IMAGES /////////////
