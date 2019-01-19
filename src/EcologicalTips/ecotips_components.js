@@ -107,7 +107,7 @@ export const EcoItemText = styled.p`
   margin: 5px;
   margin-top: 20px;
   @media screen and (max-width: ${mobileSize}) {
-    font-size: 0.95em;
+    font-size: 0.85em;
     line-height: 0.9;
   }
 `;

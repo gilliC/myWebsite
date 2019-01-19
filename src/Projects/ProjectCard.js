@@ -1,32 +1,38 @@
 import React from 'react';
 import {Title, ContainerRow, Text, Link} from '../components/common_components';
-import {CardContainer, InformationContainer, Gif} from './projects_components';
-
+import {
+  CardContainerDesktop,
+  CardContainerMobile,
+  InformationContainer,
+  Gif,
+} from './projects_components';
+import {mobileSize} from '../app_components';
 import Carousel from '../components/Carousel';
-import mainPhoto from '../drawable/achieving_goals_gifs/app_main.jpg';
-import gif1 from '../drawable/achieving_goals_gifs/app_gif_1.gif';
-import gif2 from '../drawable/achieving_goals_gifs/app_gif_2.gif';
-import gif3 from '../drawable/achieving_goals_gifs/app_gif_3.gif';
-import gif4 from '../drawable/achieving_goals_gifs/app_gif_4.gif';
 
 export default props => {
-  return (
-    <CardContainer>
-      <ContainerRow>
+  let gifs = props.gifs.map(gif => {
+    return <Gif src={gif} alt="Goals Tracker gif" key={gif} />;
+  });
+  if (props.screenSize > mobileSize) {
+    return (
+      <CardContainerDesktop>
+        <ContainerRow>
+          <InformationCard {...props} />
+          <Carousel>{gifs}</Carousel>
+        </ContainerRow>
+      </CardContainerDesktop>
+    );
+  } else
+    return (
+      <CardContainerMobile>
         <InformationCard {...props} />
-        <Carousel>
-          <Gif src={mainPhoto} alt="App main photo" />
-          <Gif src={gif1} alt="App gif" />
-          <Gif src={gif3} alt="App gif" />
-          <Gif src={gif2} alt="App gif" />
-          <Gif src={gif4} alt="App gif" />
-        </Carousel>
-      </ContainerRow>
-    </CardContainer>
-  );
+        <Carousel>{gifs}</Carousel>
+      </CardContainerMobile>
+    );
 };
 
 const InformationCard = props => {
+  console.log(props.screenSize);
   return (
     <InformationContainer>
       <Title>{props.title}</Title>
@@ -38,13 +44,13 @@ const InformationCard = props => {
           animation="ColorBackground"
           className="fab fa-github"
           href={props.gitHubLink}
-          width="50%"
+          width="20%"
         />
         <Link
           animation="ColorBackground"
           className="fab fa-google-play"
           href={props.projLink}
-          width="50%"
+          width="20%"
         />
       </ContainerRow>
     </InformationContainer>

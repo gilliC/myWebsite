@@ -46,8 +46,8 @@ class App extends Component {
     this.setState({width: window.innerWidth, height: window.innerHeight});
   }
   render() {
-    const {pages} = this.state;
-    if (this.state.width > 770) {
+    const {pages, width} = this.state;
+    if (width > 770) {
       return (
         <Provider store={store}>
           <Router>
@@ -55,7 +55,7 @@ class App extends Component {
               <HeaderContainer>
                 <NavigationBar pages={pages} />
               </HeaderContainer>
-              <Routing />
+              <Routing screenSize={width} />
             </AppContainer>
           </Router>
         </Provider>
@@ -69,7 +69,7 @@ class App extends Component {
                 <Sidebar pages={pages} />
               </SidebarPush>
               <AppSideContainr right size={9}>
-                <Routing />
+                <Routing screenSize={width} />
               </AppSideContainr>
             </ContainerRow>
           </Router>

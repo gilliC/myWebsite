@@ -12,6 +12,7 @@ import NoMatch from '../components/defaultPage';
 //import './App.scss';
 const routing = props => {
   let {location} = props.history;
+  let {screenSize} = props;
   return (
     <AppBody
       classNames="fade"
@@ -38,7 +39,9 @@ const routing = props => {
         <Route
           exact
           path="/projects"
-          children={({match, ...rest}) => <Projects {...rest} />}
+          children={({match, ...rest}) => (
+            <Projects {...rest} screenSize={screenSize} />
+          )}
         />
         <Route
           exact

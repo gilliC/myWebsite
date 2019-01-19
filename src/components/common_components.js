@@ -62,12 +62,18 @@ export const Text = styled.p`
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 1em;
+  }
 `;
 export const TextSpan = styled.span`
   font-size: ${props => props.fontSize || '1em'};
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 1em;
+  }
 `;
 
 export const Bold = styled.span`
@@ -124,6 +130,13 @@ const LinkChangeBackground = styled.a`
   }
   :hover {
     color: ${primaryColor};
+  }
+  @media screen and (max-width: ${mobileSize}) {
+    :any-link {
+      height: 50px;
+      font-size: 3.5em;
+      margin: 5px;
+    }
   }
 `;
 
@@ -195,10 +208,16 @@ export const CarouselRow = styled.div`
     align-items: center;
     justify-content: center;
   }
+  @media screen and (max-width: ${mobileSize}) {
+    min-width: 0px;
+  }
 `;
 
 export const Arrow = styled.i`
   font-size: 4em;
   color: ${primaryColor};
   align-self: center;
+  @media screen and (max-width: ${mobileSize}) {
+    font-size: 1em;
+  }
 `;
