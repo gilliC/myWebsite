@@ -24,7 +24,9 @@ const routing = props => {
         <Route
           exact
           path="/"
-          children={({match, ...rest}) => <Home {...rest} />}
+          children={({match, ...rest}) => (
+            <Home {...rest} screenSize={screenSize} />
+          )}
         />
         <Route
           exact

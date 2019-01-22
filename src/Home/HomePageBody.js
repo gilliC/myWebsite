@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from '../components/common_components';
-
+import {mobileSize} from '../app_components';
 const linksList = [
   {
     href: 'https://github.com/gilliC',
@@ -29,10 +29,16 @@ const linksList = [
   },
 ];
 
-export default () => {
-  let linksElements = linksList.map(props => {
+export default props => {
+  let linksElements;
+  linksElements = linksList.map(props => {
     return <Link {...props} animation="Grow" />;
   });
+  if (props.screenSize <= mobileSize)
+    linksElements = linksList.map(props => {
+      return <Link {...props} animation="ColorBackground" />;
+    });
+
   return (
     <div>
       <h1>Contact:</h1>

@@ -5,7 +5,7 @@ import HomePageBody from './HomePageBody';
 export default props => {
   return (
     <HomeContainer>
-      <HomePageBody />
+      <HomePageBody screenSize={props.screenSize} />
     </HomeContainer>
   );
 };

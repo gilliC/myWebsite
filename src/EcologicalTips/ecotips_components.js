@@ -47,7 +47,7 @@ export const EcoItem = styled.div`
     -webkit-transition: opacity 0.35s ease-in-out;
   }
 
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     width: ${defaultTipWidthMobile};
     opacity: 1;
     :after {
@@ -76,7 +76,7 @@ export const Layer = styled.div`
     z-index: 5;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     width: ${defaultTipWidthMobile};
     position: absolute;
     z-index: 3;
@@ -96,7 +96,7 @@ export const EcoItemTitle = styled.h2`
     display: ${props => (props.clicked ? 'none' : 'block')};
     color: #ffffff;
   }
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 1em;
   }
 `;
@@ -106,7 +106,7 @@ export const EcoItemText = styled.p`
   text-align: center;
   margin: 5px;
   margin-top: 20px;
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 0.85em;
     line-height: 0.9;
   }

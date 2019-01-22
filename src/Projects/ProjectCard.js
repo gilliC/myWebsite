@@ -32,7 +32,6 @@ export default props => {
 };
 
 const InformationCard = props => {
-  console.log(props.screenSize);
   return (
     <InformationContainer>
       <Title>{props.title}</Title>

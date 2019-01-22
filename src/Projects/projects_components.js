@@ -34,7 +34,7 @@ export const InformationContainer = styled.div`
 ////////////// GIFS /////////////
 export const Gif = styled.img`
   margin: 10px;
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     height: 200px;
   }
 `;

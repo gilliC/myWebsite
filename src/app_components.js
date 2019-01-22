@@ -9,7 +9,7 @@ const appColors = {
   tertiaryColor: '#9e788f',
 };
 const screenSizes = {
-  mobileSize: '768px',
+  mobileSize: 768,
 };
 export const {primaryColor, secondaryColor, tertiaryColor} = appColors;
 export const {mobileSize} = screenSizes;
@@ -58,7 +58,7 @@ export const HeaderContainer = styled.div`
 
 const AppBodyTGroup = styled(TransitionGroup)`
   height: 80%;
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     height: 100%;
   }
 `;

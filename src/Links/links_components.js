@@ -28,7 +28,7 @@ export const LinksListContainer = styled.div`
   width: 300px;
   padding: 20px;
   float: left;
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     width: 150px;
   }
 `;
@@ -50,7 +50,7 @@ export const ArticleItemContainer = styled.div`
     padding: 10px;
     animation: ${linkItem_hovering} 1s ease forwards;
   }
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
   }
 `;
 
@@ -62,7 +62,7 @@ export const LinkText = styled.p`
   :hover {
     color: ${primaryColor};
   }
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 0.5em !important;
   }
 `;

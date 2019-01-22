@@ -79,7 +79,7 @@ export const LogoImg = styled.img`
   :hover {
     animation: ${logoSpin} infinite 3s linear;
   }
-  @media (max-width: ${mobileSize}) {
+  @media (max-width: ${mobileSize + 'px'}) {
     height: 50px;
   }
 `;

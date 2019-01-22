@@ -44,7 +44,7 @@ export const LinkTitle = styled.h3`
   padding-bottom: 10px;
   margin: 0;
   padding: 0;
-  @media (max-width: ${mobileSize}) {
+  @media (max-width: ${mobileSize + 'px'}) {
     font-size: 15px;
   }
 `;

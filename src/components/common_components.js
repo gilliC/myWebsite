@@ -53,7 +53,7 @@ export const Title = styled.h1`
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 1em;
   }
 `;
@@ -62,7 +62,7 @@ export const Text = styled.p`
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 1em;
   }
 `;
@@ -71,7 +71,7 @@ export const TextSpan = styled.span`
   text-align: ${props => props.textAlign || 'center'};
   font-family: ${props => props.fontFamily || 'Amatic SC'};
   color: ${props => props.color || 'black'};
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 1em;
   }
 `;
@@ -131,7 +131,7 @@ const LinkChangeBackground = styled.a`
   :hover {
     color: ${primaryColor};
   }
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     :any-link {
       height: 50px;
       font-size: 3.5em;
@@ -208,7 +208,7 @@ export const CarouselRow = styled.div`
     align-items: center;
     justify-content: center;
   }
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     min-width: 0px;
   }
 `;
@@ -217,7 +217,7 @@ export const Arrow = styled.i`
   font-size: 4em;
   color: ${primaryColor};
   align-self: center;
-  @media screen and (max-width: ${mobileSize}) {
+  @media screen and (max-width: ${mobileSize + 'px'}) {
     font-size: 1em;
   }
 `;
