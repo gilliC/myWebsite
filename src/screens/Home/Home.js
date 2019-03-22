@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import Contact from './Contact';
 import AboutMe from './AboutMe';
 import {mobileSize} from '../../app_components';
+import {HomeContainer} from './home_components';
 
 export default props => {
   let isInMobile = false;
@@ -14,13 +14,3 @@ export default props => {
     </HomeContainer>
   );
 };
-
-const HomeContainer = styled.div`
-  min-height: 80vh;
-  color: white;
-  h1 {
-    font-family: Amatic SC;
-    font-size: 65px;
-    margin: 0;
-  }
-`;
