@@ -74,10 +74,10 @@ transform: translate(100%);
   transition: all 1000ms ease-in-out;
     transition-duration:${props => props.timeout + 'ms' || '1000ms'}
   }
- &:leave {
+ &:exit {
   transform: translate(0%);
 }
-&:leave-active {
+&:exit-active {
     transform: translate(-100%);
     transition: all 1000ms ease-in;
     transition-duration:${props => props.timeout + 'ms' || '1000ms'}

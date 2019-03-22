@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Contact from './Contact';
 import AboutMe from './AboutMe';
-import {primaryColor, mobileSize} from '../../app_components';
+import {mobileSize} from '../../app_components';
 
 export default props => {
   let isInMobile = false;
@@ -21,5 +21,6 @@ const HomeContainer = styled.div`
   h1 {
     font-family: Amatic SC;
     font-size: 65px;
+    margin: 0;
   }
 `;

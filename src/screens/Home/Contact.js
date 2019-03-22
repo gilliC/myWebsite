@@ -1,11 +1,5 @@
 import React from 'react';
 import {Link} from '../../components/common_components';
-import {
-  mobileSize,
-  primaryColor,
-  tertiaryColor,
-  four,
-} from '../../app_components';
 import {FullHeightDiv, Title} from '../../components/common_components';
 import styled from 'styled-components';
 const linksList = [
