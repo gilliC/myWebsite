@@ -46,7 +46,9 @@ export const FadeInContainer = transition.div`
     transition: opacity 800ms ease-in;
   }
 `;
-
+export const FullHeightDiv = styled.div`
+  height: 100%;
+`;
 /////////////// Texts /////////////
 export const Title = styled.h1`
   font-size: ${props => props.fontSize || '5em'};
@@ -88,25 +90,26 @@ export const SmallText = styled.span`
 const icons_grown = keyframes` 
  from {
     font-size: 7em;
-    color: inherit;
   }
   to {
     font-size: 8em;
+    opacity:1;
   }`;
 const icons_shrink = keyframes`
   from {
     font-size: 8em;
-    color:${primaryColor};
+    color: ${primaryColor};
   }
   to {
     font-size: 7em;
-    color: inherit;
+    opacity:0.7;
   }`;
 
 const LinkGrows = styled.a`
   :any-link {
     width: ${props => props.width || '100%'};
     color: ${primaryColor};
+    opacity: 0.7;
     animation: ${icons_shrink} 1s ease forwards;
     font-size: 7em;
     height: 100px;
@@ -120,16 +123,17 @@ const LinkGrows = styled.a`
 const LinkChangeBackground = styled.a`
   :any-link {
     width: ${props => props.width || '100%'};
-    color: inherit;
+    color: ${primaryColor};
     font-size: 7em;
     height: 100px;
-
+    opacity: 1;
     margin: 40px;
     padding-left: 10px;
     padding-right: 10px;
   }
   :hover {
     color: ${primaryColor};
+    opacity: 0.7;
   }
   @media screen and (max-width: ${mobileSize + 'px'}) {
     :any-link {

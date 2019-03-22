@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {Layer, EcoItemText, EcoItem, EcoItemTitle} from './ecotips_components';
-import {ColinRow, Bold, SmallText} from '../components/common_components';
+import {ColinRow, Bold, SmallText} from '../../components/common_components';
 
 export default class EcoTipItem extends Component {
   constructor(props) {

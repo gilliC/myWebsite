@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
+import styled from 'styled-components';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducers from './reducers';
 
-import {AppContainer, HeaderContainer} from './app_components';
+import {AppContainer, HeaderContainer, mobileSize} from './app_components';
 import {ContainerRow} from './components/common_components';
 import {AppSideContainr, SidebarPush} from './app_components';
-import NavigationBar from './TopNavigationBar/TopNavigationBar';
-import Sidebar from './Sidebar/Sidebar';
+import NavigationBar from './components/TopNavigationBar/TopNavigationBar';
+import Sidebar from './components/Sidebar/Sidebar';
 
 import Routing from './services/routing';
 const store = createStore(reducers);
@@ -21,12 +22,8 @@ class App extends Component {
         title: 'Projects',
       },
       {
-        path: 'articles',
-        title: 'Articles',
-      },
-      {
         path: 'ecologicaltips',
-        title: 'Eco Tips',
+        title: 'Ecologial Tips',
       },
     ];
     this.state = {width: 0, height: 0, pages: pages};
@@ -47,7 +44,7 @@ class App extends Component {
   }
   render() {
     const {pages, width} = this.state;
-    if (width > 770) {
+    if (width > mobileSize) {
       return (
         <Provider store={store}>
           <Router>

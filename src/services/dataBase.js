@@ -5,6 +5,15 @@ import publictransport from '../drawable/publictransport.jpg';
 import recycle from '../drawable/recycle.jpg';
 import smartshopping from '../drawable/smartshopping.jpg';
 
+export const intro = {
+  title: 'Intro',
+  articles: [
+    {
+      title:
+        'Here I keep a list of my favorite articles, which you might also find usefull',
+    },
+  ],
+};
 export const linksList = [
   {
     title: 'React',

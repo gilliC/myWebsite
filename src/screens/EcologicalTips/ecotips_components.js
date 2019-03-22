@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {primaryColor, mobileSize} from '../app_components';
+import {primaryColor, mobileSize} from '../../app_components';
 
 //////////// CONSTS /////////////
 

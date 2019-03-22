@@ -1,13 +1,18 @@
 import React from 'react';
-import {Title, ContainerRow, Text, Link} from '../components/common_components';
+import {
+  Title,
+  ContainerRow,
+  Text,
+  Link,
+} from '../../components/common_components';
 import {
   CardContainerDesktop,
   CardContainerMobile,
   InformationContainer,
   Gif,
 } from './projects_components';
-import {mobileSize} from '../app_components';
-import Carousel from '../components/Carousel';
+import {mobileSize} from '../../app_components';
+import Carousel from '../../components/Carousel';
 
 export default props => {
   let gifs = props.gifs.map(gif => {
@@ -47,7 +52,7 @@ const InformationCard = props => {
         />
         <Link
           animation="ColorBackground"
-          className="fab fa-google-play"
+          className={props.projLinkClassName}
           href={props.projLink}
           width="20%"
         />

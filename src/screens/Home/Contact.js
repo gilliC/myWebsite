@@ -1,16 +1,18 @@
 import React from 'react';
-import {Link} from '../components/common_components';
-import {mobileSize} from '../app_components';
+import {Link} from '../../components/common_components';
+import {
+  mobileSize,
+  primaryColor,
+  tertiaryColor,
+  four,
+} from '../../app_components';
+import {FullHeightDiv, Title} from '../../components/common_components';
+import styled from 'styled-components';
 const linksList = [
   {
     href: 'https://github.com/gilliC',
     className: 'fab fa-github',
     key: 'github',
-  },
-  {
-    href: 'https://www.instagram.com/gilli_carmon/',
-    className: 'fab fa-instagram',
-    key: 'instagram',
   },
   {
     href: 'mailto:gillicarmon@gmail.com',
@@ -31,18 +33,22 @@ const linksList = [
 
 export default props => {
   let linksElements;
-  linksElements = linksList.map(props => {
-    return <Link {...props} animation="Grow" />;
-  });
-  if (props.screenSize <= mobileSize)
+  if (props.isInMobile) {
     linksElements = linksList.map(props => {
       return <Link {...props} animation="ColorBackground" />;
     });
+  } else {
+    linksElements = linksList.map(props => {
+      return <Link {...props} animation="Grow" />;
+    });
+  }
 
   return (
-    <div>
-      <h1>Contact:</h1>
-      {linksElements}
-    </div>
+    <FullHeightDiv>
+      <Title>Contact</Title>
+      <SlantedDiv>{linksElements}</SlantedDiv>
+    </FullHeightDiv>
   );
 };
+
+const SlantedDiv = styled.div``;

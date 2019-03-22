@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {Link} from 'react-router-dom';
-import {Title} from '../components/common_components';
+import {Title} from '../../components/common_components';
 import {SideBarContainer} from './sidebar_components';
-import logo from '../drawable/websiteLogo.png';
+import logo from '../../drawable/websiteLogo.png';
 import LinkItem from './LinkItem';
 import {LogoImg} from '../TopNavigationBar/topNavigationbar_components';
 

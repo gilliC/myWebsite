@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {withRouter} from 'react-router-dom';
 
-import logo from '../drawable/websiteLogo.png';
+import logo from '../../drawable/websiteLogo.png';
 import NavigationNav from './NavigationNav';
 import {NavTabBrand, LogoTabTop} from './topNavigationbar_components';
 

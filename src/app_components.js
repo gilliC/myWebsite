@@ -7,11 +7,12 @@ const appColors = {
   primaryColor: '#5e82bc',
   secondaryColor: 'white',
   tertiaryColor: '#9e788f',
+  four: 'blue',
 };
 const screenSizes = {
   mobileSize: 768,
 };
-export const {primaryColor, secondaryColor, tertiaryColor} = appColors;
+export const {primaryColor, secondaryColor, tertiaryColor, four} = appColors;
 export const {mobileSize} = screenSizes;
 
 export function getWithOpacity(color, opacity) {
@@ -57,14 +58,14 @@ export const HeaderContainer = styled.div`
 `;
 
 const AppBodyTGroup = styled(TransitionGroup)`
-  height: 80%;
+  height: 80vh;
   @media screen and (max-width: ${mobileSize + 'px'}) {
     height: 100%;
   }
 `;
 
 const AppCSST = transition.div`
-height:100%;
+height:100vh;
 &:enter {
 transform: translate(100%);
   }

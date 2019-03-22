@@ -3,10 +3,9 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 
 import {AppBody} from '../app_components';
 
-import Home from '../Home/Home';
-import Links from '../Links/Links';
-import EcologicalTips from '../EcologicalTips/EcologicalTips';
-import Projects from '../Projects/Projects';
+import Home from '../screens/Home/Home';
+import EcologicalTips from '../screens/EcologicalTips/EcologicalTips';
+import Projects from '../screens/Projects/Projects';
 import NoMatch from '../components/defaultPage';
 
 //import './App.scss';
@@ -27,11 +26,6 @@ const routing = props => {
           children={({match, ...rest}) => (
             <Home {...rest} screenSize={screenSize} />
           )}
-        />
-        <Route
-          exact
-          path="/articles"
-          children={({match, ...rest}) => <Links {...rest} />}
         />
         <Route
           exact

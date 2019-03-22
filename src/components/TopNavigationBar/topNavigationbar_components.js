@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
-import {mobileSize} from '../app_components';
+import {mobileSize} from '../../app_components';
 import Nav from 'react-bootstrap/lib/Nav';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {NavLink} from 'react-router-dom';
