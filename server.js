@@ -1,11 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const ecologicalTips = require('./server/database').default;
+
+/**const water = require('./drawable/water.jpg');
+const educateothers = require('./drawable/educateothers.jpg');
+const plasticbags = require('./drawable/plasticbags.jpg');
+const publictransport = require('./drawable/publictransport.jpg');
+const recycle = require('./drawable/recycle.jpg');
+const smartshopping = require('./drawable/smartshopping.jpg');
+ **/
+
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/ping', function(req, res) {
-  return res.send('pong');
+app.get('/api/getTips', function(req, res) {
+  return res.send(ecologicalTips);
 });
 
 app.get('*', function(req, res) {

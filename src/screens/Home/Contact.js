@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from '../../components/common_components';
-import {FullHeightDiv, Title} from '../../components/common_components';
+import {ContactContainer} from './home_components';
+import {Link, FullHeightDiv, Title} from '../../components/common_components';
 import styled from 'styled-components';
 const linksList = [
   {
@@ -38,11 +38,13 @@ export default props => {
   }
 
   return (
-    <FullHeightDiv>
+    <ContactContainer>
       <Title>Contact</Title>
       <SlantedDiv>{linksElements}</SlantedDiv>
-    </FullHeightDiv>
+    </ContactContainer>
   );
 };
 
-const SlantedDiv = styled.div``;
+const SlantedDiv = styled.div`
+  height: 20vh;
+`;

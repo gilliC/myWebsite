@@ -1,5 +1,6 @@
 import styled, {keyframes} from 'styled-components';
 import {primaryColor} from '../../app_components';
+import {FullHeightDiv} from '../../components/common_components';
 
 export const HomeContainer = styled.div`
   min-height: 80vh;
@@ -9,6 +10,13 @@ export const HomeContainer = styled.div`
     font-size: 65px;
     margin: 0;
   }
+`;
+
+export const ContactContainer = styled(FullHeightDiv)`
+  margin: 15px;
+  padding: 10px;
+  border: 4px solid ${primaryColor};
+  border-radius: 25px;
 `;
 
 export const icons_grow = keyframes` 
