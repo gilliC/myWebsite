@@ -10,9 +10,9 @@ export default props => {
     async function fetchTips() {
       const cs = new ConnectServer();
       let res = await cs.getEcoTips();
+      console.log(res);
       dataSet(res);
     }
-
     fetchTips();
   }, []);
   if (data) {

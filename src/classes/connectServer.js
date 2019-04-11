@@ -3,6 +3,7 @@ import axios from 'axios';
 export default class ConnectServer {
   constructor() {
     this.url = 'http://localhost:5000/';
+    console.log('URL:' + this.url);
   }
 
   async getEcoTips() {
