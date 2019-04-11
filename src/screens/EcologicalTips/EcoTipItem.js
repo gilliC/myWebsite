@@ -2,20 +2,23 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {Layer, EcoItemText, EcoItem, EcoItemTitle} from './ecotips_components';
+import ConnectServer from '../../classes/connectServer';
 import {ColinRow, Bold, SmallText} from '../../components/common_components';
 
 export default class EcoTipItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {clicked: false};
     this.onClick = this.onClick.bind(this);
+    const cs = new ConnectServer();
+    let url = cs.getPictureUrl(props.item.img);
+    this.state = {clicked: false, imgUrl: url};
   }
-
   onClick() {
     this.setState({clicked: !this.state.clicked});
   }
   render() {
-    const {img, info, src, title} = this.props.item;
+    const {info, src, title} = this.props.item;
+    const {imgUrl} = this.state;
     const {clicked} = this.state;
     let description = '';
 
@@ -43,7 +46,7 @@ export default class EcoTipItem extends Component {
 
     return (
       <ColinRow>
-        <EcoItem img={img} onClick={this.onClick} clicked={clicked}>
+        <EcoItem img={imgUrl} onClick={this.onClick} clicked={clicked}>
           <a href={src}>
             <Layer>
               <EcoItemTitle clicked={clicked}>{title}</EcoItemTitle>

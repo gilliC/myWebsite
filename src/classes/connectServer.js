@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export default class ConnectServer {
   constructor() {
-    this.url = 'http://localhost:8080/';
+    this.url = 'http://localhost:5000/';
   }
 
   async getEcoTips() {
@@ -15,5 +15,9 @@ export default class ConnectServer {
     }
     const error = {error: 'res.data is undefined'};
     throw error;
+  }
+  getPictureUrl(path) {
+    let requestUrl = this.url + 'api/getPicture/' + path;
+    return requestUrl;
   }
 }

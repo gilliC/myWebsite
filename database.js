@@ -1,14 +1,8 @@
-/**const water = require('./drawable/water.jpg');
-const educateothers = require('./drawable/educateothers.jpg');
-const plasticbags = require('./drawable/plasticbags.jpg');
-const publictransport = require('./drawable/publictransport.jpg');
-const recycle = require('./drawable/recycle.jpg');
-const smartshopping = require('./drawable/smartshopping.jpg');
- **/
 exports.default = [
   {
     id: 1,
     title: 'Recycle',
+    img: 'recycle',
     src:
       'https://www.freepik.com/free-photo/crop-hands-throwing-rubbish-in-bins_2254651.htm',
     info:
@@ -18,6 +12,7 @@ exports.default = [
   {
     id: 2,
     title: 'Use public transport',
+    img: 'publictransport',
     src:
       'https://www.freepik.com/free-vector/urban-bus-and-bus-stop-with-flat-design_2383281.htm',
     info:
@@ -27,6 +22,7 @@ exports.default = [
   {
     id: 3,
     title: 'Smart shopping',
+    img: 'smartshopping',
     src:
       'https://www.freepik.com/free-vector/food-store-background-design_1059377.htm',
     info:
@@ -35,6 +31,7 @@ exports.default = [
   {
     id: 4,
     title: 'Educate others',
+    img: 'educateothers',
     src:
       'https://www.freepik.com/free-vector/lovely-hand-drawn-education-concept_2826345.htm',
     info:
@@ -43,6 +40,7 @@ exports.default = [
   {
     id: 5,
     title: 'Avoid using plastic bags',
+    img: 'plasticbags',
     src:
       'https://www.freepik.com/free-photo/crop-hands-throwing-rubbish-in-bins_2254651.htm',
     info:
@@ -51,6 +49,7 @@ exports.default = [
   {
     id: 6,
     title: 'Save Water',
+    img: 'water',
     src:
       'https://www.freepik.com/free-photo/water-background-with-splashes_1101025.htm',
     info:

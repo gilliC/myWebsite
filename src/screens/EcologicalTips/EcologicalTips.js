@@ -7,13 +7,13 @@ import {EcoTipsContainer} from './ecotips_components';
 export default props => {
   const [data, dataSet] = useState(false);
   useEffect(() => {
-    async function fetchMyAPI() {
+    async function fetchTips() {
       const cs = new ConnectServer();
       let res = await cs.getEcoTips();
       dataSet(res);
     }
 
-    fetchMyAPI();
+    fetchTips();
   }, []);
   if (data) {
     return (
