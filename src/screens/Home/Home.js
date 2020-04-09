@@ -1,9 +1,9 @@
 import React from "react";
 import Contact from "./components/Contact";
 import AboutMe from "./components/AboutMe";
-import { mobileSize } from "../../app_components";
-import { HomeContainer } from "./home_components";
-import ColoredBottom from "./components/Contact/components/ColoredBottom";
+import HomeContainer from "./components/HomeContainer";
+import ColoredBottom from "./components/ColoredBottom";
+import { mobileSize } from "../../consts/screenSizes";
 
 export default (props) => {
   let isInMobile = false;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { tertiaryColor } from "../../../../../app_components";
+import { tertiaryColor } from "../../../app_components";
 
 export default styled.div`
   height: 25vh;
