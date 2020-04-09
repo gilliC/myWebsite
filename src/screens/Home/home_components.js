@@ -1,5 +1,5 @@
-import styled, {keyframes} from 'styled-components';
-import {primaryColor} from '../../app_components';
+import styled, { keyframes } from "styled-components";
+import { primaryColor } from "../../app_components";
 
 export const HomeContainer = styled.div`
   min-height: 80vh;
@@ -66,17 +66,6 @@ export const RowContainer = styled.div`
   padding: 100px;
   height: 90%;
 `;
-export const AboutMeDiv = styled.div`
-  min-height: 80vh;
-  background-color: ${props => (props.isInMobile ? 'none' : primaryColor)};
-`;
-
-export const LeftSideDiv = styled.div`
-  width: 50%;
-  flex: 1;
-  float: left;
-  margin-right: 30px;
-`;
 
 export const RightSideDiv = styled.div`
   width: 50%;
@@ -91,15 +80,16 @@ export const RightSideDiv = styled.div`
   border-color: rgba(255, 255, 255, 0.3);
 `;
 export const Text = styled.p`
-  padding: 20px;
-  color: ${props => props.color || 'inherient'};
+  flex: 1;
+  padding:20px;
+  color: ${(props) => props.color || "inherient"};
   font-size: 2em;
   text-align: center;
   font-family: Poiret One;
 `;
 export const BoldText = styled.p`
   flex: 1;
-  color: ${props => props.color || 'inherient'};
+  color: ${(props) => props.color || "inherient"};
   font-weight: bold;
   font-size: 3.5em;
   font-family: Abel;
