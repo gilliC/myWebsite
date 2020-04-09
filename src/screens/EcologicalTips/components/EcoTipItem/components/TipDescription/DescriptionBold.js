@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default styled.span`
+export default styled.p`
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-top: 20px;
 `;

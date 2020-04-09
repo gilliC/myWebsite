@@ -5,12 +5,12 @@ import EcoItemContainerImg, {
   defaultTipWidthMobile,
 } from "./EcoItemContainerImg";
 
-export const ColorLayer = styled.div`
-  background-color: ${primaryColor};
+export default styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: -3;
+  background-color: ${primaryColor};
   border-radius: ${borderRadius};
   transition: background-color 500ms ease;
 

@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import DescriptionBold from "./DescriptionBold";
 import DescriptionRegular from "./DescriptionRegular";
 
-export default class TipDescription extends Component {
-  isItemWithBold = (item) => {
+export default (props) => {
+  const isItemWithBold = (item) => {
     return item.split("\b").length > 1;
   };
-  getLinesFromInfo = (info) => {
+  const getLinesFromInfo = (info) => {
     return info.split("\n");
   };
-  render() {
-    const { info } = this.props;
-    if (!info) {
-      return null;
-    }
-    const lines = this.getLinesFromInfo(info);
-    const description = lines.map((item) => {
-      if (this.isItemWithBold(item))
-        return <DescriptionBold>{item}</DescriptionBold>;
-      else return <DescriptionRegular>{item}</DescriptionRegular>;
-    });
-    return description;
+  const { info } = props;
+  if (!info) {
+    return null;
   }
-}
+  const lines = getLinesFromInfo(info);
+  const description = lines.map((item) => {
+    if (isItemWithBold(item))
+      return <DescriptionBold>{item}</DescriptionBold>;
+    else return <DescriptionRegular>{item}<br /></DescriptionRegular>;
+  });
+  return description;
+};

@@ -5,6 +5,7 @@ import EcoItemContainerImg from "./EcoItemContainerImg";
 export default  styled.h2`
   font-family: Josefin Slab;
   font-size: 50px;
+
   display: ${props => (props.clicked ? 'none' : 'block')};
   padding: ${props => (props.clicked ? '10px' : '0px')};
 

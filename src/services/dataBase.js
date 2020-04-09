@@ -50,7 +50,7 @@ export const ecologicalTips = [
     src:
       'https://www.freepik.com/free-vector/lovely-hand-drawn-education-concept_2826345.htm',
     info:
-      "A lot of people are not eco-friendly because they are simple unaware of the consequences of their actions, or how easy it is to be eco-friendly. Don't push your ideology, but maybe if more people would know how easy it is to help the environment and take eco-friendly decisions, maybe more people would do so.",
+      "A lot of people are not eco-friendly because they are simple unaware of the consequences of their actions, or how easy it is to be eco-friendly. \n Don't push your ideology, but maybe if more people would know how easy it is to help the environment and take eco-friendly decisions, maybe more people would do so.",
   },
   {
     id: 5,
