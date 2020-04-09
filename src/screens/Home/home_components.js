@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components";
 
 export const HomeContainer = styled.div`
-  min-height: 80vh;
+  min-height: 70vh;
   color: white;
   h1 {
     font-family: Amatic SC;
@@ -10,51 +10,14 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const icon_slide_down = keyframes` 
- 0% {
-    transform:translateY(0px);
-    opacity:1;
-  }
-  15%{
-   transform:translateY(25px);
-    font-size:2em;
-    opacity:0.3
-
-  }
- 25% {
-    transform:translateY(50px);
-    font-size:2em;
-    opacity:0.3
-  }
- 50%{
-    transform:translateY(0px);
-    font-size:5em;
-    opacity:1;
-  }
- 100%{
-    transform:translateY(0px);
-    opacity:1;
-  }
-`;
-
-
-export const ScrollDownIcon = styled.i`
-  color: white;
-  font-size: 5em;
-  cursor: pointer;
-  animation: ${icon_slide_down} 2s ease infinite;
-`;
 export const RowContainer = styled.div`
   display: flex;
-  padding: 100px;
+  padding: 5%;
   height: 90%;
 `;
 
 export const RightSideDiv = styled.div`
-  width: 50%;
   flex: 1;
-  float: right;
-  margin-right: 30px;
   justify-content: center;
   display: flex;
   align-items: center;

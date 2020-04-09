@@ -1,41 +1,22 @@
-import React from 'react';
-import {animateScroll as scroll} from 'react-scroll';
+import React from "react";
+import { RowContainer } from "../../home_components";
+import AboutMeMobile from "./components/AboutMeMobile";
+import AboutMeContainer from "./components/AboutMeContainer";
+import AboutMeLeft from "./components/AboutMeLeft";
+import AboutMeRight from "./components/AboutMeRight";
+import ScrollDownIcon from "./components/ScrollDownIcon";
 
-import {
-  Text,
-  RowContainer,
-  RightSideDiv,
-  ScrollDownIcon,
-} from '../../home_components';
-import AboutMeMobile from './components/AboutMeMobile';
-import AboutMeContainer from './components/AboutMeContainer';
-import AboutMeLeft from './components/AboutMeLeft';
-
-export default props => {
+export default (props) => {
   if (props.isInMobile) {
-    return <AboutMeMobile />
+    return <AboutMeMobile />;
   } else {
     return (
       <AboutMeContainer>
         <RowContainer>
           <AboutMeLeft />
-          <RightSideDiv>
-            <Text>
-              I'm a junior & enthusiastic programmer, looking for some new
-              projects to work on. I enjoy what I do, which promises great
-              results. I have taught myself React, React Native and Python. I'm
-              serious and open minded to learn new things. I have also learned
-              c# & Java, but most of my work focuses on websites and mobile
-              application.
-            </Text>
-          </RightSideDiv>
+          <AboutMeRight />
         </RowContainer>
-        <ScrollDownIcon
-          onClick={() => {
-            scroll.scrollToBottom();
-          }}
-          className="fas fa-chevron-down"
-        />
+        <ScrollDownIcon />
       </AboutMeContainer>
     );
   }
