@@ -7,8 +7,9 @@ import {
   EcoItem,
   EcoItemTitle,
 } from "../ecotips_components";
-import { ColinRow, Bold, SmallText } from "../../../components/common_components";
+import { ColinRow, SmallText } from "../../../components/common_components";
 import TipDescription from "./components/TipDescription";
+import TipContent from "./components/TipContent";
 
 export default class EcoTipItem extends Component {
   constructor(props) {
@@ -22,24 +23,13 @@ export default class EcoTipItem extends Component {
   render() {
     const { img, info, src, title } = this.props.item;
     const { clicked } = this.state;
-    const description = <TipDescription info={info} />
-
-    let content = (
-      <EcoItemText>
-        Click for more information <br />
-        <SmallText>The photo was designed by Freepik</SmallText>
-      </EcoItemText>
-    );
-
-    if (clicked) content = <EcoItemText>{description}</EcoItemText>;
-
     return (
       <ColinRow>
         <EcoItem img={img} onClick={this.onClick} clicked={clicked}>
           <a href={src}>
             <Layer>
               <EcoItemTitle clicked={clicked}>{title}</EcoItemTitle>
-              {content}
+              <TipContent info={info} clicked={clicked}/>
             </Layer>
           </a>
         </EcoItem>
