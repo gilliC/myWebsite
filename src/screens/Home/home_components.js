@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const HomeContainer = styled.div`
   min-height: 70vh;
@@ -8,12 +8,6 @@ export const HomeContainer = styled.div`
     font-size: 65px;
     margin: 0;
   }
-`;
-
-export const RowContainer = styled.div`
-  display: flex;
-  padding: 5%;
-  height: 90%;
 `;
 
 export const RightSideDiv = styled.div`

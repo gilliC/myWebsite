@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import transition from 'styled-transition-group';
-import {primaryColor, secondaryColor, mobileSize} from '../app_components';
+import {primaryColor, secondaryColor, tertiaryColor , mobileSize} from '../app_components';
 
 /////////////// DIVS /////////////
 export const Container = styled.div`
@@ -46,9 +46,7 @@ export const FadeInContainer = transition.div`
     transition: opacity 800ms ease-in;
   }
 `;
-export const FullHeightDiv = styled.div`
-  height: 100%;
-`;
+;
 /////////////// Texts /////////////
 export const Title = styled.h1`
   font-size: ${props => props.fontSize || '5em'};
@@ -93,23 +91,21 @@ const icons_grown = keyframes`
   }
   to {
     font-size: 8em;
-    opacity:1;
+    opacity:0.7;
   }`;
 const icons_shrink = keyframes`
   from {
     font-size: 8em;
-    color: ${primaryColor};
+    color: #313131;
   }
   to {
     font-size: 7em;
-    opacity:0.7;
   }`;
 
 const LinkGrows = styled.a`
   :any-link {
     width: ${props => props.width || '100%'};
-    color: ${primaryColor};
-    opacity: 0.7;
+    color: #313131;
     animation: ${icons_shrink} 1s ease forwards;
     font-size: 7em;
     height: 100px;
@@ -178,7 +174,7 @@ export const Link = props => {
 export const MainInput = styled.input`
   color: ${primaryColor};
   padding: 15px;
-  background-color: ${secondaryColor};
+  background-color: white;
   border: 2px solid ${primaryColor} !important;
   border-radius: 10px;
   margin-left: 10px;

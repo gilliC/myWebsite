@@ -5,8 +5,8 @@ import transition from 'styled-transition-group';
 
 const appColors = {
   primaryColor: '#5e82bc',
-  secondaryColor: 'white',
-  tertiaryColor: '#9e788f',
+  secondaryColor: '#D36E7A',
+  tertiaryColor: '#6ED3C7',
   four: 'blue',
 };
 const screenSizes = {

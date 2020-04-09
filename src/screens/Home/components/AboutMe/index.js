@@ -1,5 +1,5 @@
 import React from "react";
-import { RowContainer } from "../../home_components";
+import RowContainer from "./components/RowContainer";
 import AboutMeMobile from "./components/AboutMeMobile";
 import AboutMeContainer from "./components/AboutMeContainer";
 import AboutMeLeft from "./components/AboutMeLeft";
