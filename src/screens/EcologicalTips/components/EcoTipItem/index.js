@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
-import {
-  Layer,
-  EcoItemText,
-  EcoItem,
-  EcoItemTitle,
-} from "../ecotips_components";
-import { ColinRow, SmallText } from "../../../components/common_components";
-import TipDescription from "./components/TipDescription";
 import TipContent from "./components/TipContent";
+import { EcoItemTitle } from "./components/EcoItemTitle";
+import EcoItemContainer from "./components/EcoItemContainer";
 
 export default class EcoTipItem extends Component {
   constructor(props) {
@@ -24,16 +17,10 @@ export default class EcoTipItem extends Component {
     const { img, info, src, title } = this.props.item;
     const { clicked } = this.state;
     return (
-      <ColinRow>
-        <EcoItem img={img} onClick={this.onClick} clicked={clicked}>
-          <a href={src}>
-            <Layer>
-              <EcoItemTitle clicked={clicked}>{title}</EcoItemTitle>
-              <TipContent info={info} clicked={clicked}/>
-            </Layer>
-          </a>
-        </EcoItem>
-      </ColinRow>
+      <EcoItemContainer img={img} src={src} clicked={clicked} onClick={this.onClick}>
+        <EcoItemTitle clicked={clicked}>{title}</EcoItemTitle>
+        <TipContent info={info} clicked={clicked} />
+      </EcoItemContainer>
     );
   }
 }

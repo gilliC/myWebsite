@@ -1,8 +1,8 @@
 import React from "react";
-import EcoTipItem from "./EcoTipItem";
+import EcoTipItem from "./components/EcoTipItem";
 import { ecologicalTips } from "../../services/dataBase";
 
-import { EcoTipsContainer } from "./ecotips_components";
+import EcoTipsContainer from "./components/EcoTipsContainer";
 
 export default (props) => {
   const itemsComponents = ecologicalTips.map((item) => {

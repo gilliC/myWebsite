@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mobileSize} from '../../../../../app_components';
+import { mobileSize} from '../../../../../../app_components';
 
 export const DescriptionRegular = styled.p`
   font-family: ${props => (props.clicked ? 'Poiret One' : '')};
