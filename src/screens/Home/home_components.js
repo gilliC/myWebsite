@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { primaryColor } from "../../app_components";
 
 export const HomeContainer = styled.div`
   min-height: 80vh;
@@ -11,17 +10,6 @@ export const HomeContainer = styled.div`
   }
 `;
 
-export const icons_grow = keyframes` 
- 0% {
-    font-size: 5em;
-  }
-  50% {
-    font-size: 6em;
-  }
-100%{
-font-size:5em;
-}
-`;
 export const icon_slide_down = keyframes` 
  0% {
     transform:translateY(0px);
@@ -49,12 +37,7 @@ export const icon_slide_down = keyframes`
   }
 `;
 
-export const Icon = styled.i`
-  color: white;
-  font-size: 5em;
-  flex: 1;
-  animation: ${icons_grow} 1s ease;
-`;
+
 export const ScrollDownIcon = styled.i`
   color: white;
   font-size: 5em;
