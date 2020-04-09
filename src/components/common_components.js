@@ -1,7 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components';
 import transition from 'styled-transition-group';
-import {primaryColor, secondaryColor, tertiaryColor , mobileSize} from '../app_components';
+import {primaryColor, mobileSize} from '../app_components';
+import { BLACK_LIGHT, BLACK_DARK } from '../consts/colorsPalette';
 
 /////////////// DIVS /////////////
 export const Container = styled.div`
@@ -91,12 +92,12 @@ const icons_grown = keyframes`
   }
   to {
     font-size: 8em;
-    opacity:0.7;
+    color: ${BLACK_DARK};
   }`;
 const icons_shrink = keyframes`
   from {
     font-size: 8em;
-    color: #313131;
+    color: ${BLACK_LIGHT};
   }
   to {
     font-size: 7em;
@@ -105,7 +106,7 @@ const icons_shrink = keyframes`
 const LinkGrows = styled.a`
   :any-link {
     width: ${props => props.width || '100%'};
-    color: #313131;
+    color: ${BLACK_LIGHT};
     animation: ${icons_shrink} 1s ease forwards;
     font-size: 7em;
     height: 100px;

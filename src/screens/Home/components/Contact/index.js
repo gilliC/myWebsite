@@ -1,22 +1,15 @@
 import React from "react";
-import {
-  Title,
-  Link,
-} from "../../../../components/common_components";
-import { linksList } from "./linksList";
+import { Title } from "../../../../components/common_components";
 import ContactContainer from "./components/ContactContainer";
+import LinksList from "./components/LinksList";
 
 export default (props) => {
-  const animation = props.isInMobile ? "ColorBackground" : "Grow";
-  const linksElements = linksList.map((props) => {
-    return <Link {...props} animation={animation} />;
-  });
 
   return (
     <ContactContainer>
-      <br />
       <Title>Contact</Title>
-      <div>{linksElements}</div>
+      <br />
+      <LinksList />
     </ContactContainer>
   );
 };
