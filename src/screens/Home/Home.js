@@ -1,6 +1,6 @@
 import React from 'react';
 import Contact from './Contact';
-import AboutMe from './AboutMe';
+import AboutMe from './components/AboutMe';
 import {mobileSize} from '../../app_components';
 import {HomeContainer} from './home_components';
 
