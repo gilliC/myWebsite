@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { mobileSize} from '../../../../../app_components';
-import { EcoItemContainerImg } from "./EcoItemContainerImg";
+import EcoItemContainerImg from "./EcoItemContainerImg";
 
-export const EcoItemTitle = styled.h2`
+export default  styled.h2`
   font-family: Josefin Slab;
   font-size: 50px;
   display: ${props => (props.clicked ? 'none' : 'block')};

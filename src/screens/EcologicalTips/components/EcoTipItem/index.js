@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import TipContent from "./components/TipContent";
-import { EcoItemTitle } from "./components/EcoItemTitle";
+import EcoItemTitle from "./components/EcoItemTitle";
 import EcoItemContainer from "./components/EcoItemContainer";
 
 export default class EcoTipItem extends Component {

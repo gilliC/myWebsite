@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DescriptionBold = styled.span`
+export default styled.span`
   font-weight: bold;
   margin-bottom: 10px;
 `;

@@ -7,7 +7,7 @@ const defaultTipWidthDesktop = '750px';
 export const borderRadius = '25px';
 export const defaultTipWidthMobile = '100%';
 
-export const EcoItemContainerImg = styled.div`
+export default styled.div`
   content: '';
   width: ${defaultTipWidthDesktop};
   height: ${props => (props.clicked ? hoverTipHeight : defaultTipHeight)};

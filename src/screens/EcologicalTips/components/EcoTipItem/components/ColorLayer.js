@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { primaryColor, mobileSize } from "../../../../../app_components";
-import {
-  EcoItemContainerImg,
+import EcoItemContainerImg, {
   borderRadius,
   defaultTipWidthMobile,
 } from "./EcoItemContainerImg";

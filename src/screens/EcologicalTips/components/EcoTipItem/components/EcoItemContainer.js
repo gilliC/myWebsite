@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { EcoItemContainerImg } from "./EcoItemContainerImg";
+import EcoItemContainerImg from "./EcoItemContainerImg";
 import { ColinRow } from "../../../../../components/common_components";
 import { ColorLayer } from "./ColorLayer";
 

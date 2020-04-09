@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { mobileSize} from '../../../../../../app_components';
 
-export const DescriptionRegular = styled.p`
+export default styled.p`
   font-family: ${props => (props.clicked ? 'Poiret One' : '')};
   font-size: ${props => (props.clicked ? '26px' : '')};
   text-align: center;
