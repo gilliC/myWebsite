@@ -5,7 +5,7 @@ import {AppBody} from '../app_components';
 
 import Home from '../screens/Home/Home';
 import EcologicalTips from '../screens/EcologicalTips';
-import Projects from '../screens/Projects/Projects';
+import Projects from '../screens/Projects';
 import NoMatch from '../components/defaultPage';
 
 //import './App.scss';

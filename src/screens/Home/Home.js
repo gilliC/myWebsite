@@ -9,7 +9,7 @@ export default (props) => {
   let isInMobile = false;
   if (props.screenSize <= mobileSize) isInMobile = true;
   return (
-    <HomeContainer isInMobile={isInMobile}>
+    <HomeContainer>
       <AboutMe isInMobile={isInMobile} />
       <Contact isInMobile={isInMobile} />
       <ColoredBottom />
