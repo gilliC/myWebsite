@@ -1,79 +1,65 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Arrow from "./component/Arrow";
 import CarouselContainer from "./component/CarouselContainer";
 import CenterItem from "./component/CenterItem";
 
-class Carousel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { components: props.children, componentIndex: 0 };
-  }
+export default (props) => {
+  const [components, setComponents] = useState(props.children);
+  const [show, setShow] = useState(true);
+  const [componentIndex, setComponentIndex] = useState(0);
 
-  changeState = () => {
-    this.setState({ show: !this.state.show });
+  const { children } = props;
+
+  const toggleShow = () => {
+    setShow(!show);
   };
 
-  showChild = (id) => {
-    const { children } = this.props;
-    const { components } = this.state;
+  const showChild = (id) => {
     if (!children) return;
     const component = Array.isArray(components) ? components[id] : components;
     return <div> {component} </div>;
   };
-  componentDidMount() {
-    this.changeState();
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.componentIndex !== prevState.componentIndex) {
-      this.changeState();
-    }
-  }
-  componentWillReceiveProps({ children }) {
-    this.setState({
-      components: children,
-    });
-  }
 
-  onClick(e) {
-    const control = e.currentTarget.dataset.name;
-    const i = this.state.componentIndex;
-    const compCount = this.state.components.length;
+  useEffect(() => {
+    toggleShow();
+    setComponents(children);
+  }, [componentIndex, children]);
+
+  const getNewIndexByControl = (control) => {
+    const compCount =
+      components && Array.isArray(components) ? components.length : 1;
     if (control === "right") {
-      if (i + 1 < compCount)
-        this.setState({
-          componentIndex: i + 1,
-        });
-      else this.setState({ componentIndex: 0 });
+      return componentIndex + 1 < compCount ? componentIndex + 1 : 0;
     }
     if (control === "left") {
-      if (i - 1 >= 0) this.setState({ componentIndex: i - 1 });
-      else this.setState({ componentIndex: compCount - 1 });
+      return componentIndex - 1 >= 0 ? componentIndex - 1 : compCount - 1;
     }
-  }
+  };
 
-  render() {
-    const { show, componentIndex } = this.state;
-    return (
-      <CarouselContainer>
-        <Arrow
-          onClick={this.onClick}
-          className="fas fa-chevron-left "
-          dataName="left"
-        />
-        <CenterItem
-          show={show}
-          showChild={this.showChild}
-          componentIndex={componentIndex}
-          changeState={this.changeState}
-        />
-        <Arrow
-          onClick={this.onClick}
-          className="fas fa-chevron-right "
-          dataName="right"
-        />
-      </CarouselContainer>
-    );
-  }
-}
+  const onClick = (e) => {
+    const control = e.currentTarget.dataset.name;
+    const newIndex = getNewIndexByControl(control);
+    setComponentIndex(newIndex);
+  };
 
-export default Carousel;
+  return (
+    <CarouselContainer>
+      <Arrow
+        onClick={onClick}
+        className="fas fa-chevron-left "
+        dataName="left"
+      />
+      <CenterItem
+        show={show}
+        showChild={showChild}
+        componentIndex={componentIndex}
+        changeState={toggleShow}
+      />
+      <Arrow
+        onClick={onClick}
+        className="fas fa-chevron-right "
+        dataName="right"
+      />
+    </CarouselContainer>
+  );
+};
