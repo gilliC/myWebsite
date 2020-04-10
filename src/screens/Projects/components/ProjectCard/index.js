@@ -1,9 +1,10 @@
 import React from "react";
-import { CardContainerMobile, Gif } from "../../projects_components";
-import { mobileSize } from "../../../../app_components";
+import { mobileSize } from "../../../../consts/screenSizes";
 import Carousel from "../../../../components/Carousel";
 import ContainerDesktop from "./components/ContainerDesktop";
 import ProjectInformation from "./components/ProjectInformation";
+import Gif from "./components/ProjectGif";
+import CardContainerMobile from "./components/CardContainerMobile";
 
 export default (props) => {
   let gifs = props.gifs.map((gif) => {
@@ -19,8 +20,8 @@ export default (props) => {
   }
   return (
     <CardContainerMobile>
-      <ProjectInformation {...props} />
       <Carousel>{gifs}</Carousel>
+      <ProjectInformation {...props} />
     </CardContainerMobile>
   );
 };

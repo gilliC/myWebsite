@@ -6,7 +6,7 @@ import IconLink, {
 
 export default (props) => {
   const { gitHubLink, projLinkClassName, projLink } = props;
-  const animation = linkAnimationTypes.DOUBLE_CIRCLE;
+  const animation = linkAnimationTypes.COLOR_BACKGROUND;
   const linkWidth = "20%";
   return (
     <ContainerRow>

@@ -10,8 +10,8 @@ export default styled.a`
     flex:1;
   }
   :hover {
-    color: ${secondaryColor};
-    opacity: 0.7;
+    color: ${tertiaryColor};
+    opacity: 0.5;
     transition: 0.5s;
   }
   @media screen and (max-width: ${mobileSize + "px"}) {
