@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-
-import { FadeInContainer, ColinRow, ComponentItem } from "../common_components";
 import Arrow from "./component/Arrow";
 import CarouselContainer from "./component/CarouselContainer";
 import CenterItem from "./component/CenterItem";
@@ -8,20 +6,20 @@ import CenterItem from "./component/CenterItem";
 class Carousel extends Component {
   constructor(props) {
     super(props);
-    this.state = { components: this.props.children, componentIndex: 0 };
-    this.changeState = () => this.setState({ show: !this.state.show });
-    this.onClick = this.onClick.bind(this);
+    this.state = { components: props.children, componentIndex: 0 };
   }
 
+  changeState = () => {
+    this.setState({ show: !this.state.show });
+  };
+
   showChild = (id) => {
-    if (this.props.children !== undefined) {
-      let component;
-      if (Array.isArray(this.state.components))
-        component = this.state.components[id];
-      else component = this.state.components;
-      return <ComponentItem component={component} index={id} key={id} />;
-    }
-  }
+    const { children } = this.props;
+    const { components } = this.state;
+    if (!children) return;
+    const component = Array.isArray(components) ? components[id] : components;
+    return <div> {component} </div>;
+  };
   componentDidMount() {
     this.changeState();
   }
@@ -56,26 +54,24 @@ class Carousel extends Component {
   render() {
     const { show, componentIndex } = this.state;
     return (
-      <div>
-        <CarouselContainer>
-          <Arrow
-            onClick={this.onClick}
-            className="fas fa-chevron-left "
-            dataName="left"
-          />
-          <CenterItem
-            show={show}
-            showChild={this.showChild}
-            componentIndex={componentIndex}
-            changeState={this.changeState}
-          />
-          <Arrow
-            onClick={this.onClick}
-            className="fas fa-chevron-right "
-            dataName="right"
-          />
-        </CarouselContainer>
-      </div>
+      <CarouselContainer>
+        <Arrow
+          onClick={this.onClick}
+          className="fas fa-chevron-left "
+          dataName="left"
+        />
+        <CenterItem
+          show={show}
+          showChild={this.showChild}
+          componentIndex={componentIndex}
+          changeState={this.changeState}
+        />
+        <Arrow
+          onClick={this.onClick}
+          className="fas fa-chevron-right "
+          dataName="right"
+        />
+      </CarouselContainer>
     );
   }
 }

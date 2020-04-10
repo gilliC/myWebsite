@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { tertiaryColor, secondaryColor } from "../../../consts/colorsPalette";
+import { tertiaryColor } from "../../../consts/colorsPalette";
 import { mobileSize } from "../../../consts/screenSizes";
 
 export default styled.a`

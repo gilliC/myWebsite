@@ -186,39 +186,3 @@ export const MainInput = styled.input`
     outline: 0 !important;
   }
 `;
-
-/////////////// CAROUSEL /////////////
-export const ComponentItem = ({component}) => {
-  return <div>{component} </div>;
-};
-
-export const CarouselRow = styled.div`
-  min-width: 400px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  :not([class]) {
-    width: 100%;
-  }
-
-  & > [class*='col-'] {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  @media screen and (max-width: ${mobileSize + 'px'}) {
-    min-width: 0px;
-  }
-`;
-
-export const Arrow = styled.i`
-  font-size: 4em;
-  color: ${primaryColor};
-  align-self: center;
-  @media screen and (max-width: ${mobileSize + 'px'}) {
-    font-size: 1em;
-  }
-`;

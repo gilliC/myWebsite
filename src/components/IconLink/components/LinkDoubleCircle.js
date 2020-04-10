@@ -1,6 +1,6 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
-import { secondaryColor, tertiaryColor } from "../../../consts/colorsPalette";
+import styled from "styled-components";
+import { tertiaryColor } from "../../../consts/colorsPalette";
 
 const StyledLink = styled.a`
   :any-link {
