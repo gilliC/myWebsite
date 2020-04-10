@@ -5,8 +5,8 @@ import Nav from 'react-bootstrap/lib/Nav';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import {NavLink} from 'react-router-dom';
 
-let rightDistance = '40px';
-let marginFromBottom = '-30px';
+export const rightDistance = '40px';
+export const marginFromBottom = '-30px';
 
 /////////////// ANIMATIONS /////////////
 

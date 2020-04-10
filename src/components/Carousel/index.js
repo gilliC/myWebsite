@@ -4,11 +4,12 @@ import CarouselContainer from "./component/CarouselContainer";
 import CenterItem from "./component/CenterItem";
 
 export default (props) => {
-  const [components, setComponents] = useState(props.children);
+  const { children } = props;
+
+  const [components, setComponents] = useState(children);
   const [show, setShow] = useState(true);
   const [componentIndex, setComponentIndex] = useState(0);
 
-  const { children } = props;
 
   const toggleShow = () => {
     setShow(!show);

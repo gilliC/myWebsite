@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {HeaderContainer} from '../app_components';
-import NavigationBar from '../components/TopNavigationBar/TopNavigationBar';
+import NavigationBar from './TopNavigationBar';
 
 export default props => {
   const {pages, width} = props;

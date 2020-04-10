@@ -4,7 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {AppContainer, HeaderContainer, mobileSize} from './app_components';
 import {ContainerRow} from './components/common_components';
 import {AppSideContainr, SidebarPush} from './app_components';
-import NavigationBar from './components/TopNavigationBar/TopNavigationBar';
+import NavigationBar from './components/TopNavigationBar';
 import Sidebar from './components/Sidebar/Sidebar';
 
 import Routing from './services/routing';
