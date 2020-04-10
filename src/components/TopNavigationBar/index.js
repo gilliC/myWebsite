@@ -4,6 +4,7 @@ import NavigationNav from "./components/NavigationNav";
 import NavBarRow from "./components/NavBarRow";
 import NavTabBrand from "./components/NavTabBrand";
 import LogoTabTop from "./components/LogoTabTop";
+import PlaceHolder from "./components/PlaceHolder";
 
 const NavigationBar = (props) => {
   const { pages, location } = props;
@@ -15,13 +16,13 @@ const NavigationBar = (props) => {
 
   return (
     <NavBarRow>
-      <div style={{ flex: 1 }} />
+      <PlaceHolder />
       <NavTabBrand />
-      <div style={{ flex: 1 }} />
+      <PlaceHolder />
       {navsComponents}
-      <div style={{ flex: 10 }} />
+      <PlaceHolder flex={10} />
       <LogoTabTop />
-      <div style={{ flex: 1 }} />
+      <PlaceHolder />
     </NavBarRow>
   );
 };

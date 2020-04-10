@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 
 const brandHover = keyframes` 
   0% {
-    font-size: 30px;
+    font-size: 20px;
   }
   50% {
-    font-size: 35px;
+    font-size: 25px;
   }
   100% {
-    font-size: 30px;
+    font-size: 20px;
   }`;
 
 export default () => {
@@ -23,6 +23,7 @@ export default () => {
 
 const BrandNavLink = styled(NavLink)`
   flex: 1;
+  font-size: 20px;
   :hover {
     animation: ${brandHover} 2s ease forwards;
   }

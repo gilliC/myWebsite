@@ -31,7 +31,7 @@ export default styled.div`
   position: relative;
   z-index: 1;
 
-  padding-bottom: 10px;
+  padding: 10px 0;
   margin: 0 10px; 
 
   border-bottom: solid 2px white;

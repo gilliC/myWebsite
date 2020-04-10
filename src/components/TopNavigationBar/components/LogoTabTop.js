@@ -13,19 +13,11 @@ const logoSpin = keyframes`
 `;
 
 export default () => {
-  return (
-    <Container>
-      <LogoImg alt="logo" src={logo} />
-    </Container>
-  );
+  return <LogoImg alt="logo" src={logo} />;
 };
 
-const Container = styled.div`
-  flex: 1;
-  background-color:yellow;
-`;
-
 const LogoImg = styled.img`
+  flex: 1;
   height: 100px;
   :hover {
     animation: ${logoSpin} infinite 3s linear;
