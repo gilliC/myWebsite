@@ -7,7 +7,7 @@ import Gif from "./components/ProjectGif";
 import CardContainerMobile from "./components/CardContainerMobile";
 
 export default (props) => {
-  let gifs = props.gifs.map((gif) => {
+  const gifs = props.gifs.map((gif) => {
     return <Gif src={gif} alt="Goals Tracker gif" key={gif} />;
   });
   if (props.screenSize > mobileSize) {
