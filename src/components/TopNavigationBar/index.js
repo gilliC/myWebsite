@@ -11,7 +11,7 @@ const NavigationBar = (props) => {
   const pathname = location.pathname;
 
   const navsComponents = pages.map((page) => {
-    return <NavigationNav page={page} key={page.path} localPath={pathname} />;
+    return <NavigationNav page={page} key={page.path} currentActivePath={pathname} />;
   });
 
   return (
