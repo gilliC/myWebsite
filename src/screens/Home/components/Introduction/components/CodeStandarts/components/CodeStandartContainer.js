@@ -14,11 +14,8 @@ to {
 `;
 
 export default styled.div`
-  padding-top: 20px;
   flex: 1;
   margin-right: 35px;
-  left: -100px;
-  display: inline-block;
   :after {
     display: block;
     content: "";
