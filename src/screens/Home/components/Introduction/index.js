@@ -11,9 +11,9 @@ export default (props) => {
     <IntroductionContainer>
       <PlaceHolder />
       <WelcomeTitle />
-      <VerticalHeight />
+      <VerticalHeight height="7vh" />
       <IntroductionText />
-      <VerticalHeight />
+      <VerticalHeight height="7vh" />
       <CodeStandarts />
       <PlaceHolder flex={3} />
     </IntroductionContainer>
