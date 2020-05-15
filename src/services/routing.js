@@ -3,7 +3,7 @@ import {Route, Switch, withRouter} from 'react-router-dom';
 
 import {AppBody} from '../app_components';
 
-import Home from '../screens/Home/Home';
+import Home from '../screens/Home/HomeOld';
 import EcologicalTips from '../screens/EcologicalTips/EcologicalTips';
 import Projects from '../screens/Projects/Projects';
 import NoMatch from '../components/defaultPage';
