@@ -1,12 +1,13 @@
 import React from "react";
 import ButtonContainer from "./ButtonContainer";
-import Title from "common/text/Title";
+import Icon from "./Icon";
+import ButtonText from "./ButtonText";
 
-export default (props) => {
+export default () => {
   return (
     <ButtonContainer>
-      <Title style={{ fontStyle: "italic", fontSize: "18px", margin:0 }}>Email Me</Title>
-      <i class="fas fa-arrow-right" style={{marginLeft: 20, fontSize: "18px"}}></i>
+      <ButtonText />
+      <Icon className="fas fa-arrow-right email-arrow-icon" />
     </ButtonContainer>
   );
 };
