@@ -5,6 +5,7 @@ import PlaceHolder from "common/container/PlaceHolder";
 import IntroductionText from "./components/IntroductionText";
 import CodeStandarts from "./components/CodeStandarts";
 import VerticalHeight from "common/container/VerticalHeight";
+import EmailMe from "./components/EmailMe";
 
 export default (props) => {
   return (
@@ -15,7 +16,9 @@ export default (props) => {
       <IntroductionText />
       <VerticalHeight height="7vh" />
       <CodeStandarts />
-      <PlaceHolder flex={3} />
+      <PlaceHolder flex={1} />
+      <EmailMe />
+      <PlaceHolder flex={2} />
     </IntroductionContainer>
   );
 };
